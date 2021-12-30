@@ -22,7 +22,7 @@
     "preset-ja-spacing": {
       "ja-space-between-half-and-full-width": {
         "space": "always",
-        "exceptPunctuation": true,
+        "exceptPunctuation": true
       },
       "ja-space-around-code": {
         "before": true,
