@@ -1,0 +1,197 @@
+{
+  "title": "フロントエンドに関わる人のスキルとして触れておきたい・知っておきたいこと",
+  "closed": false,
+  "archived": false,
+  "created_at": "2020-11-21",
+  "comments": [
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-21",
+      "body_markdown": "今後のエンジニア採用において、自分の中で考えていることなどを順次羅列していく\n投稿を許可してるので、こういうのもあるよっていうコメントも募集してます",
+      "body_updated_at": "2020-11-21",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-24",
+          "body_markdown": "いろいろな方に見てもらえるようになったので補足\n\n- 以下羅列することは「必ず」やっておかなければならないことではない\n- 専門性を広げるためにどういった領域を基点とすればいいかを知るため\n- 自分自身がもつスキルの現在地点の再確認・見直しをするため",
+          "body_updated_at": "2020-11-25"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-21",
+      "body_markdown": "## HTML\n\n- [HTML Standard](https://html.spec.whatwg.org/multipage/) を参照できる\n  - 入れ子関係\n  - どういった用途で使われるのか\n- `<head>`内のみで使用できるタグをおおよそ把握している\n- セマンティクスに基づいた実装の利点を説明できる\n- [Nu Html Checker](https://validator.w3.org/nu/) を使うことができる\n  - 構文エラーについてを把握できる\n- 各ブラウザで使用できるかできないかを把握している\n  - https://caniuse.com/ \n",
+      "body_updated_at": "2020-11-22",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-22",
+          "body_markdown": "## WAI-ARIA\n\n- [WAI Web Accessibility Tutorials](https://www.w3.org/WAI/tutorials/) を参照できる\n  - リッチなアクセシビリティ対応コンポーネントを作れる\n- [WCAG (Quickref Reference)](https://www.w3.org/WAI/WCAG21/quickref/) を参照できる\n  - アクセシビリティ対応についてのOK・NGが理解できる\n- [各種Roleモデル](https://www.w3.org/WAI/PF/aria/roles#roles_categorization)を理解している\n  - 各種役割について\n  - 使用できるものできないものの理解"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-21",
+      "body_markdown": "## CSS\n\n- SASS、SCSS、Stylusのいずれかを利用できる\n  - 変数を使用した効率化について理解がある、準じたコードを書ける\n- CSS設計についてが何のためにあるか理解している\n  - 各設計のメリットについて説明できる\n- 詳細度について理解している\n  - IDを含む場合の優先度順\n  - `!important`が付与される場合の優先度順\n- media queryの扱い方について理解している\n- stylelintなどの静的解析ツールを使用できる\n- Grid, Flexboxを使用したレイアウト調整ができる\n  - inline-blockやfloatを使用した横並び以外の手段が使える\n- CSS変数について知っている\n- CSSフレームワークについて紹介できる",
+      "body_updated_at": "2020-11-22",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-21",
+          "body_markdown": "レイアウトをもとに頭の中で使用するプロパティを想像できるようになると上級者？"
+        },
+        {
+          "author": "catnose99",
+          "created_at": "2020-11-21",
+          "body_markdown": "レイアウト調整でいうと、positionプロパティの各値（`relative`、`static`、`absolute`、`fixed`）の違いと使いどころが分かっている方良いですね。"
+        },
+        {
+          "author": "catnose99",
+          "created_at": "2020-11-21",
+          "body_markdown": "CSS設計については現場によると思いますが、個人的にはBEMについて理解があると色んなところでやりやすそうだなと思います。"
+        },
+        {
+          "author": "klim0824",
+          "created_at": "2021-01-16",
+          "body_markdown": "z-indexの重ね合わせコンテキストに関する挙動も押さえておきたいです（positionプロパティの使いどころに内包されてる内容かもしれませんが）"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-21",
+      "body_markdown": "## JavaScript\n\n- 現行の仕様に追従したJavaScriptを意識して書くことができる\n  - varではなくletやconstを使用する\n- AltJSについて知っている、利用できる\n- eslintといった静的解析を用いることができる\n- consoleで実行内容を出力できる\n- DOMが何かを理解している\n  - JSを用いて操作できる\n- オブジェクト、配列を作成できる\n  - 中身の操作ができる（コピー、追加、削除など）\n  - 順番を入れ替えることができる\n  - イミュータブルな実装の考慮ができる\n- イベントを登録できる、削除できる\n- [MDNのJavaScriptドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript)を参照できる\n- TC39でプロポーザルが出されている機能を参照することができる\n  - https://github.com/tc39/proposals",
+      "body_updated_at": "2020-11-22",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-21",
+          "body_markdown": "## TypeScript\n\n- 静的型付けを理解している\n  - 何故JavaScriptではなくTypeScriptを選択するのか説明できる\n- 扱える型について理解している\n  - anyについて厳重に扱える\n- 型定義できる\n  - 場合において定義ファイルを作成できる\n- 型ガードの理解がある\n- 新しいJSの機能を利用できることを理解している\n  - Optional chainingを使用できる\n  - Nullish coalescingを理解できる・使用できる",
+          "body_updated_at": "2020-11-21"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-22",
+          "body_markdown": "##  テストツール\n\n- なぜテストをしなければいけないか説明できる\n  - TDD、BDDとは何かを説明できる\n- どういうテストがあるのか理解している\n  - それぞれのテストにおいてどういうツールを用いるかを理解している\n- ブラウザ自動化ツールを知っている\n- Snapshot テストと Visual Regression テストの違いを説明できる ",
+          "body_updated_at": "2021-04-03"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-22",
+          "body_markdown": "## Polyfill\n\n- なぜ必要なものなのか説明できる\n- 開発においてbabel、core-jsのセットアップができる\n"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-21",
+      "body_markdown": "## 宣言的UI\n\n- 従来のJSによるDOM操作とは異なるものを理解して説明できる\n- 採用しているライブラリ、フレームワークを知っている\n- 状態管理を考慮することができる\n  - ステートを保持する場所（ローカル、グローバル）の理解している\n  - ステートを受け渡す方法を知っている\n  - 更新方法を知っている\n  - バインディングは単方向か双方向であるか理解している\n\n\n"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-21",
+      "body_markdown": "## バンドルツール\n\n- Browserify, Webpack, gulp, rollup, parcelというツールが何をするものか理解している\n  - それぞれの用途、メリットについて説明できる\n- どういったものがバンドルされているか分析することができる\n- 圧縮してファイルサイズを小さくすることができる\n- 開発中とプロダクションモードの切り替えができる\n- Code Splittingが何をしているものか理解している",
+      "body_updated_at": "2021-04-03"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-22",
+      "body_markdown": "##  Web パフォーマンス\n\n- PRPLパターン、RAILモデルについてそれぞれ説明できる\n- 計測ツールについて何があるか説明できる\n- Chrome を用いたパフォーマンス向上に関して\n  - Lighthouse や PageSpeed Insight を用いて計測できる\n  - Chrome Developer Toolsのどのタブで確認するか理解している\n  - Resource Hintsを用いて実行・高速化できる\n- Synthec Monitoring でパフォーマンス計測することによる利点がわかる\n- パフォーマンスバジェットについて説明できる\n- RUM について説明できる\n- CDNを活用できる\n- レンダリングブロックについて説明できる\n  - 描写される順番について理解している\n",
+      "body_updated_at": "2021-04-03"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-22",
+      "body_markdown": "##  セキュリティ\n\n- [安全なウェブサイトの作り方](https://www.ipa.go.jp/security/vuln/websecurity.html)を参照できる\n- 同一、クロスオリジンのそれぞれの違いが説明ができる\n- XSSとは何かを説明できる\n  - 対策方法についてコードベースで説明できる\n- ブラウザ側での脆弱性対策について理解している\n  - CSPとは何かを説明できる\n  - SameSIte Cookieについて説明できる\n- npmモジュールの脆弱性をチェックをする方法を知っている"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-22",
+      "body_markdown": "![Webを支える技術 -HTTP、URI、HTML、そしてREST 書影](https://storage.googleapis.com/zenn-user-upload/scb4hvu9sgptfqqq265mkaeqg23r)\n[Webを支える技術 -HTTP、URI、HTML、そしてREST (WEB+DB PRESS plus)](https://www.amazon.co.jp/dp/4774142042) を読む",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-22",
+          "body_markdown": "@[youtube](_LzSBr99kkw)\n\n[「Web とは何か？」 - あるいは「Web を Web たらしめるものは何か？」](https://www.youtube.com/watch?v=_LzSBr99kkw)を見る",
+          "body_updated_at": "2020-11-22"
+        },
+        {
+          "author": "takanorip",
+          "created_at": "2020-11-22",
+          "body_markdown": "Webを支える技術はけっこう古い情報が現在でも使われているかのような書き方でたくさん載っているので、手放しで薦めるのは難しいと思います。かといって全体感を知ってもらうのに最適な書籍が何かといわれるとこれ以外にないかもしれませんが…。"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-22",
+          "body_markdown": "> 手放しで薦めるのは難しい\n\nわかる。その辺もあったのでJxckさんの動画引用してみた（Ajax以降の話は含まれてないので）",
+          "body_updated_at": "2020-11-22"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2020-12-09",
+          "body_markdown": "@[youtube](HHpmgrg_NF4)\n\n[WEB の自重](https://www.youtube.com/watch?v=HHpmgrg_NF4) を見る"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-05-01",
+          "body_markdown": "![図解まるわかり Web技術のしくみ 書影](https://storage.googleapis.com/zenn-user-upload/u73vyuoku5st72wm5mige2pt1efz)\n\n[図解まるわかり Web技術のしくみ](https://www.amazon.co.jp/gp/product/B08W51LBFJ/) を読む"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-22",
+      "body_markdown": "## ブラウザ情報\n\n- 各動向をチェックする情報源を知っている \n  - [Chrome Platform Status](https://chromestatus.com/features)\n  - [Release Notes - Safari Technology Preview - Safari - Apple Developer](https://developer.apple.com/safari/technology-preview/release-notes/)\n  - [Mozilla Firefox Release Notes](https://www.mozilla.org/en-US/firefox/releases/)\n  - [Microsoft Edge release notes for Stable Channel | Microsoft Docs](https://docs.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel)\n- https://mozaic.fm/ のMonthly Web回を聴く",
+      "body_updated_at": "2020-11-22"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-22",
+      "body_markdown": "## デザインツール\n\n- プロダクトのデザインツールで何が使われているか理解している\n- 画像の書き出し方について理解している\n  - 2倍や3倍の解像度書き出し方が分かる\n  - アイコンの場合、SVGにて抽出できる方法を知っている\n- CSSを抽出できるものの場合、どこから確認すればいいか理解している\n- スポイトツールで色の抽出ができる\n  - グラデーションで色の始点と終点を抽出できる\n- 要素間の空きや余白がどれくらいあるか確認することができる",
+      "body_updated_at": "2020-11-22",
+      "children": [
+        {
+          "author": "takanorip",
+          "created_at": "2020-11-22",
+          "body_markdown": "- ベクター画像とビットマップ画像の違いを説明できる\n- 画像を適切に圧縮できる\n- 各画像圧縮方式についてざっと説明できる"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-22",
+          "body_markdown": "## 画像\n\n- jpg, png, gifの拡張子それぞれの特徴について説明できる\n- webpを用いることのメリットについて説明できる"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2020-11-22",
+          "body_markdown": "## レスポンシブデザイン\n\n- レスポンシブデザインにする必要について説明できる\n- 中間幅についての挙動を考慮した提案ができる\n- どのブレイクポイントがあるとよいか理解して説明できる"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-22",
+      "body_markdown": "## OSS\n\n- セマンティック バージョニングにおいて各数字が何であるか理解している\n  - major, minor, patch, rc\n- ライセンスの有無を理解している\n  - ライセンスに則った使用をしている\n- 使用しているバージョンがEOL（End of Life）かどうかを確認できる\n  - EOLになる場合のアップデート対応や方針などを説明できる\n- 場合によってはIssueやPull Requestなどで提言できる\n- 運用している場合、どのようにメンテナンスしているか説明できる\n",
+      "body_updated_at": "2020-11-22",
+      "children": [
+        {
+          "author": "takanorip",
+          "created_at": "2020-11-22",
+          "body_markdown": "- よくあるライセンスの種類について知っている\n- ライセンスごとのコンテンツの利用制限について知っている"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-24",
+      "body_markdown": "## SPA（Single Page Application）\n\nWIP\n\n- アプリケーションの構成について説明できる",
+      "body_updated_at": "2020-11-28"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2020-11-28",
+      "body_markdown": "## Node.js\n\n- WIP"
+    }
+  ]
+}

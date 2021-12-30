@@ -1,0 +1,58 @@
+{
+  "title": "FicusJSを触ってみる",
+  "closed": true,
+  "archived": false,
+  "created_at": "2021-04-03",
+  "comments": [
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-03",
+      "body_markdown": "## これはなに\nhttps://github.com/ficusjs/ficusjs\n\nWeb Components を使ったアプリケーション開発をするためのライブラリセット。\n\n- 高速で軽量な Web コンポーネントを作成するための関数 (2.01 KB gzipped)\n- アプリケーションの状態を保存する高速かつ軽量なストレージを作成する関数（1.22 KB gzipped)\n- 高速で軽量なパブリッシュ/サブスクライブイベントバスを作成する関数（274 B gzipped)\n\n### ドキュメント\nhttps://docs.ficusjs.org/",
+      "body_updated_at": "2021-04-03"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-03",
+      "body_markdown": "## まず書いてみる\nhttps://docs.ficusjs.org/docs/getting-started/\n\nどうやら index.html だけで開発できちゃうっぽい。\n以下を`<body>`内に書いてあげる\n\n```html\n<hello-world></hello-world>\n\n<script type=\"module\">\nimport { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers/lit-html'\nimport { createComponent } from 'https://cdn.skypack.dev/ficusjs/component'\n\ncreateComponent('hello-world', {\n  renderer,\n  handleClick (e) {\n    window.alert('Hello to you!')\n  },\n  render () {\n    return html`<div>\n<p>Test component</p>\n<button type=\"button\" @click=\"${this.handleClick}\">Click me!</button>\n</div>`\n  }\n})\n</script>\n```\n\n生成結果：https://codepen.io/ducksoupdev/pen/GRZPqJO\n\n[![生成結果のGifアニメーション。ボタンをクリックしてアラートが表示されている](https://i.gyazo.com/f00763522cb72ffc8883525d830dbde1.gif)](https://gyazo.com/f00763522cb72ffc8883525d830dbde1)"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-03",
+      "body_markdown": "- レンダラーとして [https://www.npmjs.com/package/lit-html](lit-html) を使用している\n- ES Modules で読み込むようにして開発しているので IE11 は非推奨環境になってる\n  - レガシーブラウザ対応、CommonJSで使用するならビルドツールでトランスパイルしてくださいとのこと\n  - [IE11 への対応例](https://github.com/ficusjs/ficusjs/tree/master/examples/ie11)",
+      "body_updated_at": "2021-04-03"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-03",
+      "body_markdown": "## 機能\n\n- 関数型プログラミングパターン\n- 宣言的コンポーネントを作成\n- リアクティブコンポーネント\n- 独自のレンダラーを選択している\n- 関数によるコンポーネント拡張\n  - ストア\n  - イベントバスとの連携\n  - ステートトランザクション\n  - CSSスタイル\n- ストアによるアプリケーションの状態管理が可能\n- アプリケーション・イベントバス\n- スモール・フットプリント\n  - 全機能 (4.12 KB gzipped)\n  - コンポーネント (2.01 KB gzipped)\n  - ストア (1.22 KB gzipped)\n  - イベントバス (274 B gzipped)\n- 各機能を個別にロードすることも、全機能バンドルで使用することも可能\n- 依存関係なし\n- 全てのサーバーサイド/クライアントサイドフレームワークに対応"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-03",
+      "body_markdown": "## スタイルを付与する\n\n`withStyles` を使う。\n\n```jsx\nimport { createComponent, withStyles } from 'https://cdn.skypack.dev/ficusjs'\nimport { html, renderer } from 'https://cdn.skypack.dev/@ficusjs/renderers/lit-html'\n\ncreateComponent(\n  'my-component',\n  withStyles({\n    renderer,\n    styles () {\n      return `\n        my-component button {\n          background-color: yellow;\n          color: black;\n        }\n      `\n    },\n    render () {\n      return html`<button type=\"button\">Click me!</button>`\n    }\n  })\n)\n```\n\n![my-component button がスタイルあたっている様子](https://storage.googleapis.com/zenn-user-upload/ganr7mu30saeyny307408wqjdgqo)\n\n### 外部のCSSを読み込む\n\nURL を読み込む\n\n```js\n{\n  styles () {\n    return 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css'\n  }\n}\n```\n\n### 通常のスタイルと外部CSSを複合的に使う\n\n配列で return しておく\n\n```js\n{\n  styles () {\n    return [\n      'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css',\n      `\n        my-component button {\n          background-color: yellow;\n          color: black;\n        }\n      `\n    ]\n  }\n}\n```",
+      "body_updated_at": "2021-04-03"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-03",
+      "body_markdown": "TypeScript とかは書けないのかしら",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-03",
+          "body_markdown": "IE11 対応例を見るにバンドラー挟めばいけそうな感じ"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-04",
+          "body_markdown": "作ってみた\nhttps://github.com/yamanoku-playground/ficusjs-typescript-playground"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-04",
+          "body_markdown": "（チュートリアルなぞっただけだと）旨味なさすぎワロタ"
+        }
+      ]
+    }
+  ]
+}

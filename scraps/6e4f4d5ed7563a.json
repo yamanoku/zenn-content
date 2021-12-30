@@ -1,0 +1,783 @@
+{
+  "title": "クラウドワークス #accessibility チャンネル で気になった話題 Pickup 2021年1〜6月編",
+  "closed": true,
+  "archived": false,
+  "created_at": "2021-12-13",
+  "comments": [
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": ":::message\nこの記事は、[アクセシビリティ Advent Calendar 2021](https://adventar.org/calendars/6197) の12/14の記事になります。\n:::\n",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "弊社のSlackではアクセシビリティ（情報へのアクセスしやすさ）の取り組みに興味がある人が集まる `#accessibility` チャンネルがあります。\n\nそこではアクセシビリティにまつわる話題や気になったことをシェアしているのですが、\n2021年にあった良かった・気になったトピックをZennにまとめてで取り上げてみようという記事になります。\n\nこの記事ではチャンネルにあった2021年1月〜6月まで内容を取り上げます。\n\n2021年後半の内容は以下より確認できます。\nhttps://zenn.dev/yamanoku/scraps/d964d3efc75e09",
+          "body_updated_at": "2021-12-13"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "昨年のまとめ記事は以下よりご覧になれます。\n\nhttps://zenn.dev/yamanoku/scraps/443087a170fcbe"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## インクルーシブ公園\n\nhttps://www3.nhk.or.jp/news/html/20201225/k10012783451000.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 民間企業への合理的配慮の義務化、改正障害者差別解消法が交付\n\nhttps://nordot.app/770847441335402496?c=39546741839462401",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://www.mitsue.co.jp/knowledge/blog/a11y/202101/12_0928.html"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://www.sankei.com/politics/news/210225/plt2102250036-n1.html"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://this.kiji.is/741804196154507264"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://www.bengo4.com/c_18/n_12978/"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "障害者差別解消法に関するオンライン研修会\n[https://www.youtube.com/watch?v=-s0cwQWnobk](https://www.youtube.com/watch?v=-s0cwQWnobk)",
+          "body_updated_at": "2021-12-13"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 中国政府による高齢者向けのネットサービス提供\n\nhttps://japan.zdnet.com/article/35164907/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## バイデン大統領のサイトが大きくアクセシビリティ向上される\n\nhttps://jp.techcrunch.com/2021/01/21/2021-01-20-white-house-dark-mode-biden-admin-refreshes-presidencys-website-vows-accessibility/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 株式会社コンセントによる iOS アプリのアクセシビリティ向上支援\n\nhttps://www.concentinc.jp/works/abematv_202101/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## WCAG 3.0 ワーキングドラフトの公開\n\nhttps://twitter.com/weba11y/status/1352299816466878464",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://accessible-usable.net/2021/01/entry_210124.html"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## YouTuber 企画\n\n\n### RouTube\nhttps://www.nhk.jp/p/routube/ts/RMZYQN463V/episode/te/8PK2Y58MPJ/",
+      "body_updated_at": "2021-12-13",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "### SODAきょうだい児と福祉？法律？情報ちゃんねる\n\nhttps://www.youtube.com/channel/UCL-6iW6mshU9qJ0V2OFc2IA",
+          "body_updated_at": "2021-12-13"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "### POCチャンネル\n\nhttps://youtu.be/RPRZSbJfYH8",
+          "body_updated_at": "2021-12-13"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "### アクセシブルキッチン\n\nhttps://www.youtube.com/watch?v=jlxqUUXYnF8"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## STUDIO のアクセシビリティ強化\nhttps://blog.studio.design/ja/posts/outline0",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://twitter.com/takuNoCode1/status/1443544525826232323"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 「視覚障害者が社会で働くということについて」というテーマで講演\n\nhttps://www.mitsue.co.jp/knowledge/blog/a11y/202102/01_1214.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## ナイキ ゴー フライイーズ\n\nhttps://twitter.com/fashionsnap/status/1356407588695363584",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://www.fashionsnap.com/article/2021-02-02/nike-go-flyease/"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## ぼくとわたしのアクセシビリティ\n\nhttps://www.youtube.com/watch?v=U04kUK8Ivr8",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://zenn.dev/doke/articles/bbc1f28aad590a"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## AccessiブルGoGo! シーズン２開始\n\nhttps://www.youtube.com/watch?v=_whroMvq6To"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 点字を予想する\n\nhttps://note.com/catabol/n/n3b479ddbbca7"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## デジタル改革関連法案\n\nhttps://xtech.nikkei.com/atcl/nxt/column/18/00001/05164/\n\n> 1つ目は「情報アクセシビリティー」である。年齢や障がい、身体機能、知能、言語、性などにかかわらず、全国民が公平に安心して有用な情報にアクセスできる環境を求めた。\n\n> 「インターネットを使えない人がいると困るという配慮から、行政サービスのデジタル化は特に遅れた。その反省から『情報アクセシビリティー』と『置いてきぼりをつくらない』を最初に入れた。誰もが有用な情報にアクセスできる環境で置いてきぼりをつくらないことを前提としたうえで、行政手続きなどはデジタルを基本として、それが難しい場合には困っている人を支えるという環境を整備しなければ、この国のデジタル化は進まない」（村井教授）。"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 梅田芸術劇場の字幕サービス用タブレット端末貸し出しのご案内\nhttps://twitter.com/pon0305ray/status/1358411457021415426"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 俳優、ダンサーとして舞台に立つ大橋ひろえさんのドキュメンタリー\n\nhttps://creators.yahoo.co.jp/itoshiori/0200090389"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 聴覚障害者によるゆうちょ銀行アプリへの陳情\n\nhttps://www.j-cast.com/2021/02/10404870.html?p=all"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 障害者を「ネタ」にしたコメディアンが最高裁に行き着くまで\nhttps://www.bbc.com/japanese/features-and-analysis-56066375"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## Web事業会社３社による「Webアクセシビリティ」に関するアンケート調査\nhttps://webtan.impress.co.jp/n/2021/03/04/39286"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## XboxおよびPC向けゲーム開発者がゲームのアクセシビリティを確認できるプログラム\nhttps://www.itmedia.co.jp/news/articles/2102/17/news077.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## aXe を用いた自動テスト実行スクリプト\n\nhttps://accessible-usable.net/2021/02/entry_210223.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## メルカリの「アンコンシャス・バイアスワークショップ」研修資料\n\nhttps://about.mercari.com/press/news/articles/20210225_unconsciousbiasworkshop/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## ヤフーとLINE経営統合にともなう色覚検証の実施\n\nhttps://events.z-holdings.co.jp/tougou/color.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 言語フリー・スペースについて\n\nhttps://prtimes.jp/main/html/rd/p/000000077.000006279.html",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "> つまりみんな母国語だけ使って話をするのです。\n> 英語の会議で半分くらいしか理解できなかったり、\n> 英語だけ話せて仕事ができない人に担当させたり、\n> 仕事ができる人が英語を話せないだけで外されたり、\n> 一見日本語ペラペラの中国人が全然分かってなかったり、\n> 日本語が話せないエンジニアを採用できなかったり、\n> 語学ができるがゆえに本職じゃない翻訳をさせられたり、\n> 長年続いた暗黒時代は終わりました。"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 自動音声認識による字幕付き配信・文字起こしや翻訳\n\nhttps://twitter.com/nagataniyoshiki/status/1262381660877791233\n\nhttps://twitter.com/tkgshn/status/1262964204153249796"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 牧野友香子さんによる聴覚障害に関するコラム連載\n\nhttps://medical.jiji.com/column6/articles/?c=1"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## きこえにくい映画とお笑い\n\nhttps://twitter.com/f_takutaro/status/1366676987289292804\n\n- [1~4p](https://twitter.com/f_takutaro/status/1366676987289292804)\n- [5~8p](https://twitter.com/f_takutaro/status/1366677326260436992)\n- [9~12p](https://twitter.com/f_takutaro/status/1366677483114831873)\n- [13~15p](https://twitter.com/f_takutaro/status/1366677686853148673)",
+      "body_updated_at": "2021-12-13"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 「見えない。そんだけ。」\n\nhttps://president.jp/articles/-/43598",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://twitter.com/rinri_y/status/1368401769626103809"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## スタートアップ業界におけるジェンダーギャップ課題\n\nhttps://www.huffingtonpost.jp/entry/story_jp_603893b4c5b6b745c4b607c5?dbm\n",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://tokion.jp/2021/03/29/why-the-startup-industry-needs-diversity/"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## THEATRE for ALL のプログラム配信\n\nhttps://twitter.com/THEATRE_for_ALL/status/1357645540758986754"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 春日晴樹さんによる書籍「はるの空」\n\nhttps://www.amazon.co.jp/dp/4863715633"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 手話絵本\n\nhttps://twitter.com/saitoharumichi/status/1367995910987259904"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## Zoom 会話の自動文字起こし機能\n\nhttps://www.lifehacker.jp/2021/03/230536how-to-enable-zooms-new-live-transcriptions.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## アクセシビリティオーバーレイ\nhttps://jp.techcrunch.com/2021/03/11/2021-02-10-accessibility-overlay-startup-accessibe-closes-28m-series-a/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## Amebaブログのウェブアクセシビリティ試験結果の公開\n\nhttps://ameblo.jp/ameba-accessibility/entry-12658896389.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 同性婚にまつわる裁判\n\nhttps://www.bbc.com/japanese/56424717\n\nhttps://mainichi.jp/articles/20210623/k00/00m/040/168000c"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## Chrome 89 からのライブキャプション機能（英語のみ）\n\nhttps://forest.watch.impress.co.jp/docs/news/1313084.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## See-Through Captions\n\nhttps://www.itmedia.co.jp/news/articles/2103/22/news014.html",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://twitter.com/gen62gen/status/1401417100049084419"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## YourEyes\n\nhttps://twitter.com/ponycanyon/status/1373907628372336640"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## PDF とアクセシビリティ\n\nhttps://jdash.info/archives/Make_PDFs_exported_from_InDesign_more_accessible"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 鉄道利用における障害者の声\n\nhttps://www.asahi.com/articles/ASP3R4G5XP3CUTIL011.html\n\nhttp://blog.livedoor.jp/natirou/archives/52316146.html "
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## SureTalk\n\nhttps://www.itmedia.co.jp/news/spv/2103/30/news091.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## オリンピックでの平和的抗議に対する制裁を科さない方針\n\nhttps://www.sankei.com/tokyo2020/news/210331/tko2103310001-n1.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 外国人技能実習制度 違反企業マップ\n\nhttps://twitter.com/MahirOrihaM/status/1377248915808866307"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## TikTok の取り組み\n\nhttps://newsroom.tiktok.com/ja-jp/auto-captions\n\nhttps://twitter.com/earlgraymk/status/1357383759847301121"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## モノトーンカラーに選択できることによる恩恵\nhttps://togetter.com/li/1694489",
+      "body_updated_at": "2021-12-13",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "私の解釈ですが、地図をモノトーンで表示できるようにするの、ハイコントラストな状態で地図見れるような配慮だったのが、こういうふうに用途や応用が広がっていいなと思いました。"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## アクセシビリティチェックリスト\n\nhttps://zenn.dev/yusukehirao/articles/cba1fe0cc26c93\n\nhttps://corp.freee.co.jp/news/accessibility-checklist.html\n\nhttps://devlog.atlas.jp/2021/05/13/3762",
+      "body_updated_at": "2021-12-13",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "freee さんのチェックリストは一部改修して [crowdworks.jp](https://crowdworks.jp/) の LP における HTML コーディングチェックリストとして活用させてもらっています。",
+          "body_updated_at": "2021-12-13"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 音声認識大手企業の買収\n\nhttps://www.nikkei.com/article/DGXZQOGN113DV0R10C21A4000000/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 浅井純子さんの記事・ツイート\n\nhttps://www.chietoku.jp/moudouken/\n\nhttps://twitter.com/nofkOzrKtKUViTE/status/1403126460861276163",
+      "body_updated_at": "2021-12-13"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 電動車いす\n\nhttps://xtrend.nikkei.com/atcl/contents/casestudy/00012/00588/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 白状利用者\n\nhttps://twitter.com/atiek_takizawa/status/1381751547290390535\n\nhttps://note.com/wiroha/n/n0aa020b94402"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 外国人との働き方 Working with Foreigners in Japan\n\nhttps://www.youtube.com/playlist?list=PLIFKAGoXm024Cousj8LkdJzvK4OZMZcvz"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## Webアクセシビリティ診断サービスの提供開始\nhttps://wmr.tokyo/tech/2021/04/524394/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 追悼の意を込めたサイトの白黒化による視覚障害者からの不満の声\n\nhttps://www.theguardian.com/uk-news/2021/apr/12/visually-impaired-users-complain-rail-websites-greyscale-prince-philip"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 福祉をたずねるクリエイティブマガジン「こここ」\n\nhttps://twitter.com/saitoharumichi/status/1382531612072550402"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## ダイアログミュージアム「対話の森」関連\n\nhttps://camp-fire.jp/projects/view/375163\n\nhttps://peatix.com/event/1876966\n\nhttps://taiwanomori.dialogue.or.jp/event/20210625-1/ ",
+      "body_updated_at": "2021-12-13",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://www.youtube.com/watch?v=SsC9LvijLvc"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## note へのアクセシビリティ改善要望\n\nhttps://twitter.com/azu_nsd/status/1372016587759259649\nhttps://twitter.com/azu_nsd/status/1372016721297469440\nhttps://twitter.com/sawamemo/status/1384391669944963077"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 日本視覚障害者ICTネットワークによる第1回支援技術利用状況調査実施\n\nhttps://jbict.net/update/at-survey-01",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://jbict2109.peatix.com/"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "yamanoku の感想\n\nhttps://twitter.com/yamanoku/status/1437927164997816320\nhttps://twitter.com/yamanoku/status/1437927991133097984\nhttps://twitter.com/yamanoku/status/1437928260633960448"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 選ばないという選択肢\n\nhttps://twitter.com/ogatti21/status/1386611234863157256?s=20"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## プロレス専用義足\n\nhttps://twitter.com/t346fire/status/1386910512886140930"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "##  卵子凍結・0歳児保育支援制度\n\nhttps://about.mercari.com/press/news/articles/20210428_merciboxupdate/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## わたしとWebアクセシビリティ\n\nhttps://emiemihuimei.hatenablog.com/entry/2021/04/27/222623"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 色弱を告白したデザイナーの記事\n\nhttps://note.com/osi_ire/n/ne7deeebe3212"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 音検知機能・音声文字変換\n\nhttps://www.watch.impress.co.jp/docs/news/1322082.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## インスタコード\n\nhttps://twitter.com/insta_chord/status/1390158884241694721"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## Wix のアクセシビリティツール\n\nhttps://prtimes.jp/main/html/rd/p/000000017.000025208.html",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://webtan.impress.co.jp/e/2021/07/08/40672"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## LineChaser\n\nhttps://japan.cnet.com/article/35170520/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 全盲エンジニアとの働きで見えてきたこと\n\nhttps://cocoda.design/sukoyakarizumu/p/pe7435506a9e8"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## COCOA のアクセシビリティ改善点\n\nhttps://github.com/cocoa-mhlw/cocoa/issues/164",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://www.itmedia.co.jp/news/articles/2109/08/news175.html"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## GAAD Japan\n\nhttps://twitter.com/GAAD_jp/status/1394822200255942660"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## アクセシビリティの祭典 2021\n\nhttps://accfes.com/2021/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## ユニバーサルデザインの自動販売機\n\nhttps://twitter.com/jido__hanbaiki/status/1394925529166344192"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## Spotify\n\nhttps://japan.cnet.com/article/35171054/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 絵文字の未来\n\nhttps://www.technologyreview.jp/s/243939/the-woman-who-will-decide-what-emoji-we-get-to-use/",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "> ユニコード・コンソーシアムの絵文字小委員会の委員長に、女性として初めて就任したジェニファー・ダニエルは、インクルーシブ（包摂的）で気の利いた絵文字の熱心な支持者だ。ダニエルは当初、サンタクロースやクロース夫人の代わりとなる、ジェンダー・インクルーシブな「Mx.クロース」や、ノンジェンダーの人がノンジェンダーの赤ちゃんに授乳している姿、ブライダルベールをかぶった男性的な顔などを発表したことで有名になった。"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## note のアクセシビリティ改善\n\nhttps://note.com/info/n/n4dbe29c380a1",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://twitter.com/fladdict/status/1396774312414089218?s=20"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://note.jp/n/na23fead88b93?gs=fa03e49d1d6c"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 「誰一人取り残さないために情報技術が果たす役割」\n\n浅川智恵子さんによるウェビナー\nhttps://www.ipsj.or.jp/ipsjwebinar/webinar02.html",
+      "body_updated_at": "2021-12-13"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## キーボード操作の可視化\n\nhttps://dev.classmethod.jp/articles/vscode-screencast-mode/",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "相手がどう操作しているか伝える上で便利そう"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 音声・文字・手話言語による「新型コロナワクチンの説明書と予診票」解説動画\n\nhttps://twitter.com/minna_yakushiji/status/1399332229885534212"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 障害者を考慮したライティングのスタイルガイド\n\nhttps://help.apple.com/applestyleguide/#/apd49cbb2b06",
+      "body_updated_at": "2021-12-13"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 伊敷政英さんのインタビュー記事\n\nhttps://truecolorsfestival.com/jp/advisory-panel-interview-ishiki/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## ジェンダーギャップ解消のまち\n\nhttps://www.nhk.or.jp/gendai/articles/4556/index.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 仕様設計の段階でアクセシビリティドキュメントを仕込んでおく取り組み\nhttps://bootcamp.uxdesign.cc/how-to-document-accessibility-as-a-ux-designer-c51476104723"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## サイボウズ Office のアクセシビリティ改善\nhttps://cocoda.design/ka3zu1ma10/p/pfa80beecd420",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://cocoda.design/mma2i/p/pce6ce0340c7b"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## グラフの全機能を提供できる「オーディオグラフ」\n\nhttp://www.macotakara.jp/blog/news/entry-41422.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 基本情報技術者試験を点字受験で最年少合格\n\nhttps://mainichi.jp/articles/20210615/k00/00m/040/081000c",
+      "body_updated_at": "2021-12-13"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## ハザードマップ機能の色のバリアフリー対応\n\nhttps://lifull.com/news/20819/",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "> 『洪水・土砂災害・地震ハザードマップ』は、一般色覚の方だけでなく、色覚の障がいを持つ方の見やすさにも配慮し、ヒートマップで用いる色のバリアフリー対応を行いました。\n\n> 従来のヒートマップは、一般色覚の方でも緑色・黄色・橙色の差が分かりにくく、T（3型2色覚）の色覚を持つ方の場合、緑色がグレーに見えるなどの問題がありました。そこで、本ハザードマップでは、形状・サイズ・重ね方などの検証により、それぞれの差が分かりやすい色や柄を採用しています。"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 障害者就労、雇用と福祉の併用促進へ\n\nhttp://www.fukushishimbun.co.jp/topics/26019"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 背景色と文字色のコントラストをチェックできるWebツール\n\nhttps://color.review/",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "パーマリンクも発行してくれて便利！\n[https://color.review/check/163451-FFFFFF](https://color.review/check/163451-FFFFFF)",
+          "body_updated_at": "2021-12-13"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## Instagram の代替テキスト\n\nhttps://accessible-usable.net/2021/06/entry_210622.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 元なでしこジャパン選手のトランスジェンダー公表\n\nhttps://www.huffingtonpost.jp/entry/story_jp_60ce8c1de4b02e04e28d3b0f"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## アクセシビリティに取り組んでいる「人」にフォーカスしたインタビュー集\n\nhttps://contraaast.jp/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## デジタル庁が大切にしたい、アクセシビリティとアカウンタビリティ\n\nhttps://digital-gov.note.jp/n/nf2c340029002",
+      "body_updated_at": "2021-12-13"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 下肢障害をもつ Vtuber\nhttps://twitter.com/hitomicocco/status/1408033794800578570"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## アクセシビリティ対応でブランドカラーを変更\n\nhttps://webtan.impress.co.jp/e/2021/06/25/40341"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 東京都新型コロナウイルス感染症対策サイトにおけるアクセシビリティ貢献\n\nhttps://www.tokyo-np.co.jp/article/113119",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "> 都内のクラウドソフト会社に勤める伊原力也さん（３９）も「勝手連」で参加した一人だ。伊原さんは、障害者など誰でも使いやすいウェブの「アクセシビリティ」を専門に手掛けるデザイナー。ツイッターを見て興味を持った。\n\n> サイトが掲げる行動原則は「No one left behind（誰も取り残さない）―国籍や年齢、障害の有無にかかわらず、誰もが快適に利用できるサイトを目指す」。まさに自分の領域で「これはやるべきだ、と思いました」。\n\n> 例えば棒グラフの色。すっきりした当初の配色は、色覚特性がある人には差が分かりにくいものだった。全盲の人の協力を得て、サイトの内容を音声で読み上げる機能も加わった。\n\n> シビックテックに初めて関わった伊原さんは「こういう社会貢献の仕方もあるんだなと思った」と話す。",
+          "body_updated_at": "2021-12-13"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 決済画面のスクリーンリーダー対応\n\nhttps://officialmag.stores.jp/entry/update02",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "> スクリーンリーダーとは視覚障害のある方がパソコンを利用する際に、画面に表示されている内容や操作を音声で読み上げてくれる機能のことです。\n\n> これまでは、決済画面の一部項目をスクリーンリーダーで操作できないため、商品を購入することができませんでした。今回以下2つの対応を行ったことで、スクリーンリーダーを使って購入完了までできるようになりました。\n\n> - 支払方法選択ページのラジオボタンを操作可能に\n> - お客様情報、お届け先情報入力ページのチェックボックスを操作可能に\n\n> STORES でより多くの方が商品を買いやすい状態を作るために、アクセシビリティについても改善を進めていきたいと思います。"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## altテキストが示唆するもの\n\nhttps://scratch.trashpot.org/2021/06/what_alt_text_suggests/"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 「インクルーシブなペルソナ拡張」の英語版\n\nhttps://accessible-usable.net/2021/06/entry_210629.html"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## 絵文字はコントラストを満たす必要があるかどうか\n\nhttps://twitter.com/pauljadam/status/1409930303263723524\n",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "> そこまで行ったら肌色とかどうなるんだろ？\n\nといった意見も出ました"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## アクセシビリティの拡大解釈に関する提言\n\nhttps://researchmap.jp/blogs/blog_entries/view/120426/b7ef0018205aea142ad2c3b0873c0cdf",
+      "body_updated_at": "2021-12-13",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://momdo.hatenablog.jp/entry/20210630/1625051822"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-12-13",
+      "body_markdown": "## iPhone のサウンド認識設定\n\n![Apple Watch を装着している写真。画面には Baby Crying がハイライトされている。](https://storage.googleapis.com/zenn-user-upload/58f9f236ec3b-20211213.jpeg)\n\n聴覚障害がある弊社社員がこれまで夜も補聴器を付けていたがこの機能のおかげで使用せずに確認ができるようになった",
+      "body_updated_at": "2021-12-13",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-12-13",
+          "body_markdown": "https://support.apple.com/ja-jp/guide/iphone/iphf2dc33312/ios"
+        }
+      ]
+    }
+  ]
+}

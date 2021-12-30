@@ -1,0 +1,162 @@
+{
+  "title": "Svelteでデジタル時計コンポーネントを作る",
+  "closed": true,
+  "archived": false,
+  "created_at": "2021-04-11",
+  "comments": [
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-11",
+      "body_markdown": "https://twitter.com/yamanoku/status/1381126852492713985\n\n## 成果物\nhttps://github.com/yamanoku/oclock\n\n## スクリーンショット\n| `prefers-color-scheme: light` | `prefers-color-scheme: dark` |\n| ----------------------------- | ---------------------------- |\n| ![Screen Shot prefers-color-scheme: light](https://user-images.githubusercontent.com/1996642/114294426-7f583500-9ad9-11eb-945a-7a11c35c53ff.png) | ![Screen Shot prefers-color-scheme: dark](https://user-images.githubusercontent.com/1996642/114294425-7c5d4480-9ad9-11eb-9238-99944a28e569.png) |\n\n## ページ\nhttps://yamanoku.net/oclock/",
+      "body_updated_at": "2021-04-11"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-11",
+      "body_markdown": "## モチベーション\n\n秒で見えるデジタル時計が部屋にほしかった。\nが、探しても秒が見えないものや、個人的に良さげだと思う時計が自分の中では見当たらなかった。\n\nそんな中、以前 [miyaoka](https://twitter.com/miyaoka/) さんが一週間の日付だけを見れるカレンダーをつくっていたのをふと思い出した。\n\nhttps://twitter.com/miyaoka/status/1330871730215161856\n\nそこで、自作してPWAとしてデジタル時計のようにすぐ見れるようにしてみてもいいのではないかとひらめき今に至る。\n\nhttps://twitter.com/yamanoku/status/1378240444946022403\n",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-18",
+          "body_markdown": "なぜ PWA にしたかったかというと、アドレスバーなどが画面上では不要な情報だったのでそれを除去したかったから"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-11",
+      "body_markdown": "## 技術選定\n\nアイデアとして秒で作れそうだったので index.html と VanillaJS でも良いんじゃないかと思ったけど\nせっかくなので最近気になってる Svelte を使用してみることに\n\nhttps://svelte.dev/",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "## CLI\n\n```\nnpx degit sveltejs/template oclock\ncd oclock\n```\n\nでサクッとできる。"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "## TypeScript\n\nせっかくなので TypeScript を使えるようにする。以下コマンドを叩くとセッテイングしてくれる。\n\n```bash\nnode scripts/setupTypeScript.js\n```\n\nhttps://github.com/sveltejs/template#using-typescript"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-11",
+      "body_markdown": "## カウントできるようにする\n\nSvelte は Vue.js を使ってる人なら馴染みがあるような気がするが、使用する形があまりにもシンプルすぎて心配になる（なった）。\n\n```js\n  import { onMount } from \"svelte\";\n  let time = new Date();\n\n  // ゼロパディングするために文字列にして padStart で2桁にしている\n  $: hours = String(time.getHours()).padStart(2, \"0\"); // 時間\n  $: minutes = String(time.getMinutes()).padStart(2, \"0\"); // 分\n  $: seconds = String(time.getSeconds()).padStart(2, \"0\");  // 秒\n\n  // マウントして1秒毎にカウントしてくれるようにする\n  onMount(() => {\n    const interval = setInterval(() => {\n      time = new Date();\n    }, 1000);\n    return () => {\n      clearInterval(interval);\n    };\n  });\n```\n\nこうすることで以下のような変数を HTML 上で使用することができる\n\n```\n{hours} {minutes} {seconds}\n```",
+      "body_updated_at": "2021-04-11"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-11",
+      "body_markdown": "## マークアップ、WAI-ARIA\n\n今回は下記のような形でマークアップすることにした。\n\n```html\n<div\n  id=\"visually-hidden-oclock\"\n  class=\"visually-hidden-oclock\"\n  role=\"timer\"\n  aria-live=\"polite\"\n  aria-atomic=\"true\"\n>\n  {hours}:{minutes}\n</div>\n<div id=\"visually-oclock\" class=\"visually-oclock\" aria-hidden=\"true\">\n  {hours}:{minutes}:{seconds}\n</div>\n```",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "`role=\"timer\"` は 開始時点からの経過時間を示す、または終了時点までの残り時間を示す数値カウンターとして支援技術に伝えるための WAI-ARIA である。\n\n### 参照ドキュメント\n\n- [WAI-ARIA 1.1](https://www.w3.org/TR/wai-aria-1.1/#timer)\n  - [WAI-ARIA 1.1 日本語訳](https://momdo.github.io/wai-aria-1.1/#timer)\n- [MDN](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/ARIA_timer_role)\n",
+          "body_updated_at": "2021-04-11"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "今回カウントするにあたり、秒までを含めたかったが\nスクリーンリーダーで読み上げる際に１秒毎に正確に読み上げることができず、かつ毎回読み上げるごとに煩わしさもあったので、**読み上げる部分**は時間と分だけにすることにした。\n\n```\n{hours}:{minutes}\n```\n\nまた、視覚的に見えるカウントについては支援技術側に伝わらないように `aria-hidden=\"true\"` で隠蔽するようにした。\n\n```html\n<div id=\"visually-oclock\" class=\"visually-oclock\" aria-hidden=\"true\">\n  {hours}:{minutes}:{seconds}\n</div>\n```",
+          "body_updated_at": "2021-04-11"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "### 余談\n\n`role=\"timer\"` を調べているときに W3C の WAI-ARIA Issue にて\n`aria-interval`（存在しない WAI-ARIA）を設定している場合、その間隔ごとに `aria-live` の API に通知が行って反応できるようにするのはどうか、といったアイデアが投稿されていた。\n\n```html\n<span role=\"timer\" aria-interval=\"60\">Time Left in this session 5:00</span>\n```\n\nこれは以下のような文字入力の場合に何文字入力されたかを検知する際にも便利そうである。\n\n```html\n<span aria-live=\"true\" aria-interval=\"50\"> 250 characters left</span>\n```\nhttps://github.com/w3c/aria/issues/821#issuecomment-428629018",
+          "body_updated_at": "2021-04-11"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-11",
+      "body_markdown": "## CSS\n\n### 天地中央寄せ\n\n```css\ndisplay: flex;\njustify-content: center;\nalign-items: center;\nheight: 100%;\n```\n\n### 数字の等幅対応\n\n数字を同じ大きさにする表記を有効にする設定\n\n```css\nfont-variant-numeric: tabular-nums;\n```\n\nその他の仕様や説明は [MDN](https://developer.mozilla.org/ja/docs/Web/CSS/font-variant-numeric) を参照\n\n### ダークモード設定\n\n`:root` 設定と `prefers-color-scheme` で Light の時と Dark の時とでカラーが切り替わるように設定。\n\n```css\n@media (prefers-color-scheme: light) {\n  :root {\n    --theme-base: #d2d2d2;\n    --theme-font: #15202b;\n  }\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --theme-base: #15202b;\n    --theme-font: #d2d2d2;\n  }\n}\n```\n\n```css\n  background-color: var(--theme-base);\n  color: var(--theme-font);\n```\n\n### Visually-hidden\n\n支援技術のみに伝わるようにHTMLを隠蔽する方法\n\n```css\n.visually-hidden {\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 4px;\n  height: 4px;\n  opacity: 0;\n  overflow: hidden;\n  border: none;\n  margin: 0;\n  padding: 0;\n  display: block;\n  visibility: visible;\n}\n```\n\n色々なスタイルが存在しているが、 [amp-html で定義されているもの](https://github.com/ampproject/amphtml/blob/main/css/ampshared.css#L228-L247)が iOS の VoiceOver や Android の Talkback といったスクリーンリーダーへの考慮も含んでいるので採用。",
+      "body_updated_at": "2021-04-11",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "色についてはポートフォリオサイトでも使用している自作 normalize.css から参照\n\nhttps://github.com/yamanoku/yamanoku.github.io/blob/nuxt/packages/yama-normalize/yama-normalize.css#L2-L3",
+          "body_updated_at": "2021-04-11"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-11",
+      "body_markdown": "## PWA化\n\nSvelte 側で設定する必要があるかなと思っていたが、\nポートフォリオサイトでもある [yamanoku.net](https://yamanoku.net/) は PWA 設定が root でされておりGitHub Pages として公開している。\n新たにリポジトリを作って 同様に GitHub Pages の設定をすると `https://yamanoku.github.io/oclock/` という形で公開される。\n`https://yamanoku.github.io/` は `https://yamanoku.net/` に転送される仕組みになっているので、自動的にPWAとして扱えるようになっていた。ラッキー",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "### 設定した経緯\nhttps://yamanoku.net/archive/aws-route53-acm-cloudfront-with-github-page",
+          "body_updated_at": "2021-04-11"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "https://twitter.com/yamanoku/status/1381143300032266240"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "![PC でも PWA として見れるようになっているスクリーンショット](https://storage.googleapis.com/zenn-user-upload/g8kpyqv3a2tdkdmwi5fu6peiysw0)\n"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-11",
+      "body_markdown": "## Web Components（Custom Elements）\n\n特にやる必要もないといえばないが、簡単にできるようなので、Web Components にしてみようと思って対応。\n\n必要な設定は以下の通り\n\n### Rollup.config.js\n\n`customElement` の設定を追加。\n\n```js:rollup.config.js\nsvelte({\n  compilerOptions: {\n    customElement: true, // 追加\n   }\n}),\n```\n\n### Svelteファイル\n\ntagの名前を定義。一番上に設定。\n\n```html:Svelte\n<svelte:options tag=\"oclock-component\" />\n```\n\n### 設置するHTML\n\n今回の場合は `./public/index.html` に Svelte ファイルで設定した tag の名前を Web Components として設置。\n\n```html\n<oclock-component></oclock-component>\n```",
+      "body_updated_at": "2021-04-11",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "![oclock-component という Custom Elements が選択されているスクリーンショット](https://storage.googleapis.com/zenn-user-upload/dw8iee9u2jbopwqyeslfyqkdfiow)\n\n![Chrome Dev Tools の Elements タブより oclock-component のタグ内部が開いて閲覧しているスクリーンショット](https://storage.googleapis.com/zenn-user-upload/v6p1064b12x1ucoh2gxupg69c3n8)\n",
+          "body_updated_at": "2021-04-11"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-11",
+          "body_markdown": "Web Components 対応にあたり、global.css で設定されていた visually-hidden が適応されずに焦った…\nそのため Svelte 側にも同様の visually-hidden スタイルを適応。",
+          "body_updated_at": "2021-04-11"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-11",
+      "body_markdown": "## 所感\n\nSvelte は個人的にやりたいと思っていたことや、簡単なアイデアを実現するにベストなフレームワークに思える。今回それが要件を満たしていたのでよかった。\nアイデア自体は以前浮かんだものだったが、いろいろな実装を混みで半日かからずで出来たことも地味に嬉しい。\n\nより簡易的に作るのであれば以前触った [FicusJS](https://docs.ficusjs.org/) が結構良さそうな感じかもしれない。\nhttps://zenn.dev/yamanoku/scraps/95d130be273b17\n\nWAI-ARIA については以前作っていた[誕生日までのカウントダウンページ](https://yamanoku.net/birthday-countdown-js/)が同様の対応ができそうだと思った。\n`role=\"timer\"` 自体も今回調べてみて出会えたのでよかったが、よりアクセシビリティを考慮できたカウントをつくれないか引き続き考えていきたい。",
+      "body_updated_at": "2021-04-11"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-12",
+      "body_markdown": "デジタル時計で使われそうなフォントを探してるけど、等幅対応きいとらんけってなってた\nhttps://fonts.google.com/specimen/Orbitron\n\n[![Web フォントを Orbitron にして時間カウントしている様子](https://i.gyazo.com/101499d765f9824eb518ed9b77c5cb13.gif)](https://gyazo.com/101499d765f9824eb518ed9b77c5cb13)",
+      "body_updated_at": "2021-04-12",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-04-12",
+          "body_markdown": "読み込み自体は `?text=0123456789:` と指定できるから最小読み込みで済みそうなんだけど肝心のフォントが見当たらんな",
+          "body_updated_at": "2021-04-12"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-04-30",
+      "body_markdown": "JavaScriptが無効のとき、なにも表示されなくなるので、注意書きを追加した\n\n![Please allow JavaScript. と画面に書かれている](https://storage.googleapis.com/zenn-user-upload/q84sc9xv8lp7e3k7wpblcs6a3eh5)\n\nhttps://github.com/yamanoku/oclock/pull/14\n\n"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-06-05",
+      "body_markdown": "https://twitter.com/yamanoku/status/1400932546167201793\n\nということで秒だけ見れる版をつくった\nhttps://yamanoku.net/oclock/seconds.html\n\nhttps://github.com/yamanoku/oclock/pull/40\n\n[![](https://i.gyazo.com/a781278b987385922af3f5292b2c44cc.gif)](https://gyazo.com/a781278b987385922af3f5292b2c44cc)",
+      "body_updated_at": "2021-06-05"
+    }
+  ]
+}

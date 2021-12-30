@@ -1,0 +1,193 @@
+{
+  "title": "Accessible Vue 読書メモ",
+  "closed": false,
+  "archived": false,
+  "created_at": "2021-09-22",
+  "comments": [
+    {
+      "author": "yamanoku",
+      "created_at": "2021-09-22",
+      "body_markdown": "https://accessible-vue.com/\n\n[Marcus Herrmann](https://twitter.com/_marcusherrmann) 氏による Web アプリにおけるアクセシビリティについて、ヒントやコツ、ベストプラクティスな手法、Vue2, 3 でのインクルーシプなコンポーネントを作成する方法について書かれた本。",
+      "body_updated_at": "2021-09-22"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-09-22",
+      "body_markdown": "# About this book \n読了\n\n- 開口第一でVueはとってもアクセシブルとのご意見\n  - ReactやAngularよりもカンタンに書ける（筆者談）\n- 別の点ではVueはアクセシブルではないとのご意見（どっちやねん）\n  - ただこれはVueに限らず他のフレームワークでも同様の問題を抱えている\n  - もともと各種フレームワークはユーザがアクセシビリティを意識したコードを書けるはず\n- 問題なのはアクセシビリティの認識や教育ができていないことである\n  - Webサイトやアプリは開発者が想定した環境で皆が使えるわけではない\n  - 多様なユーザがWebを使っている現実があるが、そこへの配慮が忘れ去られている\n    - これは「多様性への非認識」であるとも言える\n  - JavaScriptでつくられたWebアプリ以外にも昔ながらのWebサイト（アクセシビリティ配慮がされている）もインターネット上にはいくつもあるが、その事自体に注目がいっていない\n  - Web開発がプロ化してきたことで様々な職務の人が参加できるようになった\n  - デザイン性のあるものやDRYなバックエンドへの興味は高くなる一方でアウトプットされるもの（HTML、CSS）への敬意はうすれていっている\n  - [Eric氏の言うように](https://ericwbailey.design/writing/open-ui-and-implicit-parent-child-relationships-in-html/)「フレームワークファースト」から「ユーザーファースト」への考えを移行する必要がある",
+      "body_updated_at": "2021-09-25",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## What are the contents of this book? \n\n-  各章についての説明\n- [チャプター１：Webアクセシビリティの基本的な理解ができるような説明](https://zenn.dev/link/comments/5a4dae96ec9fdb)\n- [チャプター２：アクセシブルなWebアプリをつくるためのbuilding blocksについての説明](https://zenn.dev/link/comments/6bafe74824a784)\n- [チャプター３：アクセシブルなWebアプリにするためにVueのコアコンセプトとアーキテクチャの強みをどう利用するか](https://zenn.dev/link/comments/a927dea53ff096)\n- [チャプター４：典型的なコンポーネント群をアクセシブルにする方法について](https://zenn.dev/link/comments/eba9f21f735e31)\n- [チャプター５：状態や非同期的なものを支援技術で理解できるようにする方法について](https://zenn.dev/link/comments/28115eac9106ac)\n- [チャプター６：テストと自動化チェックによりアクセシビリティ改善をする方法について](https://zenn.dev/link/comments/fae325bf746430)\n- [チャプター７：よりアクセシビリティについてを学んでいくための教材の紹介](https://zenn.dev/link/comments/0db522e198cd9d)",
+          "body_updated_at": "2021-09-22"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## What are the limits of this book?\n\n- この本ではあくまでもVueにおけるアクセシビリティについてを取り扱う\n- アクセシビリティも多岐にわたる内容があるため表層的にしか取り扱えない\n  - eslint や jest や Cypress といったものはそれ自体で１冊の本を書けてしまうくらい膨大\n- あくまでもこの本はそれらの有用なツールを使ってアクセシビリティを実践する最初の一歩を教えるだけにとどめている"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## Who is this book for?\n\n- 対象者について\n- Vueでアプリケーションを作って、Vueを使って作ったページやアプリからユーザーを排除したくない人向け\n- 本書の読者はWebアクセシビリティについて基本的な知識があると理想的である\n  - そうでなければチャプター１をしっかり読んだほうがいい\n  - アクセシビリティについて詳しく知ることは、それだけで価値のあるスキルだから\n- WEBアプリに関するアクセシビリティ、特にVueのアクセシビリティはドキュメントが不足している\n- ただそれ自体とは関係なくアクセシビリティは重要である"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## How do code examples in this book work?\n\n- Vueアプリを作成する方法はいくつもあるので古典的な方法で紹介する\n  - シングル・ファイル・コンポーネント（SFC）\n  - プロジェクトで扱うものはVue CLIで作成されたものと仮定\n  - その結果、オプションAPIを使用している\n  - コードサンプルは、Vue 3とVue 2の両方の構文で存在して、コードサンプルごとにCodeSandboxで提供"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## Who wrote this book? \n\n- 筆者についての紹介項目\n  - Marcus Herrmann\n  - Webアクセシビリティのスペシャリスト（IAAP）の資格がある\n  - ドイツ・ベルリン出身のフリーランスのWeb開発者\n- Vue.jsを好むがすべての案件でVue.jsを使用するわけではない\n- しかしクライアントサイド駆動型のフレームワークを用いたほうがいい\n- WEBアクセシビリティとVueが両方交わる領域に魅力を感じているので本書をつくった"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-09-22",
+      "body_markdown": "# チャプター１：Cover accessibility basics first \n\nWIP"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-09-22",
+      "body_markdown": "# チャプター２：Basic web app accessibility concepts \n\nWIP"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-09-22",
+      "body_markdown": "# チャプター３：Using Vue’s strengths \n\n読了\n\n## Conveying context with props\n- heading を例にした props に関する説明\n  - `context is king, and useful heading levels their crown.`\n  - そうなんだ…（感想）\n- HeadingComponent.vue は以下のように実装すると良い\n\n```html\n  <component :is=\"headline\">見出し</component>\n```\n\n```javascript\n  computed: {\n    headline() {\n      return \"h\" + this.headlineLevel;\n    },\n  },\n```\n\n- `<h1>` みたいな形でハードコーディングしてしまうと特定の位置でのコンポーネントとしてでしか活用できない\n- 妥当な位置に妥当な見出しレベルでおけるようにすることが肝要",
+      "body_updated_at": "2021-09-25",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## Requiring props \n\n- 必須propsを使うことでアクセシビリティを向上させる方法\n- 下記のような形で実装するのではなく（labelがないのでそもそもNG）\n\n```html\n<template>\n  <input type=\"text\">\n</template>\n```\n\n- 下記のような形でマークアップしてpropsを必須にすることでアクセシビリティを維持しつつ、labelが入っていない場合はブラウザコンソールで警告に気づける\n\n```html\n<label for=\"name\"> {{ label }} </label>\n<input id=\"name\" name=\"name\" type=\"text\" > \n```\n\n```javascript\n  props: {\n    label: {\n      type: String,\n      required: true,\n    }\n  }\n```\n\n- その他の活用事例\n  - 画像コンポーネントへのalt属性\n  - インラインSVGへのaria-label、title\n  - アイコンボタンへのaria-label\n  - fieldsetでのlegendタグ\n  - 多言語対応のときのlang属性\n  - tableでのsummaryタグ",
+          "body_updated_at": "2021-09-22"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## Circumventing Vue 2’s one-root-element rule \n\n- Vue2でのrootエレメントは１つでないといけない問題への対処\n  - Vue3では複数エレメントがおけるようになった\n- table の実装では以下のような実装ではエラーになる問題点がある\n\n```html\n<template>\n  <tr><th>行１</th><td>内容１</td></tr> \n  <tr><th>行２</th><td>内容２</td></tr> \n  <tr><th>行３</th><td>内容３</td></tr> \n</template>\n```\n\n- そのためdivで挟みがちになりそうだが、以下はVueではコンパイル成功できるがHTML構文上はエラーになる\n\n```html\n<template>\n  <div>　\n    <tr><th>行１</th><td>内容１</td></tr> \n    <tr><th>行２</th><td>内容２</td></tr> \n    <tr><th>行３</th><td>内容３</td></tr> \n  </div>\n</template>\n```\n\n- [vue-fragment](https://www.npmjs.com/package/vue-fragment) を使用して回避する\n\n```html\n<template>\n  <fragment>　\n    <tr><th>行１</th><td>内容１</td></tr> \n    <tr><th>行２</th><td>内容２</td></tr> \n    <tr><th>行３</th><td>内容３</td></tr> \n  </fragment>\n</template>\n```\n\n```javascript\nimport { Fragment } from 'vue-fragment'\n```\n\n"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## Facilitate focus management with $refs\n\n- $refs を使うと`.querySelector`などのDOMクエリを使用せずともDOMノードへの参照ができるようになる\n- アプリのフォーカス制御とかで便利になる\n  - refsで要素を指定して`.focus()`で要素にフォーカスできる"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## Controlling where attributes get applied to\n\n- コンポーネントに属性を付与するとコンテナにそのまま追加される\n- たとえば以下のコンポーネントに指定すると意図せぬ属性が付与されたりする\n  - 本来であればbutton に`disabled`が付与されてほしい\n\n```html\n<HogeButton label=\"name\" disabled />\n```\n\n```html\n<template>\n  <div disabled>\n    <button>{{name}}</button>\n  </div>\n</template>\n```\n\n- これを防ぐために`inheritAttrs`をfalseにして付与したい対象に`v-bind=\"$attrs\"`を書くとよい\n  - Vue3では`inheritAttrs`を明示的に書かなくても省略して指定できる"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## Visibility helper components\n\n- 視覚的に隠すテクニックとしてvisually-hiddenという選択肢がある（前章参考）\n- <VisuallyHidden />というヘルパーコンポーネントを作ってみる\n  - `<VisuallyHidden tag=\"h2\">私はここにいるよ</VisuallyHidden>`\n- focusableというboolean propを渡すことでフォーカス可能なものにできる\n  - スキップリンクという手法で使われている\n"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## Accessible Base Components \n\n- コンポーネントをアクセシブルにすることも大事だけどそれを使いやすくすることも大事\n  - グローバルなコンポーネントとして使えるようにしておくと良い\n  - 何度も使うものや、アクセシブルな方法で提供したいものが適している\n  - テキスト入力やボタン、SVGアイコン、テーブルなど\n- １つめの手段はベースとなる`App.vue`にコンポーネントを登録しておくこと\n- ２つめの手段はエントリーファイルに`Vue.component`でコンポーネントを登録しておくこと\n- チーム内で使うように促進しておくことが大事\n  - アクセシブルなコンポーネントが曖昧なフォルダにあってインポートもされない場合、ユーザにとっては何の意味もないものになる"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-22",
+          "body_markdown": "## Action Steps for this chapter\n- 作成したVueアプリケーションにおける見出しをチェックしてみる\n- 作ったコンポーネントがアクセシブルなものかをチェックしてみる\n- [W3Cの公式バリデータ](https://validator.w3.org/)を使用してみてチェックしてみる"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-09-22",
+      "body_markdown": "# チャプター４：Make typical components accessible \nWIP\n\n## Modal dialogs \n\n- フォーカスマネジメントが大事\n  - 本来、フォーカスはユーザーが自由にコントロールできるもので、それを変更するのは混乱を招きかねない\n  - なのでプログラムでフォーカスを変更することは、やりすぎてはいけない\n  - とはいえ意図的にフォーカス変更することが必要な場合もある\n- モーダルが開かれた時、スクリーンリーダーのユーザーはモーダルに移動することを期待する\n- この際にフォーカスがモーダルへ移動することも大事だが、モーダルの中でフォーカス移動を保つようにすることも大事である\n- モーダルは「モード変更」であり、他の要素を受け入れない「ブロッキング部分」でもあるため\n\n### ブロッキング部分を実装する方法について紹介\n- aria-modal \n  - モーダルのコンテナ部分に`aria-modal=\"true\"`を付与する\n  - スクリーンリーダーにaria-modal以外のものを「裏側」のものとして認識させる\n- Disabling parts of the DOM \n  - DOM を２つ用意する\n    - モーダルダイアログ用のDOM\n    - モーダル以外のDOM\n      - モーダルが開いているときはアクセス不可視のものにする必要がある\n    - `aria-hidden=\"true\"` で見えないようにする\n      - かなり強い制御であることを留意する\n      - display:none と同一であるが、aria-hidden がある状態だと display: block もアクセスできないものになる\n- 上記２点の実装方法でどちらがいいかというと現時点ではDOMを２つ用意する方法\n  - aria-modal はMac、iPadOS、iOSのVoiceOverでバグがある\n- その他、ESCキーやオーバーレイのクリックでも閉じる挙動ができることも実装できるようにしたい\n\n### Vueでモーダルを作成する方法\n- バニラ版：https://github.com/KittyGiraudel/a11y-dialog\n- ラップして作られたVue版：https://github.com/morkro/vue-a11y-dialog\n  - Vue2: `npm install vue-a11y-dialog`\n  - Vue3: `npm install vue-a11y-dialog-next`\n\n```html\n<a11y-dialog\n  disable-native\n  id=\"app-dialog\"\n  app-root=\"#app\"\n  dialog-root=\"#dialog-root\"\n  @dialog-ref=\"assignDialogRef\">\n  <template v-slot:title >\n    <span>タイトル</span>\n  </template>\n  <div>\n    <p>コンテンツ</p>\n  </div>\n</a11y-dialog> \n```\n\n- ダイアログを開くためのメソッドがある（`openDialog()`）\n- `assignDialogRef` メソッドを使ってどの要素を開くか伝える\n  - 詳しくは[ドキュメント参照](https://github.com/morkro/vue-a11y-dialog#multiple-dialogs)\n- マウントするdivを別途容易する\n\n```html\n<div id=\"app\"></div>\n<div id=\"dialog-root\"></div> \n```\n\n### フォーカス位置を正しく設置する\n\n- モーダルが開かれた時、a11y-modal では閉じるボタンにフォーカスが移動する\n- WAI-Authoring Practice では最初のテキストに移動するのがよいとされている\n- 開いたモーダルダイアログで最初のインタラクティブ要素にフォーカスを当たるのはそれはそうとも言える\n- しかしスクリーンリーダーユーザーは開いた直後にフォーカスしたものが「閉じる」だとイラッとすることがある\n- その場合、モーダルダイアログ自体にフォーカスがあたることが好ましいのでは、と考える専門家もいる\n  - 参考：https://github.com/scottaohara/accessible_modal_window\n\n```html\n<div id=\"dialog\" aria-labelledby=\"DialogHeadlineId\" role=\"dialog\" tabindex =\"-1\"></div> \n```\n\n- フォーカスを正しく置くことについては現実解がない\n- [Adrian Roselliの記事](https://adrianroselli.com/2020/10/dialog-focus-in-screen-readers.html)では多くのユーザにテストしてもらう必要がある結論になっている\n  - Authoring Practice に乗り続けることは一部のユーザを刺激しかねないため\n  - 自分の中で仮定しているものをユーザーテストしてもらおう\n\n\n### `<dialog>` は壊れている\n- a11y-dialog のコードに`disable-native`というのがあるのが気になった\n- Using ARIAでも[ネイティブのものを使ってほしい](https://www.w3.org/TR/using-aria/#firstrule)という話が載っているので`<dialog>`を使うべきでは？と思うかもしれない\n- `<dialog>`は現在アクセシビリティ観点で大きい問題があるため使用しないほうがよいとされているらしい。\n- Webアクセシビリティの専門家でもある[Scott O'Haraの記事](https://www.scottohara.me/blog/2019/03/05/open-dialog.html)でも \"But with its current issues, it presently makes little sense to use the dialog element at all.\" と述べている。\n",
+      "body_updated_at": "2021-09-25",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-24",
+          "body_markdown": "## Skip links\n\n- スキップリンクはマウスを使わずに操作する人のためのアンカーリンク\n  - ほとんどの場合、フォーカスしたときに出現する\n  - ドキュメントの最初の部分にフォーカスが当たるようにする\n\n### Skip links in Vue\n- Vueで使う場合は[vue-a11y/vue-skip-to](https://github.com/vue-a11y/vue-skip-to)というものがある\n  - Vue2: `npm install @vue-a11y/skip-to --save-dev`\n  - Vue3: `npm install vue-skip-to-next --save-dev`\n- `<VueSkipTo />` というグローバルコンポーネントで使う\n  - toで飛び先idを指定、labelでスキップリンクのテキストを指定する\n  - デフォルトで`to=\"#main\"`, `label=\"Skip to main content\"`と指定されている"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-10-19",
+          "body_markdown": "## Slide-In Navigation \n\nWIP",
+          "body_updated_at": "2021-10-19"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-10-19",
+          "body_markdown": "## Menus\n\nWIP",
+          "body_updated_at": "2021-10-19"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-10-19",
+          "body_markdown": "## Tab Component\n\nWIP",
+          "body_updated_at": "2021-10-19"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-10-19",
+          "body_markdown": "## Aside: Component libraries\n\n- コンポーネントライブラリにアクセシビリティ機能を売り込むクリエイターは稀\n  - 軽量だったり見た目の美しさを強調していたりする（これ自体は悪いことではない）\n- アクセシビリティに関する内容がドキュメントの奥深くまで探さないといけないことが問題\n  - さらにアクセシビリティ対応しているのはごくわずか\n- 悲しいことに Web 開発全体においてアクセシビリティの優先順位は低く、コンポーネントライブラリも例外ではない\n- WAI-ARIA オーサリング・プラクティスに準じて、それを忠実に再現しようとしていたりするものがある\n  - 第２章を読み直すとなぜそれではうまくいかないかが分かる\n- アクセシビリティテストもされておらず、ページ自体のセマンティクスやスタイリング、動作で大きい問題を起こしかねない\n- コンポーネントライブラリにおける分析をして以下は結論になる\n  - 「plug and play」ライブラリのコンセプトみたいに単純に約束できるものではない\n\n---\n\n1. コンポーネントライブラリの候補をアクセシビリティの観点から吟味しよう。\n1. 一般的にアクセシブルとされていて、実際に障害者と一緒に定期的にテストされているコンポーネントライブラリに注目しよう。Vue で提供されていない場合、Vanilla JavaScript で提供されているものを探す。あとはそれを Vue に変換するだけ\n1. 合理的で、アクセシブルで、完璧な、インストールが簡単なVue用のコンポーネントがすぐに登場することを確信しています。\n",
+          "body_updated_at": "2021-10-19"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-10-19",
+          "body_markdown": "## Action Steps \n\n- Vuetify 、Buefy や Bootstrap-Vue を使用している場合、ライブラリのアクセシビリティについてを調査する\n- 既存の Vue プロジェクトにスキップリンクがないか確認する\n  - 万一ない場合は、少なくとも1つ（`#main`）追加することを検討してください。\n- オフキャンバスやタブコンポーネント自体を構築しないように検討してみてください。"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-09-22",
+      "body_markdown": "# チャプター５：Convey changes of state to screen-readers \n\nWIP"
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-09-22",
+      "body_markdown": "# チャプター６：Testing for accessibility \nWIP\n\n- アクセシビリティのテスト手法\n  - シナリオAはアクセシブルなテストスイートを書く\n  - シナリオBはビジネスロジックを書く前にアクセシビリティテストを書く\n- 自動テストについてはすべてグリーンになったとしてもアクセシブルなものを保証できるとは限らない\n  - 自動検出されるものは限られている\n- アクセシビリティとは多様性とこれまでの経験に関わる部分である",
+      "body_updated_at": "2021-09-25",
+      "children": [
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-25",
+          "body_markdown": "## Automated tests are no miracle workers \n\n- 自動テストは開発の助けにはなりますが、確実にアクセシブルになるものかというと違う\n- 例えば alt について\n  - alt属性が付与されているかどうかというのは機械的に自動テストをかけることができます\n  - 挿入されたaltテキストが適しているかどうかの判定まではテストできない\n- アクセシブルデザインについてのチェックは機械ではなく人間がするものである\n- 自動的にアクセシビリティの問題点を抽出するのは全体で見て30%しかできない\n- その結果を知ってがっかりするかもしれないけど、**それでもテストをしないよりはマシ**"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-09-25",
+          "body_markdown": "## Accessibility Testing as education\n- アクセシビリティテストは２つの点において通常のテストと同様貢献するものがある\n  - 重要なコンテンツをカバーできていると個人やチームが拡張したりリファクタリングするときにも壊すことがない\n  - ドキュメントとしての機能\n    - [axe-core テストランナー](https://www.deque.com/axe/browser-extensions/)はWCAGのリファレンスにもつながっている\n- アクセシビリティテストに失敗した面々はそこから学ぶきっかけを得られる\n- とはいっても自動テストが完璧ではないことは否定できないし、したくない\n  - 偽陽性や偽陰性が発生する可能性がある\n- しかしそれを上回るメリットがあると信じてる\n  - アクセシビリティがチームにとって重要であることを伝えることができる\n  - プロジェクトのアクセシビリティレベルが維持される価値がある証拠になる\n    - さらに良い方向へ拡大することもできる？\n  - 初めて触れるチームメンバーに出発点を提示することができる"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-10-10",
+          "body_markdown": "## Linting\n\n- アクセシビリティリンターの紹介\n  - 一般的なものは ESLint\n  - 有用なものとして [eslint-plugin-vuejs-accessibility](https://github.com/vue-a11y/eslint-plugin-vuejs-accessibility) があげられる\n    - `.vue` ファイルのアクセシビリティチェックをしてくれる\n  - `npm install eslint-plugin-vuejs-accessibility --save-dev`\n"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-10-10",
+          "body_markdown": "## Checks in your browser \n\n- このセクションについては Vue に特化した話ではない\n  - 自動テストが可能なレベルのものを紹介\n    - Chrome の Lighthouse\n    - [axe 拡張機能](https://www.deque.com/axe/browser-extensions/)\n    - WebAIM の [WAVE](http://wave.webaim.org)\n    - Microsoft の [Accessibility Insights for Web](https://accessibilityinsights.io/docs/en/web/overview/)\n    - [pa11y](https://pa11y.org/)\n    - [tota11y](https://khan.github.io/tota11y/)\n    - HeadingsMap （[Chrome](https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi?hl=ja)）（[Firefox](https://addons.mozilla.org/de/firefox/addon/headingsmap/)）\n    - Landmark Navigation（[Chrome](https://chrome.google.com/webstore/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp)）（[Firefox](https://addons.mozilla.org/de/firefox/addon/landmarks/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)）\n    - NerdeRegion ... ライブリージョンの確認\n    - nerdeFocus ... フォーカスの順序確認（[ブックマークレット](https://github.com/wizzyfx/nerdeFocus)）\n    - [vue-axe](https://axe.vue-a11y.com/) ... axe-core をラップした Vue プラグイン\n"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-10-19",
+          "body_markdown": "## Unit Tests\n\n- もし jest を使っている環境であれば、jest-axe を使ってみる\n  - (1) jest-axe を読み込んで \n  - (2) expect で `toHaveNoViolations` で使用できるか確認する\n\n```js\nconst { axe , toHaveNoViolations } = require('jest-axe');  // (1)\nexpect . extend ( toHaveNoViolations );  // (2)\n```\n\nimg に alt が入っていないかをチェックするテスト\n\n```js\nit ('matcher の使い方を示す' , async () => {\n  const render = () => '<img src=\"#\"/>' ; \n  const html = render(); \n  expect(await axe(html)).toHaveNoViolations(); \n})\n```\n\n上記はエラーが出て、解決方法として [deque のリンク](https://dequeuniversity.com/rules/axe/2.6/image-alt)が提示される。\nVue のテスト方法については [Vue Test Utils](https://vue-test-utils.vuejs.org/) Edd Yerburgh 氏の [Testing Vue.js Applications](https://www.manning.com/books/testing-vue-js-applications) を参考にされたし。\n\nフォーカスのチェックをするテストは以下参考\n\n```js\nexpect(document.activeElement).toBe(container.querySelector('input')) \n```\n\nフォーカス可能な要素かの一覧：[Focusable Elements - Browser Compatibility Table](https://allyjs.io/data-tables/focusable.html)"
+        },
+        {
+          "author": "yamanoku",
+          "created_at": "2021-10-19",
+          "body_markdown": "## End-to-end, or inter-component testing \n\n- ユニットテストだけでは不十分なことがある\n  - 単一のコンポーネントに限定されるわけではない\n  - パーツの相互作用がインクルーシブを担保することもある\n- モーダルにおいてはモーダル内でのフォーカスだけではなく、モーダルから外れた後のフォーカス管理のテストも必要である\n- コンポーネントレベルに限定するテストツールでは相互作用でアクセシビリティが守られているかをテストはできない\n- その代わりにブラウザ上でエミュレートする [Cypress](https://www.cypress.io/) テストが適している\n- vue-a11y-dialog をテストするにあたり以下のような spec を記述する\n\n```js\ndescribe('最初のテスト', () => {\n  it('モーダルの開閉時にフォーカスが管理されるかどうかをチェック', () => {\n    cy.visit('/');\n    cy.get('button#modaltrigger').click();\n    // 閉じるボタンをクリック\n    cy.get('[data-a11y-dialog-hide]').focused().click();\n    cy.get('button#modaltrigger').focused();\n  })\n}) \n```\n上記テストは以下の流れをテストしている\n\n1. ホームページにアクセス\n1. `modaltrigger` というIDのボタン要素を探す\n1. そのボタンをクリックする\n1. モーダルのクローズボタンがフォーカスされることか確認\n1. 閉じるボタンをクリック\n1. `modaltrigger` の id を持つ button 要素にフォーカスが戻るか確認\n\n上記例は単純なものなので、Cypress でテストするほどのものではないが、コンポーネントテストで実施できなかったテストのギャップや不足分を埋めるためのものである。"
+        }
+      ]
+    },
+    {
+      "author": "yamanoku",
+      "created_at": "2021-09-22",
+      "body_markdown": "# チャプター７：Keep on learning \n\nWIP",
+      "body_updated_at": "2021-09-22"
+    }
+  ]
+}
