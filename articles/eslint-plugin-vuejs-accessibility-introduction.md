@@ -47,7 +47,7 @@ pnpm add -D eslint-plugin-vuejs-accessibility
 
 ## 設定
 
-eslintの設定から以下のように追加します。
+ESLintの設定から以下のように追加します。
 
 ```javascript
 {
