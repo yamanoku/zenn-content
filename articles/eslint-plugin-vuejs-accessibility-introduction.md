@@ -3,7 +3,7 @@ title: "eslint-plugin-vuejs-accessibility入門"
 emoji: "♿"
 type: "tech"
 topics: ["Vue", "eslint", "アクセシビリティ"]
-published: false
+published: true
 publication_name: "comm_vue_nuxt"
 ---
 
