@@ -7,44 +7,44 @@ published: false
 publication_name: "comm_vue_nuxt"
 ---
 
-## SPAにおけるアクセシビリティ課題について
+## SPA におけるアクセシビリティ課題について
 
-SPA（シングルページアプリケーション）は、１つの HTML ファイルに対して、JavaScript と WebAPI を活用してスムーズなユーザー体験を実現するアプリケーションの一形態です。
+シングルページアプリケーション（SPA）は、1 つの HTML ファイルに対して JavaScript と Web API を活用して、ユーザーに素早いページ切り替えの体験を提供するウェブアプリケーションの一形態です。
 
-ですが SPA でのアクセシビリティ課題の１つに、画面遷移時にスクリーンリーダーという Web ブラウザでコンテンツを閲覧するための支援技術が、画面遷移したことを認識できないという問題があります。
+しかし、SPA にはアクセシビリティの課題があります。例えば、視覚障害のあるユーザーが使うスクリーンリーダーという支援技術ではページが遷移したことを認識できないことがあります。これは、JavaScript を使ってページを切り替える際に発生する問題です。
 
-これはクライアントサイドルーティングによって起こってしまう事象です。具体的にどういった事象かと言うと、とあるページから別ページに遷移した際、**そのページ先に移動したこと**がスクリーンリーダーを使う人にとってはわからない、という事象です。
+具体的には、ユーザーがあるページから別のページへ移動した際、スクリーンリーダーが新しいページに移動したことを認識しないことがあります。
 
-これは視覚的に情報を取得できる人であれば気にされませんが、支援技術を使うユーザーにとっては何が変わったかが分からない問題があります。
-
-そうした問題点を解消するために、JavaScript と WAI-ARIA を使用した Route Announcer（あるいは Route Announcement）という手法があります[^1]。
+この問題を解決するために、JavaScript と WAI-ARIA という技術を使って、Route Announcer という方法があります。これを活用することでページ遷移時にスクリーンリーダーへ新しいページの情報を伝えることができます[^1]。
 
 [^1]: 実装の詳細については[令和最新Route Announcer事情](https://2023.yamanoku.net/2023-12-15/)より参照ください。
 
-これらの手法は Gatsby、Next.js、SvelteKit、Angular（Angular Material）、Astro にて実装されていますが、Nuxt では未実装でした。
+多くのフレームワーク（GatsbyJS、Next.js、SvelteKit、Astro など）ではこの方法が実装されていますが、Nuxt ではこれまで未実装でした。
 
-この問題点を Nuxt にてどのように解消するかについてを昨年の[Vue Fes Japan 2023のやまのく](https://vuefes.jp/2023/sessions/yamanoku)より Route Announcer 相応のコンポーネントを作るやり方を発表しました[^2]。
+この問題点を Nuxt にてどのように解消するかについてを昨年の[Vue Fes Japan 2023のやまのく](https://vuefes.jp/2023/sessions/yamanoku)より Route Announcer 相応のコンポーネントを作る方法を発表しました[^2]。
 
 [^2]: 発表資料は[画面遷移から考えるNuxtアプリケーションをアクセシブルにする方法](https://yamanoku.net/vuefes-japan-2023/ja/)を参照ください。
 
-ですが、この度 Nuxt 3.12 より Nuxt 本体に Route Announcer 相当の機能が導入されました。
-
-## Nuxt における Route Announcer の登場
-
-Nuxt 公式のリリースにて[アクセシビリティの向上](https://nuxt.com/blog/v3-12#built-in-accessibility-improvements)の項目で `<NuxtRouteAnnouncer>` コンポーネントと `useRouteAnnouncer` composables 関数が導入されました。
+ですが、この度 Nuxt 3.12 より[アクセシビリティの向上](https://nuxt.com/blog/v3-12#built-in-accessibility-improvements)の項目で `<NuxtRouteAnnouncer>` コンポーネントと `useRouteAnnouncer` composables 関数が導入されました。
 
 * [<NuxtRouteAnnouncer> · Nuxt Components](https://nuxt.com/docs/api/components/nuxt-route-announcer)
 * [useRouteAnnouncer · Nuxt Composables](https://nuxt.com/docs/api/composables/use-route-announcer)
 
-### どのような挙動をしてくれるのか
+## どのような挙動をしてくれるのか
 
 初期インストールされたデフォルトの状態のままだと特に変化は見られないのですが、各ページにて `useHead` で `title` を指定することでその真価が発揮されます。
 
-挙動から分かるとおり、ページ（URL）が切り替わったあとにページのタイトルが読み上げられるようになっています。
+[![Image from Gyazo](https://i.gyazo.com/bd67f964f7a2d4cdd7c577257aa74538.gif)](https://gyazo.com/bd67f964f7a2d4cdd7c577257aa74538)
 
-これまでの Nuxt ではこうした挙動はデフォルトで整備されていなかったため、開発者の考慮する必要を減らしてくれるようになりました。
+`title` がない状態だとページが切り替わっても特に変化がみられません。
 
-次にコンポーネントと composables 関数のそれぞれについてを紹介していきます。
+[![Image from Gyazo](https://i.gyazo.com/a21b5a1b491e64758219d44d3fbf1cfb.gif)](https://gyazo.com/a21b5a1b491e64758219d44d3fbf1cfb)
+
+ですが `title` を設定することで、ページが切り替わったあとにその内容が読み上げられるようになっています。
+
+## Route Announcer を構成するコンポーネントと関数
+
+次に Nuxt 上で動く Route Announcer を構成するコンポーネントと composables 関数のそれぞれについてを紹介していきます。
 
 ### `<NuxtRouteAnnouncer>`
 
@@ -95,16 +95,17 @@ https://zenn.dev/splendente/articles/nuxt-route-announcer-verification
 すでにページコンポーネントにて `useHead` の `title` が設定されている場合、`set` メソッドや `message` 自体で上書きできないようになっているため、注意が必要です。動的な変更をする場合は `useHead` の `title` 側から変更してください。
 :::
 
-## nuxt/a11yの取り組み
+## Nuxtのアクセシビリティ向上への取り組み
 
 今回導入された `<NuxtRouteAnnouncer>` の取り組み以外にもアクセシビリティに関する機能を充実させるものが進められています。
 
-https://github.com/nuxt/nuxt/issues/23255
-
 ロードマップから、Nuxt 内部に vue-axe といったアクセシビリティチェックツールのビルトインやナビゲーションにおけるフォーカス管理、スキップリンクの生成なども予定されています。
+
+https://github.com/nuxt/nuxt/issues/23255
 
 ## まとめ
 
-Nuxt のクライアントサイドルーティング時のアクセシビリティ課題を解消する `<NuxtRouteAnnouncer>` についての紹介になりました。
+この記事では、Nuxt のクライアントサイドルーティング時のアクセシビリティ課題を解消するための `<NuxtRouteAnnouncer>` について紹介しました。
 
-SPA でのページ遷移通知を Nuxt のみで完結できるようになるため、ぜひ 3.12.2 以降にアップデートして使ってみてください。
+アクセシビリティ向上における開発者への負担のが期待されるので、ぜひ 3.12.2 以降にアップデートして使ってみてください。
+
