@@ -99,7 +99,7 @@ https://zenn.dev/splendente/articles/nuxt-route-announcer-verification
 
 今回導入された `<NuxtRouteAnnouncer>` の取り組み以外にもアクセシビリティに関する機能を充実させるものが進められています。
 
-ロードマップから、Nuxt 内部に vue-axe といったアクセシビリティチェックツールのビルトインやナビゲーションにおけるフォーカス管理、スキップリンクの生成なども予定されています。
+ロードマップから、Nuxt 内部に axe-core というアクセシビリティチェックツールのビルトインやナビゲーションにおけるフォーカス管理、スキップリンクの生成なども予定されています。
 
 https://github.com/nuxt/nuxt/issues/23255
 
