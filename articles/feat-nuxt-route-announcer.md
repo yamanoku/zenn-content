@@ -3,7 +3,7 @@ title: "SPA のアクセシビリティを強化する Nuxt の Route Announcer 
 emoji: "♿"
 type: "tech"
 topics: ["Vue", "Nuxt", "アクセシビリティ", "スクリーンリーダー"]
-published: false
+published: true
 publication_name: "comm_vue_nuxt"
 ---
 
