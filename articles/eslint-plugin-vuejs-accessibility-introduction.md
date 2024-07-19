@@ -168,6 +168,12 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 > [no-access-key | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-access-key.html)
 
+### no-aria-hidden-on-focusbable
+
+`aria-hidden="true"`がフォーカス可能な要素やその要素の親に指定されていないことを確認します。
+
+> [no-aria-hidden-on-focusbable | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-aria-hidden-on-focusable.html)
+
 ### no-autofocus
 
 `autofocus`属性を設定した要素がないことを確認します。
@@ -199,6 +205,12 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 デフォルトで`role`属性をもつ要素に対して、更に`role`属性を設定して冗長になっていないかを確認します。
 
 > [no-redundant-roles | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-redundant-roles.html)
+
+### no-role-presentaion-on-focusbable
+
+`role="presentaion"`がフォーカス可能な要素やその要素の親に指定されていないことを確認します。
+
+> [no-role-presentaion-on-focusbable | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-role-presentation-on-focusable.html)
 
 ### no-static-element-interactions
 
