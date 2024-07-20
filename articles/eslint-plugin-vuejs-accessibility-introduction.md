@@ -168,11 +168,11 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 > [no-access-key | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-access-key.html)
 
-### no-aria-hidden-on-focusbable
+### no-aria-hidden-on-focusable
 
 `aria-hidden="true"`がフォーカス可能な要素やその要素の親に指定されていないことを確認します。
 
-> [no-aria-hidden-on-focusbable | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-aria-hidden-on-focusable.html)
+> [no-aria-hidden-on-focusable | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-aria-hidden-on-focusable.html)
 
 ### no-autofocus
 
@@ -206,11 +206,11 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 > [no-redundant-roles | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-redundant-roles.html)
 
-### no-role-presentaion-on-focusbable
+### no-role-presentation-on-focusable
 
-`role="presentaion"`がフォーカス可能な要素やその要素の親に指定されていないことを確認します。
+`role="presentation"`がフォーカス可能な要素やその要素の親に指定されていないことを確認します。
 
-> [no-role-presentaion-on-focusbable | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-role-presentation-on-focusable.html)
+> [no-role-presentation-on-focusable | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-role-presentation-on-focusable.html)
 
 ### no-static-element-interactions
 
