@@ -2,7 +2,7 @@
 title: "Vue Fes Japanの歴代スピーカー一覧を見られるページを作った"
 emoji: "📬"
 type: "tech"
-topics: ["vue", "nuxt", "nuxt3", "cloudflare", "Tech"]
+topics: ["vue", "nuxt", "nuxt3", "cloudflare"]
 published: true
 ---
 
