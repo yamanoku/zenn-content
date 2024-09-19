@@ -104,7 +104,7 @@ ESLintの設定から以下のように追加します。
 
 ### aria-role
 
-存在する正しい`role`属性で設定されていることを確認します。
+存在する正しい `role` 属性で設定されていることを確認します。
 
 > [aria-role | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/aria-role.html)
 
@@ -116,13 +116,13 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### click-events-have-key-events
 
-`@click`イベントを指定する要素は、同様に`@keyup`、`@keydown`、`@keypress`のいずれかのイベントを指定されていることを確認します。
+`@click`イベントを指定する要素は、同様に `@keyup` 、`@keydown`、`@keypress`のいずれかのイベントを指定されていることを確認します。
 
 > [click-events-have-key-events | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/click-events-have-key-events.html)
 
 ### form-control-has-label
 
-フォーム要素が対応する`<label>`要素をもつ、あるいは`aria-label`属性か`aria-labelledby`属性が設定されていることを確認します。
+フォーム要素が対応する `<label>` 要素をもつ、あるいは `aria-label` 属性か `aria-labelledby` 属性が設定されていることを確認します。
 
 > [form-control-has-label | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/form-control-has-label.html)
 
@@ -134,7 +134,7 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### iframe-has-title
 
-`<iframe>`要素に`title`属性が設定されていることを確認します。
+`<iframe>`要素に `title` 属性が設定されていることを確認します。
 
 > [iframe-has-title | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/iframe-has-title.html)
 
@@ -146,19 +146,19 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### label-has-for
 
-フォーム要素が`<label>`要素内でネストされており、`<label>`要素の`for`属性にフォーム要素のID値が設定されていることを確認します。
+フォーム要素が `<label>` 要素内でネストされており、`<label>`要素の `for` 属性にフォーム要素のID値が設定されていることを確認します。
 
 > [label-has-for | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/label-has-for.html)
 
 ### media-has-caption
 
-メディア要素が字幕データを挿入できる`<track>`要素を持っていることを確認します。`muted`属性が設定されている場合は除外されます。
+メディア要素が字幕データを挿入できる `<track>` 要素を持っていることを確認します。`muted`属性が設定されている場合は除外されます。
 
 > [media-has-caption | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/media-has-caption.html)
 
 ### mouse-events-have-key-events
 
-いずれかのマウスイベント（`@mouseenter`、`@mouseover`、`@mouseout`、`@mouseleave`、`@hover`）を持つ要素には、同様に`@focus`、`@blur`のいずれかのイベントを指定しているかを確認します。
+いずれかのマウスイベント（`@mouseenter`、`@mouseover`、`@mouseout`、`@mouseleave`、`@hover`）を持つ要素には、同様に `@focus` 、`@blur`のいずれかのイベントを指定しているかを確認します。
 
 > [mouse-events-have-key-events | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/mouse-events-have-key-events.html)
 
@@ -182,7 +182,7 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### no-distracting-elements
 
-`<blink>`や`<marquee>`などの気の散る要素がないことを確認します。
+`<blink>`や `<marquee>` などの気の散る要素がないことを確認します。
 
 > [no-distracting-elements | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-distracting-elements.html)
 
@@ -196,13 +196,13 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 <!-- textlint-enable -->
 
-`@change`イベントを指定した場合は同様に`@blur`イベントも指定するか、`@blur`イベントだけの指定になっているかを確認します。
+`@change`イベントを指定した場合は同様に `@blur` イベントも指定するか、`@blur`イベントだけの指定になっているかを確認します。
 
 > [no-onchange | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-onchange.html)
 
 ### no-redundant-roles
 
-デフォルトで`role`属性をもつ要素に対して、更に`role`属性を設定して冗長になっていないかを確認します。
+デフォルトで `role` 属性をもつ要素に対して、更に `role` 属性を設定して冗長になっていないかを確認します。
 
 > [no-redundant-roles | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-redundant-roles.html)
 
@@ -214,13 +214,13 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### no-static-element-interactions
 
-インタラクティブな`role`を持たない要素（`div`や`span`など）にインタラクティブな操作を指定していないことを確認します。
+インタラクティブな `role` を持たない要素（`div`や `span` など）にインタラクティブな操作を指定していないことを確認します。
 
 > [no-static-element-interactions | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-static-element-interactions.html)
 
 ### role-has-required-aria-props
 
-ある`role`属性に対して必要なARIA属性がすべて設定されていることを確認します。
+ある `role` 属性に対して必要なARIA属性がすべて設定されていることを確認します。
 
 > [role-has-required-aria-props | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/role-has-required-aria-props.html)
 
