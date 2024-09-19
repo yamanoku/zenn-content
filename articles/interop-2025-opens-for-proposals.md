@@ -49,7 +49,7 @@ Interop 2025に向けたIssueとして以下の２つから投票できます。
 
 さらに「Standards Positionsとしてポジティブであるか」「一部のブラウザでは動いていない」「APIがすでに広く実装されているか」「公開されているバグトラッカーですでに認知されているか」「アクセシビリティ・国際化・プライバシー・セキュリティの面で影響があるか」といった観点についても加点要素となります。
 
-また、開発者向けサーベイの「State of HTML」「State of CSS」「State of JS」などの結果によっても今後のInteropにおいて参考とされるため、積極的に参加して回答していくと良さそうです。
+また、開発者向けサーベイの「[State of HTML](https://stateofhtml.com/en-US)」「[State of CSS](https://stateofcss.com/en-US)」「[State of JavaScript](https://stateofjs.com/en-US)」などの結果によっても今後のInteropにおいて参考とされるため、積極的に参加して回答していくと良さそうです。
 
 ## これまでのInteropについて振り返る
 
