@@ -14,7 +14,7 @@ published: true
 
 はじめにそもそもInteropとはどういう取り組みなのか？についてを簡単に触れておきます。
 
-Interopプロジェクトは、Web Platform Tests（以下、WPT）プロジェクトの一部であり、異なるウェブブラウザ（Google Chrome、Microsoft Edge、Mozilla Firefox、Safari）間でウェブサイトやウェブアプリが同じように表示され、動作することをにするための取り組みです。
+Interopプロジェクトは、Web Platform Tests（以下、WPT）プロジェクトの一部であり、異なるウェブブラウザ（Google Chrome、Microsoft Edge、Mozilla Firefox、Safari）間でウェブサイトやウェブアプリが同じように表示され、動作できるようにする相互運用性を高める取り組みです。
 
 このプロジェクトはブラウザのレンダリングエンジンに多大な貢献をしているブラウザベンダ（Apple、Google、Microsoft、Mozilla）とコンサルティング企業（Bocoup、Igalia）の代表者チームによって進められています。
 
