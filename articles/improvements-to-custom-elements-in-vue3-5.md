@@ -7,11 +7,11 @@ published: false
 publication_name: "comm_vue_nuxt"
 ---
 
-Vue3.5の更新において `defineCustomElement` に関する改善が含まれています。今回の記事ではその `defineCustomElement` に関連する事象についてを紹介・解説していきます。
+Vue3.5の更新において `defineCustomElement` に関する改善が含まれています。今回の記事ではその `defineCustomElement` に関連する事項についてを紹介・解説していきます。
 
 ## Custom Elementsとは？
 
-`defineCustomElement`についてを紹介する前に、まずは根底となるCustom Elementsについてを解説します。
+`defineCustomElement`についてを紹介する前に、まずは根底の知識となる「Custom Elements」についてを解説します。
 
 Custom Elementsは[Web Components](https://developer.mozilla.org/ja/docs/Web/API/Web_components)を構成する一部で、独自のHTML要素を作成するためのJavaScript APIです。
 
@@ -35,9 +35,9 @@ Web標準技術の相互運用向上プロジェクトである[Interop](https:/
 
 Custom Elementsの具体的な使用例を上げると、GitHubのリポジトリ内での日付表示部分は[Web Componentsで作られており](https://github.com/github/relative-time-element)、開発ツールで該当部分を見ると独自のHTML要素で定義されていることがわかります。
 
-![](https://i.gyazo.com/51a182f6b9bf3c266eaa65d41434b1b2.png)
+![relative-timeというCustom Elementsによって「last week」と表示されている](https://i.gyazo.com/51a182f6b9bf3c266eaa65d41434b1b2.png)
 
-![](https://i.gyazo.com/474e1423dc198e6fc5805c9349688c20.png)
+![実際に開発者ツール上で表示されるrelative-timeとして使用されているコード](https://i.gyazo.com/474e1423dc198e6fc5805c9349688c20.png)
 
 Zennでもウィジェットの表示においてCustom Elementsが使用されています。
 
@@ -87,9 +87,9 @@ export default defineConfig({
 
 https://github.com/yamanoku-playground/2024-09-21-vue3_5-defineCustomElement-demo
 
-Viteを起動すると、描画されているVueコンポーネント部分がCustom Elementsとして表示されることが確認できます。
+Viteを起動すると、描画されているVueコンポーネント部分がCustom Elementsとして表示されることが確認できます。内部のカウントアップボタンをクリックするとカウントが増えることも確認できます。
 
-![](https://i.gyazo.com/c8def4920406b3b76fdef1af59cb6314.png)
+![ViteのVueアプリサンプルがvue-app-elementというCustom Elementsによって表示されている。カウントアップボタンが正常に動作してカウントが5まで増えている。](/images/improvements-to-custom-elements-in-vue3-5/9220af571d03548cfcdd007c06358245.gif)
 
 ### 実際の使用事例
 
