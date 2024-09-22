@@ -3,7 +3,7 @@ title: "Vue3.5からの改善と振り返るdefineCustomElementについて"
 emoji: "⚙️"
 type: "tech"
 topics: ["vue", "webcomponents"]
-published: false
+published: true
 publication_name: "comm_vue_nuxt"
 ---
 
