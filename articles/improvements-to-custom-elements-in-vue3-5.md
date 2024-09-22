@@ -1,5 +1,5 @@
 ---
-title: "Vue3.5の改善から振り返るdefineCustomElementについて"
+title: "Vue3.5からの改善と振り返るdefineCustomElementについて"
 emoji: "⚙️"
 type: "tech"
 topics: ["vue", "webcomponents"]
@@ -7,15 +7,15 @@ published: false
 publication_name: "comm_vue_nuxt"
 ---
 
-Vue3.5の更新において `defineCustomElement` に関する改善が含まれています。今回の記事ではその `defineCustomElement` に関連する事項についてを紹介・解説していきます。
+Vue3.5の更新では `defineCustomElement` に関する改善が含まれています。今回の記事ではその `defineCustomElement` に関連する事項についてと、改善された内容を紹介します。
 
 ## Custom Elementsとは？
 
-`defineCustomElement`についてを紹介する前に、まずは根底の知識となる「Custom Elements」についてを解説します。
+`defineCustomElement` についてを紹介する前に、まずは根底の知識となる「Custom Elements」についてを解説します。
 
 Custom Elementsは[Web Components](https://developer.mozilla.org/ja/docs/Web/API/Web_components)を構成する一部で、独自のHTML要素を作成するためのJavaScript APIです。
 
-独自の定義のため、通常のHTML要素とは異なりダッシュが使われている名前(`kebab-case`)である必要があります。
+独自の定義のため、通常のHTML要素とは異なりダッシュが使われている名前( `kebab-case` )である必要があります。
 
 ```html
 <!-- 純粋なHTML要素 -->
@@ -27,13 +27,17 @@ Custom Elementsは[Web Components](https://developer.mozilla.org/ja/docs/Web/API
 
 Custom Elementsの利点としては、UIライブラリ・フレームワークを使用しているかに関わらずに利用できることが挙げられます。例えばフロントエンドの技術スタックが異なるアプリケーション間で共通のUIコンポーネントを使用する場合に有用です。
 
-Vue.js内でCustom Elementsを使用するにあたり一部設定[^1]を追加する必要がありますが、[必要なテストケースはすべて通過しているため](https://custom-elements-everywhere.com/libraries/vue/results/results.html)、安心して使用できます。
+:::message
+ちなみにVue内でCustom Elementsを使用するために一部設定[^1]を追加する必要がありますが、[必要なテストケースはすべて通過しているため](https://custom-elements-everywhere.com/libraries/vue/results/results.html)安心して使用できます。
+:::
 
-[^1]: [コンポーネント解決のスキップ](https://ja.vuejs.org/guide/extras/web-components.html#skipping-component-resolution)の設定を参考ください
+[^1]: [コンポーネント解決のスキップ](https://ja.vuejs.org/guide/extras/web-components.html#skipping-component-resolution)の設定を参照
 
 Web標準技術の相互運用向上プロジェクトである[Interop](https://wpt.fyi/interop-2024)では[Web Componentsの改善が行われており](https://wpt.fyi/results/?label=experimental&label=master&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2023-webcomponents)、Custom Elementsはほぼほぼテストケースを通過しているためクロスブラウザでもある程度安定して使用できると言えます。
 
-Custom Elementsの具体的な使用例を上げると、GitHubのリポジトリ内での日付表示部分は[Web Componentsで作られており](https://github.com/github/relative-time-element)、開発ツールで該当部分を見ると独自のHTML要素で定義されていることがわかります。
+Custom Elementsの具体的な使用例を上げると、GitHubのリポジトリ内での更新日付部分で使用されており、開発ツールで該当部分を見ると独自のHTML要素で定義されていることがわかります[^2]。
+
+[^2]: [github/relative-time-element: Web component extensions to the standard <time> element.](https://github.com/github/relative-time-element)
 
 ![relative-timeというCustom Elementsによって「last week」と表示されている](https://i.gyazo.com/51a182f6b9bf3c266eaa65d41434b1b2.png)
 
@@ -45,11 +49,11 @@ https://zenn.dev/steelydylan/articles/zenn-web-components
 
 ## VueコンポーネントをCustom Elementsとして配布する
 
-Vue3.2から[`defineCustomElement`](https://ja.vuejs.org/api/custom-elements.html#definecustomelement)というAPIが追加され、VueコンポーネントをCustom Elementsとして使用できるようになりました。
+Vue3.2から [`defineCustomElement`](https://ja.vuejs.org/api/custom-elements.html#definecustomelement) というAPIが追加され、VueコンポーネントをCustom Elementsとして使用できるようになりました。
 
-### `defineCustomElement`の使い方
+### `defineCustomElement` の使い方
 
-使い方はシンプルで、コンポーネントの拡張子を `.vue` から `.ce.vue` に変更して `defineCustomElement` で呼び出すことで、Vue.jsのコンポーネントをCustom Elementsとして使用できます。
+使い方自体はシンプルで、コンポーネントの拡張子を `.vue` から `.ce.vue` に変更して `defineCustomElement` で呼び出すことで、VueのコンポーネントをCustom Elementsとして使用できます。
 
 ```ts
 import { defineCustomElement } from 'vue';
@@ -67,7 +71,7 @@ customElements.define('vue-app-element', ExampleElement);
 <vue-app-element></vue-app-element>
 ```
 
-公式のSFCツール（vue-loader@^16.5.0、@vitejs/plugin-vue@^1.4.0）では、`"Custom Elements Mode"`をサポートしており、`ce.vue`拡張子でなくとも `customElement` オプションを追加することでCustom Elementsで呼び出せます。
+公式のSFCツール（vue-loader@^16.5.0、@vitejs/plugin-vue@^1.4.0）では、`"Custom Elements Mode"` をサポートしており、`ce.vue` 拡張子でなくとも `customElement` オプションを追加することでCustom Elementsで呼び出せます。
 
 ```js:vite.config.js
 import { defineConfig } from 'vite'
@@ -81,27 +85,37 @@ export default defineConfig({
 })
 ```
 
-### `defineCustomElement`のサンプルコードとデモ
+### `defineCustomElement` のサンプルコードとデモ
 
-`defineCustomElement`のデモとして以下リポジトリを用意しています。
+`defineCustomElement` のデモとして以下リポジトリを用意しています。
 
 https://github.com/yamanoku-playground/2024-09-21-vue3_5-defineCustomElement-demo
 
-Viteを起動すると、描画されているVueコンポーネント部分がCustom Elementsとして表示されることが確認できます。内部のカウントアップボタンをクリックするとカウントが増えることも確認できます。
+Viteを起動すると、描画されているVueコンポーネント部分がCustom Elementsとして表示されます。内部のボタンをクリックするとカウント数が増えることも確認できます。
 
-![ViteのVueアプリサンプルがvue-app-elementというCustom Elementsによって表示されている。カウントアップボタンが正常に動作してカウントが5まで増えている。](/images/improvements-to-custom-elements-in-vue3-5/9220af571d03548cfcdd007c06358245.gif)
+![ViteのVueアプリサンプルがvue-app-elementというCustom Elementsによって表示されている。ボタンも正常に動作してカウント数が5まで増えている。](/images/improvements-to-custom-elements-in-vue3-5/9220af571d03548cfcdd007c06358245.gif)
 
 ### 実際の使用事例
 
-Vue.jsやNuxtアプリケーション内でVueコンポーネントをわざわざCustom Elementsに変換して使用しないと思います。実際にどのように使用されているかについては、GMOペパボさんの以下記事の「Vue 3系におけるWeb Comopnent Build」やスライドにて紹介されている事例が参考になると思います。
+次に `defineCustomElement` を実際にはどのように使われているかを紹介します。
 
-https://tech.pepabo.com/2022/10/31/colorme-vue3-migration/
+VueやNuxtアプリケーション内でVueコンポーネントをわざわざCustom Elementsに変換して使用することはまずないと思います。VueやNuxtの世界外でVueコンポーネントを共通で使用する際に有用だと思います。
 
-https://speakerdeck.com/piyoppi/definecustomelement-wohuo-yong-sita-sabisugong-tong-nouikonponentoraiburari?slide=5
+LINEヤフーさんの事例ではtoB向けとtoC向けでコンポーネントの共通化する際にCustom Elementsに変換して使用しています。
 
-## v3.5で入った改善についての紹介
+https://uit-inside.linecorp.com/episode/104
 
-そんな `defineCustomElement` ですがVue3.5のアップデートに伴い、様々な改善が入りました。以下はそれらに含まれた改善についてを紹介しています。
+GMOペパボさんの事例でもUIコンポーネントを提供する際に `defineCustomElement` を変換層として活用しています。
+
+https://speakerdeck.com/piyoppi/definecustomelement-wohuo-yong-sita-sabisugong-tong-nouikonponentoraiburari
+
+`defineCustomElement` はVueのランタイムに依存しているためビルドサイズも実装内容に応じて変動するため、単一のCustom Elementsのみを提供する場合はVueから作成するのは過剰となります。Custom Elementsの内容が複雑なロジックであったり、GMOペパボさんのように大規模なUIコンポーネント群として提供する際には向いていると言われています[^3]。
+
+[^3]: [Vue カスタム要素ライブラリー向けの秘訣](https://ja.vuejs.org/guide/extras/web-components#tips-for-a-vue-custom-elements-library)を参照
+
+## v3.5から入った `defineCustomElement` の改善
+
+そんな `defineCustomElement` ですがVue3.5のアップデートに伴い、様々な改善が入りました。以下はその改善された内容についてを紹介します。
 
 ### custom-element: `useShadowRoot()` helper
 
@@ -117,7 +131,7 @@ https://github.com/vuejs/core/commit/775103af37df69d34c79f12c4c1776c47d07f0a0
 
 ### custom-element: expose `this.$host` in Options API
 
-Options APIでカスタム要素のホスト要素を公開できる `this.$host` 属性が実装されました。
+Options APIでCustom Elementsのホスト要素を公開できる `this.$host` 属性が実装されました。
 
 https://github.com/vuejs/core/commit/1ef8f46af0cfdec2fed66376772409e0aa25ad50
 
@@ -232,4 +246,6 @@ https://github.com/vuejs/core/commit/37d2ce5d8e0fac4a00064f02b05f91f69b2d5d5e
 
 ## おわりに
 
-この記事では `defineCustomElement` についてと、Vue3.5からの改善内容についてを紹介しました。今回の改善にでは2〜3年前から起票されていた問題を解消するものも含まれており、突然改善された理由は明らかになっておりません。いずれにせよ、Vue.jsからのCustom Elementsの利用がより安定的になり、より多くの開発者で利用しやすくなることが期待されます。
+この記事では `defineCustomElement` についてと、Vue3.5からの改善内容についてを紹介しました。今回の改善にでは2〜3年前から起票されていた問題を解消するものも含まれており、突然改善が含められた理由は明らかになっておりません（ご存知の方が居たら教えて下さい…）。
+
+いずれにせよ、VueからのCustom Elementsの出力がより安定的になり、より多くの開発者で利用しやすくなることが期待されます。
