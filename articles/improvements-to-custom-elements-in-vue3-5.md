@@ -43,10 +43,6 @@ Custom Elementsの具体的な使用例を上げると、GitHubのリポジト�
 
 ![実際に開発者ツール上で表示されるrelative-timeとして使用されているコード](https://i.gyazo.com/474e1423dc198e6fc5805c9349688c20.png)
 
-Zennでもウィジェットの表示においてCustom Elementsが使用されています。
-
-https://zenn.dev/steelydylan/articles/zenn-web-components
-
 ## VueコンポーネントをCustom Elementsとして配布する
 
 Vue3.2から [`defineCustomElement`](https://ja.vuejs.org/api/custom-elements.html#definecustomelement) というAPIが追加され、VueコンポーネントをCustom Elementsとして使用できるようになりました。
@@ -89,11 +85,11 @@ export default defineConfig({
 
 `defineCustomElement` のデモとして以下リポジトリを用意しています。
 
-https://github.com/yamanoku-playground/2024-09-21-vue3_5-defineCustomElement-demo
+https://github.com/yamanoku-playground/2024-09-22-vue3_5-defineCustomElement-demo
 
 Viteを起動すると、描画されているVueコンポーネント部分がCustom Elementsとして表示されます。内部のボタンをクリックするとカウント数が増えることも確認できます。
 
-![ViteのVueアプリサンプルがvue-app-elementというCustom Elementsによって表示されている。ボタンも正常に動作してカウント数が5まで増えている。](/images/improvements-to-custom-elements-in-vue3-5/9220af571d03548cfcdd007c06358245.gif)
+![ViteのVueアプリサンプルがvue-app-elementというCustom Elementsによって表示されている。ボタンも正常に動作してカウント数が5まで増えている。](/images/improvements-to-custom-elements-in-vue3-5/8c8b16f7a0eb260c55ab6eed5cce1b5b.gif)
 
 ### 実際の使用事例
 
