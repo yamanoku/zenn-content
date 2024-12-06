@@ -1,5 +1,5 @@
 ---
-title: "Vue.js 2024年振り返り"
+title: "Vue.jsと周辺エコシステムから振り返る2024年"
 emoji: "📬"
 type: "tech"
 topics: ["vue"]
@@ -12,28 +12,51 @@ published: false
 
 ## Vue.js
 
-### 10周年
+### Vue.js公開10周年
+
+https://x.com/vuejs/status/1753678155444101385
+
+2024年はVue.jsがHackerNewsで公開されてから10周年目を迎える年でした。Vue.jsの進化の歴史については以下の通りになります。
+
+- 2015年10月: Vue1リリース
+- 2016年10月: Vue2リリース
+- 2018年9月: Vue3の開発が開始
+- 2020年9月: Vue3リリース
+- 2022年1月: Vue3がデフォルトになる、ドキュメントもVue3がメインに
+- 2023年12月: Vue2がEoLを迎える
+
+また、今年の9月の時点でnpmからの総ダウンロード数が10億を突破しました。
+
+https://x.com/vuejs/status/1840300340383756759
 
 ### Vue 3.5
 
-Tengen Toppa Gurren Lagann
+https://blog.vuejs.org/posts/vue-3-5
 
-9月にVue 3.5がリリースされました。このリリースでは以下の変更が含まれています。
+9月にVue 3.5がリリースされました。コードネームは「Tengen Toppa Gurren Lagann」です。このリリースでは以下の変更が含まれています。
 
-- リアクティブシステムの最適化
-- SSRの改善
-  - `defineAsyncComponent()`の`hydrate`オプション
-  - `useId()`
-  - `data-allow-mismatch`
-- Custom Elementsの改善
-- `useTemplateRef()`
-- `onWatcherCleanup()`
+- **リアクティブシステムの最適化**: パフォーマンスが向上し、メモリ使用量が大幅に削減されました。
+- **リアクティブプロップのデストラクチャリング**: `defineProps`からデストラクチャリングされた変数がリアクティブになりました。
+- **SSRの改善**: 遅延ハイドレーションや`useId()`などの新機能が追加されました。
+- **カスタムエレメントの改善**: `defineCustomElement` APIに新しい機能が追加されました。
+- **新しいAPI追加**
+  - `useTemplateRef()`
+  - `Deferred Teleport`
+  - `onWatcherCleanup()`
 
 ### Vapor Mode
 
 ## Vue Router
 
 ## Vitepress
+
+https://blog.vuejs.org/posts/vitepress-1.0
+
+VitePressのv1.0がリリースされました。
+
+先ほど紹介したVapor ModeをVitePressに組み込む取り組みも進められています。
+
+https://x.com/sanxiaozhizi/status/1857155901532320202
 
 ## Pinia
 
@@ -49,8 +72,9 @@ https://pinia-colada.esm.dev/
 
 ### Volar
 
-Volar 2.0 "Link"
-https://gist.github.com/johnsoncodehk/62580d04cb86e576e0e8d6bf1cb44e73?source=weeklyVueNews&campaign=155
+https://gist.github.com/johnsoncodehk/62580d04cb86e576e0e8d6bf1cb44e73
+
+
 
 ## VueUse
 
@@ -78,13 +102,17 @@ v12よりVue2のサポートを終了し、Vue3のみをサポートするよう
 
 ### Element Plus
 
-## unovue
+## Unovue
+https://unovue.com/
 
-### Reka Vue
+### Reka UI
+https://reka-ui.com/
 
 ### Inspira UI
+https://inspira-ui.com/
 
 ### Shadcn Vue
+https://www.shadcn-vue.com/
 
 ## GovUK Vue
 https://govukvue.org/
