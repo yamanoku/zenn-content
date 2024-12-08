@@ -50,6 +50,14 @@ https://blog.vuejs.org/posts/vue-3-5
 
 ### Vapor Mode
 
+Vapor Modeは[Fine Grained Reactivity](https://docs.solidjs.com/advanced-concepts/fine-grained-reactivity)の概念を取り入れた仮想DOMを使用しない新たなVue.jsのコンパイル戦略です。Vaporを実装しているVue.jsは現在本体とは[別リポジトリ](https://github.com/vuejs/vue-vapor)で運用されております。
+
+[コンポーネントに関する実装のTODO](https://github.com/vuejs/vue-vapor/issues/4)はほぼ完了となりクローズされております。[ロードマップも](https://github.com/vuejs/vue-vapor/issues/233)公開されており、今年末までにはVitePressコードをVaporで差し替え、ベータ版を公開する予定とのことです。
+
+https://x.com/sanxiaozhizi/status/1857155901532320202
+
+VitePress内にVaporを組み込むのは現在進行中で、[Issue](https://github.com/vuejs/vue-vapor/issues/289)と[リポジトリ](https://github.com/sxzz/vitepress-vapor)にて進捗が確認できます。
+
 ## Vue Router
 
 https://router.vuejs.org/
@@ -63,12 +71,6 @@ v4.5.0よりRouterLinkに`view-transition` Propが追加されました。
 https://blog.vuejs.org/posts/vitepress-1.0
 
 VitePressは、Vite製の静的サイトジェネレータ（SSG）です。今年よりv1.0がリリースされました。
-
-https://x.com/sanxiaozhizi/status/1857155901532320202
-
-現在、先ほど紹介したVapor ModeをVitePressに組み込む取り組みも進められています。
-
-https://github.com/sxzz/vitepress-vapor
 
 ## Pinia
 
