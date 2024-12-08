@@ -3,7 +3,8 @@ title: "Vue.jsと周辺エコシステムで振り返る2024年"
 emoji: "📅"
 type: "tech"
 topics: ["vue"]
-published: false
+published: true
+published_at: 2024-12-09 12:00
 publication_name: "comm_vue_nuxt"
 ---
 
