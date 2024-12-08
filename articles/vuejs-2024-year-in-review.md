@@ -15,18 +15,18 @@ publication_name: "comm_vue_nuxt"
 
 ## Vue.js
 
-### Vue.js 公開 10 周年
+### 公開10周年
 
 https://x.com/vuejs/status/1753678155444101385
 
-2024年はVue.jsがHackerNewsで公開されてから10周年目を迎える年でした。Vue.jsの進化の歴史については以下の通りになります。
+2024年はVue.jsがHacker Newsで公開されてから10周年目を迎える年でした。Vue.jsの進化の歴史については以下の通りになります。
 
-- 2015年10月: Vue1リリース
-- 2016年10月: Vue2リリース
-- 2018年9月: Vue3の開発が開始
-- 2020年9月: Vue3リリース
-- 2022年1月: Vue3がデフォルトになる、ドキュメントもVue3がメインに
-- 2023年12月: Vue2がEoLを迎える
+- 2015年10月: Vue 1リリース
+- 2016年10月: Vue 2リリース
+- 2018年9月: Vue 3の開発が開始
+- 2020年9月: Vue 3リリース
+- 2022年1月: Vue 3がデフォルトになる、ドキュメントもVue 3がメインに
+- 2023年12月: Vue 2がEoLを迎える
 
 また、今年の9月の時点でnpmからの総ダウンロード数が10億を突破しました。
 
@@ -38,10 +38,10 @@ https://blog.vuejs.org/posts/vue-3-5
 
 9月にVue 3.5がリリースされました。コードネームは「Tengen Toppa Gurren Lagann」です。このリリースでは以下の変更が含まれています。
 
-- **リアクティブシステムの最適化**: パフォーマンスが向上し、メモリ使用量が大幅に削減されました。
-- **リアクティブプロップのデストラクチャリング**: `defineProps`からデストラクチャリングされた変数がリアクティブになりました。
-- **SSRの改善**: 遅延ハイドレーションや`useId()`などの新機能が追加されました。
-- **カスタムエレメントの改善**: `defineCustomElement` APIに新しい機能が追加されました。
+- **リアクティブシステムの最適化**: パフォーマンスが向上し、メモリ使用量が大幅に削減されました
+- **リアクティブプロップのデストラクチャリング**: `defineProps`からデストラクチャリングされた変数がリアクティブになりました
+- **SSRの改善**: 遅延ハイドレーションや`useId()`などの新機能が追加されました
+- **カスタムエレメントの改善**: `defineCustomElement` APIに新機能が追加されました
 - **新しいAPI追加**
   - `useTemplateRef()`
   - `Deferred Teleport`
@@ -117,7 +117,7 @@ Vue.jsでのi18nプラグインであるvue-i18nでのv10.0.0では軽量版のp
 
 ## UI フレームワーク
 
-Vue.jsにまつわるUIフレームワークやコンポーネントライブラリで大きな変更があったものについてを取り上げていきます。
+Vue.jsにまつわるUIフレームワークやコンポーネントライブラリで大きな変更があったものについてを取り上げます。
 
 ### PrimeVue
 
@@ -147,7 +147,7 @@ Vue.js、Nuxt利用できるUIコンポーネントライブラリである[Oku 
 
 https://unovue.com/
 
-Vueのコンポーネントやユーティリティ集であるUnovueが公開されました。現在、ヘッドレスコンポーネントのRadix Vueをリブランドした[Reka UI](https://reka-ui.com/)、再利用可能なVueコンポーネント群の[Inspira UI](https://inspira-ui.com/)、shadcn/uiの非公式、コミュニティ主導のVue移植版の[shadcn-vue](https://www.shadcn-vue.com/)がまとめられています。
+Vueのコンポーネントやユーティリティ集であるUnovueが公開されました。現在、ヘッドレスコンポーネントのRadix Vueをリブランドした[Reka UI](https://reka-ui.com/)、再利用可能なVueコンポーネント群の[Inspira UI](https://inspira-ui.com/)、shadcn/ui非公式のコミュニティ主導でのVue移植版である[shadcn-vue](https://www.shadcn-vue.com/)がまとめられています。
 
 ## GovUK Vue
 

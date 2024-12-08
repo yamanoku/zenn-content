@@ -33,8 +33,8 @@ https://nuxt.com/blog/nuxt2-eol
 
 https://nuxt.com/blog/v3-10
 
-- **実験的な共有asyncDataのprerendering**：prerendering時にデータの再取得を防ぐ機能が追加されました
-- **SSRセーフなユニークID生成**：SSRセーフなユニークIDを生成するための`useId`コンポーザブルが追加されました
+- **共有されたasyncDataのprerendering**：prerendering時にデータの再取得を防ぐ機能が追加されました
+- **SSRセーフなユニークIDの生成**：SSRセーフなユニークIDを生成するための`useId`コンポーザブルが追加されました
 - **app/router.optionsの拡張**：モジュール作成者が独自のrouter.optionsファイルを注入できるようになりました
 - **クライアントサイドのNode.jsサポート**：クライアントサイドでNode.jsのビルトインモジュールをポリフィルする実験的サポートが追加されました
 - **`useCookie`のリアクティビティ向上**：`CookieStore`を使用してクッキーの値をリアクティブに更新するオプションが追加されました
@@ -147,7 +147,7 @@ Nuxt2からNuxt3へのマイグレーションを支援するツールであるN
 
 ## Nuxt Modules
 
-Nuxtアプリケーションで利用できるモジュール群であるNuxt Modulesで大きな変更があったものについてを取り上げていきます。
+Nuxtアプリケーションで利用できるモジュール群であるNuxt Modulesで大きな変更があったものについてを取り上げます。
 
 ### Nuxt Content
 
