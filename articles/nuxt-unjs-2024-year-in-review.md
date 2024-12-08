@@ -1,16 +1,23 @@
 ---
 title: "Nuxt/UnJSと周辺エコシステムから振り返る2024年"
-emoji: "📬"
+emoji: "📅"
 type: "tech"
 topics: ["nuxt", "unjs"]
 published: false
+publication_name: "comm_vue_nuxt"
 ---
 
-この記事は[Nuxt / UnJS Advent Calendar 2024](https://qiita.com/advent-calendar/2024/nuxt-and-unjs)の9日目の記事です。
+[Nuxt / UnJS Advent Calendar 2024](https://qiita.com/advent-calendar/2024/nuxt-and-unjs)の9日目の記事です。
+
+この記事では2024年のNuxtとUnJS、そしてそれらにまつわる周辺エコシステムについてを振り返っていきます。関連する大きな出来事や変更があったものについてを中心にまとめています（この内容も取り上げてほしい！のがあった際GitHubで編集の提案をください）。
 
 同日の[Vue Advent Calendar 2024](https://qiita.com/advent-calendar/2024/vue)ではVue.jsと周辺のエコシステムについての2024年を振り返っています。併せてご覧ください。
 
 ## Nuxt
+
+https://x.com/nuxt_js/status/1850123359297614324
+
+Nuxtは今年でリリースされてから8年が経ちました。
 
 ### Nuxt 3.10
 
@@ -19,7 +26,7 @@ https://nuxt.com/blog/v3-10
 Nuxt 3.10のリリースノートの主なポイントを以下にまとめました：
 
 - **実験的な共有asyncDataのprerendering**：prerendering時にデータの再取得を防ぐ機能が追加されました
-- **SSRセーフなユニークID生成**：SSRセーフなユニークIDを生成するための`useId`コンポーザブルが追加されました
+- **SSRセーフなユニークID生成**：SSRセーフなユニークIDを生成するための `useId` コンポーザブルが追加されました
 - **app/router.optionsの拡張**：モジュール作成者が独自のrouter.optionsファイルを注入できるようになりました
 - **クライアントサイドのNode.jsサポート**：クライアントサイドでNode.jsのビルトインモジュールをポリフィルする実験的サポートが追加されました
 - **`useCookie`のリアクティビティ向上**：`CookieStore`を使用してクッキーの値をリアクティブに更新するオプションが追加されました
@@ -36,10 +43,10 @@ https://nuxt.com/blog/v3-11
 - **プレビューモード**: `usePreviewMode`コンポーザブルを使用して、プレビューモードが利用できるようになりました
 - **キャッシュバスティングペイロード**: デプロイ後に古いデータが残らないように自動的にキャッシュバスティングが行われます
 - **ミドルウェアルートルール**: Vueアプリケーション内のページパスに対してミドルウェアを定義できます
-- **新しいデータフェッチユーティリティ**: `useAsyncData`と`useFetch`が`clear`ユーティリティを公開しました
-- **新しい`#teleports`ターゲット**: サーバーサイドテレポートをサポートする新しい`<div id="teleports"></div>`要素が追加されました
+- **新しいデータフェッチユーティリティ**: `useAsyncData`と `useFetch` が `clear` ユーティリティを公開しました
+- **新しい `#teleports` ターゲット**: サーバーサイドテレポートをサポートする新しい `<div id="teleports"></div>` 要素が追加されました
 - **ローディングインジケーターとトランジションコントロール**: ローディングインジケーターのカスタムタイミング設定が可能になりました
-- **サーバーおよびクライアント専用ページ**: `.server.vue`または`.client.vue`サフィックスを使用して、サーバーまたはクライアント専用ページを作成できます
+- **サーバーおよびクライアント専用ページ**: `.server.vue`または `.client.vue` サフィックスを使用して、サーバーまたはクライアント専用ページを作成できます
 - **サーバーコンポーネントの改善**: サーバーコンポーネントの使用がさらに便利になりました
 - **パフォーマンスの向上**: 仮想テンプレートの更新やプリレンダリングキャッシュの改善など、多くのパフォーマンス向上が行われました
 - **パブリックアセットの取り扱い**: Viteのパブリックアセット取り扱いの再実装が行われました
@@ -63,9 +70,13 @@ https://nuxt.com/blog/v3-12
 
 ### Nuxt2 EoL
 
+https://x.com/Atinux/status/1856402125418574056
+
+Nuxtのダウンロード数はNuxt 3が約75%を占めており、多くの開発者がNuxt 3への移行を進めています。
+
 https://nuxt.com/blog/nuxt2-eol
 
-Nuxt2が2024年6月30日にEOLを迎えました。引き続き使う場合はHeroDevsでの有償サポートを受けることができます。
+一方で前バージョンのNuxt 2は今年の6月30日にEOLを迎えました。引き続き使う場合はHeroDevsでの有償サポートを受けることができます。
 
 ### Nuxt 3.13
 
@@ -84,72 +95,195 @@ https://nuxt.com/blog/v3-13
 https://nuxt.com/blog/v3-14
 
 - **Jitiによる高速起動**: Nuxtの設定ファイルやモジュールの読み込みがjiti v2によって高速化されました。
-- **共有フォルダ**: クライアントとサーバーで共有するコードや型のための新しい`shared/`フォルダが追加されました。
+- **共有フォルダ**: クライアントとサーバーで共有するコードや型のための新しい `shared/` フォルダが追加されました。
 - **Rspackビルダー**: 新しいNuxtビルダーとしてrspackが導入されました。まだ実験的ですが、内部の仮想ファイルシステムがunpluginを使用してリファクタリングされています。
-- **新しいコンポーザブル**: `useResponseHeader`と`useRuntimeHook`という新しいコンポーザブルが追加されました。
-- **新しいモジュールユーティリティ**: Nitroランタイムルート内でアクセス可能な仮想ファイルを追加するための`addServerTemplate`ユーティリティが追加されました。
+- **新しいコンポーザブル**: `useResponseHeader`と `useRuntimeHook` という新しいコンポーザブルが追加されました。
+- **新しいモジュールユーティリティ**: Nitroランタイムルート内でアクセス可能な仮想ファイルを追加するための `addServerTemplate` ユーティリティが追加されました。
 - **v4への変更**: `compatibilityVersion: 4`を設定することで、いくつかの変更を早期に適用できます。
 - **v3.15へのロードマップ**: 次のマイナーリリースでは、モジュールからのディレクティブの自動インポートや遅延ハイドレーションなどが予定されています。
 
-### Nuxt: Looking forward
-https://nuxt.com/blog/looking-forward-2024
+### Codemod for Nuxt 4 migration
+
+https://codemod.com/blog/nuxt-announcement
+
+CodemodではNuxtチームと連携し、Nuxt 3から4への移行用のオープンソースのツールを公開しました。
+
+## Nuxt Certification
+
+https://certificates.dev/nuxt
+
+Nuxtの公式認定試験である「Nuxt Certification」が今年から開始されました。コーディング課題に取り組み、Nuxt開発者としてのスキルをテストできます。
 
 ## NuxtHub
+
 https://hub.nuxt.com/blog/beta
+
+今年発表されたNuxtHubは、Nuxtフレームワークの拡張機能で、Cloudflare上でフルスタックアプリケーションをZero configで構築できるようになるソフトウェアです。
+
+実際に活用している事例としては以下記事をご参照ください。
+
+https://zenn.dev/comm_vue_nuxt/articles/nuxt-hub-cloudflare-2025-coedo-org
+
+https://zenn.dev/yamanoku/articles/vuefes-japan-speakers
+
+## Nuxt Studio
+
+https://nuxt.studio/blog/v2
+
+Nuxt StudioはNuxt Contentを活用したウェブサイト用のGitベースのCMSです。今年はv2がリリースされ、以下の変更が行われました。
+
+- インターフェースの再設計・刷新
+- Google認証の追加
+- ライブプレビュー設定の簡素化
 
 ## Nuxt UI
 
-Nuxt UI simplifies the creation of stunning and responsive web applications with its comprehensive collection of fully styled and customizable UI components designed for Nuxt.
+https://x.com/benjamincanac/status/1841456682620072231
 
-## @nuxt/test-utils
-
-## Nuxt DevTools
+NuxtアプリケーションのためのUIライブラリであるNuxt UIは今年より次期バージョンであるv3に向けてアルファ、ベータ版の開発が進められています。主にReka UI（Radix Vueの後継UIライブラリ）、Tailwind CSS v4、Tailwind Variantsを活用したもので構築されています。
 
 ## nuxt-bridge
 
+https://x.com/nuxt_js/status/1745823076988686538
+
+Nuxt2からNuxt3へのマイグレーションを支援するツールであるNuxt Bridgeの安定版がリリースされました。
+
 ## Nuxt Modules
+
+Nuxtアプリケーションで利用できるモジュール群であるNuxt Modulesで大きな変更があったものについてを取り上げていきます。
 
 ### Nuxt Content
 
-Nuxt Content reads the content/ directory in your project, parses .md, .yml, .csv and .json files to create a powerful data layer for your application. Additionally, you can use Vue components in Markdown with the MDC syntax.
+https://content.nuxt.com/
 
+Nuxtディレクトリの `content/` 配下のファイルを活用したブログ・ドキュメントなどのコンテンツ管理ができるNuxt Contentは現在v3の開発が進められています。
+
+https://x.com/nuxtstudio/status/1861448306338992295
+
+https://x.com/nuxtstudio/status/1865046985880785191
+
+前述したNuxt Studioとのサイトドメインの共通化、Nuxt Contentの内容をNuxt Studioにて直接編集が可能になるなど、連携が進められています。
+
+### Nuxt Fonts
+
+https://github.com/nuxt/fonts
+
+Nuxt FontsはNuxtアプリでお気に入りのフォントソースを使用した際に最適化できるモジュールです。
+
+https://x.com/nuxt_js/status/1834350374100287596
+
+`font-family`の宣言だけでカスタムフォントの追加と最適化を実施してくれます。
+
+### Nuxt Icon
+
+https://nuxt.com/blog/nuxt-icon-v1-0
+
+Nuxt IconはIconifyをベースにしたNuxtアプリケーション用のアイコンライブラリです。今年v1.0がリリースされました。
+
+### Nuxt Leaflet
+
+https://leaflet.nuxtjs.org/
+
+Nuxt Leafletは[Leaflet](https://leafletjs.com/)をラップしたリアクティブな地図を作成できるモジュールです。今年より公式のNuxtモジュールのリポジトリに追加されました。
 
 ### Nuxt Scripts
 
 https://nuxt.com/blog/nuxt-scripts
 
-### Nuxt Fonts
+Nuxt Scriptsはサードパーティ製スクリプトをNuxtアプリケーションで組み込む際にプライバシー・セキュリティに配慮し最適化するモジュールです。Daniel Roe氏によるRFCを経て今年の5月にパブリックプレビューとなりました。
 
-### NuxtIcon
+具体的な内容・使い方については以下記事をご参照ください。
 
-### Nuxt Image
-
-Plug-and-play image optimization for Nuxt apps. Resize and transform your images using built-in optimizer or your favorite images CDN.
-
-### Nuxt Tailwind
-
-The Tailwind CSS module for Nuxt enables you to set up Tailwind CSS in your Nuxt application in seconds, with many goodies.
+https://zenn.dev/comm_vue_nuxt/articles/what-is-nuxt-scripts
 
 ### Nuxt SEO
 
-Nuxt SEO is both a collection of modules and a module itself. The Nuxt SEO module is all the SEO modules combined into one that is guaranteed to work well together.
-
 https://nuxtseo.com/announcement
+
+Nuxt SEOはNuxtアプリケーションやサイトのオーガニックトラフィックを増やすための技術的な側面を処理してくれるモジュールです。v2.0.0が11月25日にリリースされました。これまで個別でインストールが必要だったモジュールが `@nuxtjs/seo` に統一されています。今後はNuxt SEO Proの有料版も公開される予定です。
 
 ## learn.nuxt.com
 
-## Nuxt Studio
-https://nuxt.studio/blog/v2
+https://learn-nuxt.vuejs-jp.org/
+
+learn.nuxt.comはNuxt公式で提供されているチュートリアルサイトで、すべてWeb上で完結できるものです。今年のVue Fes Japan 2024では日本語版サイトと[リソース](https://github.com/vuejs-jp/learn.nuxt.com)が公開されました。
+
+https://note.com/ubugeeei/n/n2ac2b02043da
 
 ## Nx Plugin
-https://blog.nrwl.io/introducing-nx-nuxt-enhanced-nuxt-js-support-in-nx-01eac78034fc
 
-## Elk
+[Introducing @nx/nuxt: Enhanced Nuxt.js Support in Nx | by Katerina Skroumpelou | Nx Devtools](https://blog.nrwl.io/introducing-nx-nuxt-enhanced-nuxt-js-support-in-nx-01eac78034fc)
+
+モノレポ管理ツールであるNxにNuxtプロジェクトをサポートするためのプラグイン `@nx/nuxt` が公開されました。
 
 ## UnJS
 
-具体的なツールの紹介については[ykoizumi0903](https://zenn.dev/ytr0903)さんの記事をご覧ください。
+https://x.com/unjsio/status/1743239935946072575
 
-https://zenn.dev/ytr0903/articles/c6c42147ed29be
+UnJSはあらゆるJavaScriptフレームワーク上で統一的に動作するユーティリティーツール・ライブラリです。今年の1月には公式サイトがリニューアルされました。
 
-https://zenn.dev/ytr0903/articles/6b50bf790c340b
+https://unjs.io/blog/2024-02-07-introducing-unjs-relations
+
+UnJSパッケージやnpmパッケージの関係をリアルタイムで視覚化できる[UnJS Relations](https://unjs.io/relations)が公開されました。
+
+### Nitro
+
+NitroはNuxtで採用されているUnJSパッケージを活用したサーバーエンジンです。
+
+今年のVue.js Amsterdamにて[v2.9.0](https://github.com/nitrojs/nitro/releases/tag/v2.9.0)がライブリリースされました。
+
+- ドキュメントの刷新
+- WebSockets API
+- SQL database layer
+- Nitro Tasks
+- unwasmの採用
+
+[v2.10.0](https://github.com/nitrojs/nitro/releases/tag/v2.10.0)ではNitro v3に向けての内部リファクタリングを行い、以下変更が含まれております。
+
+- Compatibility date
+- Environment-specific handlers
+- Route groups
+- OpenAPIのプロダクションサポート
+- Cloudflare, Netlify, VercelらのPresetの更新
+
+### 2024 年リリースされた UnJS 公式パッケージ、UnJS プラグイン
+
+今年リリースされたパッケージやプラグインについてをアルファベット順で列挙しています。
+
+https://github.com/unjs/automd
+
+https://github.com/unjs/codeup
+
+https://github.com/unjs/compatx
+
+https://github.com/unjs/confbox
+
+https://github.com/unjs/errx
+
+https://github.com/unjs/glob-native
+
+https://github.com/unjs/impound
+
+https://github.com/unjs/mdbox
+
+https://github.com/unjs/srvx
+
+https://github.com/unjs/undio
+
+https://github.com/unjs/undocs
+
+https://github.com/unjs/unifont
+
+https://github.com/unjs/unrouting
+
+https://github.com/unplugin/unplugin-inline-enum
+
+https://github.com/unplugin/unplugin-isolated-decl
+
+https://github.com/unplugin/unplugin-replace
+
+https://github.com/unplugin/unplugin-unused
+
+https://github.com/unplugin/unplugin-vue-fervid
+
+https://github.com/unplugin/unplugin-vue-jsx-vapor
