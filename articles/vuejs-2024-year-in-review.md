@@ -1,5 +1,5 @@
 ---
-title: "Vue.jsと周辺エコシステムから振り返る2024年"
+title: "Vue.jsと周辺エコシステムで振り返る2024年"
 emoji: "📅"
 type: "tech"
 topics: ["vue"]
@@ -40,7 +40,7 @@ https://blog.vuejs.org/posts/vue-3-5
 
 - **リアクティブシステムの最適化**: パフォーマンスが向上し、メモリ使用量が大幅に削減されました。
 - **リアクティブプロップのデストラクチャリング**: `defineProps`からデストラクチャリングされた変数がリアクティブになりました。
-- **SSRの改善**: 遅延ハイドレーションや `useId()` などの新機能が追加されました。
+- **SSRの改善**: 遅延ハイドレーションや`useId()`などの新機能が追加されました。
 - **カスタムエレメントの改善**: `defineCustomElement` APIに新しい機能が追加されました。
 - **新しいAPI追加**
   - `useTemplateRef()`
@@ -55,7 +55,7 @@ https://router.vuejs.org/
 
 v4.4.0よりRouteNamedMapによる型付きルートのネイティブ・サポートが導入されました。 unplugin-vue-routerなしでマップを定義し、型を自動的に推論させることができるようになりました。
 
-v4.5.0よりRouterLinkに `view-transition` Propが追加されました。
+v4.5.0よりRouterLinkに`view-transition` Propが追加されました。
 
 ## Vitepress
 
@@ -71,6 +71,8 @@ https://github.com/sxzz/vitepress-vapor
 
 ## Pinia
 
+https://pinia.vuejs.org/
+
 [12 月 4 日にリリースされた v2.3.0](https://github.com/vuejs/pinia/blob/v2/packages/pinia/CHANGELOG.md#230-2024-12-04)によるとVue 2.7が必要になるのと、2025年1月に登場するPinia 3.0では、Vue 2のサポートを終了する予定とのことです。
 
 ## Vue DevTools
@@ -81,6 +83,8 @@ Chrome拡張機能であるVue Devtoolsのv7からはVue3のみをサポート�
 
 ## eslint-plugin-vue
 
+https://eslint.vuejs.org/
+
 Vue.jsのESLint pluginであるeslint-plugin-vueでは、以下の新たなルールが追加されました。
 
 - [`vue/enforce-style-attribute`](https://eslint.vuejs.org/rules/no-deprecated-delete-set.html)
@@ -89,13 +93,13 @@ Vue.jsのESLint pluginであるeslint-plugin-vueでは、以下の新たなル�
 - [`vue/max-template-depth`](https://eslint.vuejs.org/rules/max-template-depth.html)
 - [`vue/no-deprecated-delete-set`](https://eslint.vuejs.org/rules/enforce-style-attribute.html)
 
-そのほかVue3.4からの `v-bind` same-name shorthandと `defineModel` のサポートが追加されたり、Flat ConfigサポートやESLint v9をpeer dependencyとして追加するなどの変更も行われました。
+そのほかVue3.4からの`v-bind` same-name shorthandと`defineModel`のサポートが追加されたり、Flat ConfigサポートやESLint v9をpeer dependencyとして追加するなどの変更も行われました。
 
 ## Volar（Vue Language Tools）
 
-https://gist.github.com/johnsoncodehk/62580d04cb86e576e0e8d6bf1cb44e73
+https://volarjs.dev/
 
-Volar（いわゆるVue Language Toolsと呼ばれるもの）のv2.0.0が今年リリースされました。Takeover Modeは廃止され、Vueファイルに対するすべてのTS機能を引き継ぐHybrid Modeが導入され、vue-tscを書き換えてメモリ使用量を大幅に削減するなどの変更が加えられました。
+Volar（いわゆるVue Language Toolsと呼ばれるもの）の[v2.0.0](https://gist.github.com/johnsoncodehk/62580d04cb86e576e0e8d6bf1cb44e73)が今年リリースされました。Takeover Modeは廃止され、Vueファイルに対するすべてのTS機能を引き継ぐHybrid Modeが導入され、vue-tscを書き換えてメモリ使用量を大幅に削減するなどの変更が加えられました。
 
 ## VueUse
 
@@ -107,11 +111,13 @@ https://vueuse.org/
 
 https://github.com/intlify/vue-i18n/releases/tag/v10.0.0
 
-Vue.jsでのi18nプラグインであるvue-i18nでのv10.0.0では軽量版のpetite-vue-i18n、JITコンパイルの有効化がデフォルトに、設定されたLocaleに合わせた型生成、レガシー APIモードの `$t` と `t` のオーバーロードシグネチャの変更などがされました。
+Vue.jsでのi18nプラグインであるvue-i18nでのv10.0.0では軽量版のpetite-vue-i18n、JITコンパイルの有効化がデフォルトに、設定されたLocaleに合わせた型生成、レガシー APIモードの`$t`と`t`のオーバーロードシグネチャの変更などがされました。
 
-次期バージョンのv11からはLegacy API modeの非推奨化や、v10から非推奨としていた `$tc` と `tc` のAPI廃止が計画されています。
+次期バージョンのv11からはLegacy API modeの非推奨化や、v10から非推奨としていた`$tc`と`tc`のAPI廃止が計画されています。
 
 ## UI フレームワーク
+
+Vue.jsにまつわるUIフレームワークやコンポーネントライブラリで大きな変更があったものについてを取り上げていきます。
 
 ### PrimeVue
 
@@ -153,7 +159,7 @@ https://govukvue.org/
 
 https://storybook.js.org/blog/first-class-vue-support-storybook-8/
 
-Storybook 8はVue公式のLanguage ToolsであるVolarを活用してStorybookとVue.jsの連携が強化されました。docgenでは `vue-component-meta` を使用するようになりました。Reactをpeer dependencyとしてインストールする必要がなくなりました。
+Storybook 8はVue公式のLanguage ToolsであるVolarを活用してStorybookとVue.jsの連携が強化されました。docgenでは`vue-component-meta`を使用するようになりました。Reactをpeer dependencyとしてインストールする必要がなくなりました。
 
 ## v0 for Vue
 
