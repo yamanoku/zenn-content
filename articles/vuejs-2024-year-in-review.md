@@ -96,7 +96,7 @@ Vue.jsのESLint pluginであるeslint-plugin-vueでは、以下の新たなル�
 - [`vue/max-props`](https://eslint.vuejs.org/rules/max-props.html)
 - [`vue/require-default-export`](https://eslint.vuejs.org/rules/require-default-export.html)
 - [`vue/max-template-depth`](https://eslint.vuejs.org/rules/max-template-depth.html)
-- [`vue/no-deprecated-delete-set`](https://eslint.vuejs.org/rules/enforce-style-attribute.html)
+- [`vue/no-deprecated-delete-set`](https://eslint.vuejs.org/rules/no-deprecated-delete-set.html)
 
 そのほかVue3.4からの`v-bind` same-name shorthandと`defineModel`のサポートが追加されたり、Flat ConfigサポートやESLint v9をpeer dependencyとして追加するなどの変更も行われました。
 
