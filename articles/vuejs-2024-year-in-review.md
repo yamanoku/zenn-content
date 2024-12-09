@@ -92,7 +92,7 @@ https://eslint.vuejs.org/
 
 Vue.jsのESLint pluginであるeslint-plugin-vueでは、以下の新たなルールが追加されました。
 
-- [`vue/enforce-style-attribute`](https://eslint.vuejs.org/rules/no-deprecated-delete-set.html)
+- [`vue/enforce-style-attribute`](https://eslint.vuejs.org/rules/enforce-style-attribute.html)
 - [`vue/max-props`](https://eslint.vuejs.org/rules/max-props.html)
 - [`vue/require-default-export`](https://eslint.vuejs.org/rules/require-default-export.html)
 - [`vue/max-template-depth`](https://eslint.vuejs.org/rules/max-template-depth.html)
