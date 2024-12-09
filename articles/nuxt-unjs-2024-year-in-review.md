@@ -10,9 +10,7 @@ publication_name: "comm_vue_nuxt"
 
 [Nuxt / UnJS Advent Calendar 2024](https://qiita.com/advent-calendar/2024/nuxt-and-unjs)の9日目の記事です。
 
-この記事では2024年のNuxtとUnJS、そしてそれらにまつわる周辺エコシステムについてを振り返っていきます。関連する大きな出来事や変更があったものについてを中心にまとめています（この内容も取り上げてほしい！のがあった際GitHubで編集の提案をください）。
-
-同日の[Vue Advent Calendar 2024](https://qiita.com/advent-calendar/2024/vue)ではVue.jsと周辺のエコシステムについての2024年を振り返っています。併せてご覧ください。
+この記事では2024年のNuxtとUnJS、そしてそれらにまつわる周辺エコシステムについてを振り返っていきます。関連する大きな出来事や変更があったものについてを中心にまとめています（この内容も取り上げてほしい！というものがあった際は、GitHubから編集提案をください）。
 
 ## Nuxt
 
@@ -116,7 +114,7 @@ Nuxtの公式認定試験である「Nuxt Certification」が今年から開始�
 
 https://hub.nuxt.com/blog/beta
 
-今年発表されたNuxtHubは、Nuxtフレームワークの拡張機能で、Cloudflare上でフルスタックアプリケーションをZero configで構築できるようになるソフトウェアです。
+今年発表されたNuxtHubは、Nuxtフレームワークの拡張機能でCloudflare上でフルスタックアプリケーションをZero configで構築できるようになるものです。Nuxt modulesとしての`@nuxthub/core`と管理画面としてのNuxtHub Adminが公開されています。
 
 実際に活用している事例としては以下記事をご参照ください。
 
@@ -128,7 +126,9 @@ https://zenn.dev/yamanoku/articles/vuefes-japan-speakers
 
 https://nuxt.studio/blog/v2
 
-Nuxt StudioはNuxt Contentを活用したウェブサイト用のGitベースのCMSです。今年はv2がリリースされ、以下の変更が行われました。
+Nuxt StudioはNuxt Contentを活用したウェブサイト用のGitベースのCMSです。
+
+今年はv2がリリースされ、以下の変更が行われました。
 
 - インターフェースの再設計・刷新
 - Google認証の追加
@@ -138,7 +138,9 @@ Nuxt StudioはNuxt Contentを活用したウェブサイト用のGitベースの
 
 https://x.com/benjamincanac/status/1841456682620072231
 
-NuxtアプリケーションのためのUIライブラリであるNuxt UIは今年より次期バージョンであるv3に向けてアルファ、ベータ版の開発が進められています。主にReka UI（Radix Vueの後継UIライブラリ）、Tailwind CSS v4、Tailwind Variantsを活用したもので構築されています。
+NuxtアプリケーションのためのUIライブラリであるNuxt UIは今年より次期バージョンであるv3に向けてアルファ、ベータ版の開発が進められています。
+
+主に[Reka UI](https://reka-ui.com/)（Radix Vueの後継UIライブラリ）、Tailwind CSS v4、Tailwind Variantsを活用したもので構築されています。
 
 ## nuxt-bridge
 
@@ -170,7 +172,7 @@ Nuxt FontsはNuxtアプリでお気に入りのフォントソースを使用し
 
 https://x.com/nuxt_js/status/1834350374100287596
 
-`font-family`の宣言だけでカスタムフォントの追加と最適化を実施してくれます。
+デモにもあるように`font-family`の宣言をするだけでカスタムフォントの追加と最適化を実施してくれます。
 
 ### Nuxt Icon
 
@@ -182,7 +184,7 @@ Nuxt IconはIconifyをベースにしたNuxtアプリケーション用のアイ
 
 https://leaflet.nuxtjs.org/
 
-Nuxt Leafletは[Leaflet](https://leafletjs.com/)をラップしたリアクティブな地図を作成できるモジュールです。今年より公式のNuxtモジュールのリポジトリに追加されました。
+Nuxt Leafletは[Leaflet](https://leafletjs.com/)をラップしたリアクティブな地図を作成できるモジュールです。今年より公式のNuxt Modulesのリポジトリに追加されました。
 
 ### Nuxt Scripts
 
@@ -198,13 +200,15 @@ https://zenn.dev/comm_vue_nuxt/articles/what-is-nuxt-scripts
 
 https://nuxtseo.com/announcement
 
-Nuxt SEOはNuxtアプリケーションやサイトのオーガニックトラフィックを増やすための技術的な側面を処理してくれるモジュールです。v2.0.0が11月25日にリリースされました。これまで個別でインストールが必要だったモジュールが`@nuxtjs/seo`に統一されています。今後はNuxt SEO Proの有料版も公開される予定です。
+Nuxt SEOはNuxtアプリケーションやサイトのオーガニックトラフィックを増やすための技術的な側面を処理してくれるモジュールです。v2が11月25日にリリースされました。これまで個別でインストールが必要だったモジュールが`@nuxtjs/seo`に統一されています。今後はNuxt SEO Proの有料版も公開される予定です。
 
-## learn.nuxt.com
+## Nuxt Tutorial
 
 https://learn-nuxt.vuejs-jp.org/
 
-learn.nuxt.comはNuxt公式で提供されているチュートリアルサイトで、すべてWeb上で完結できるものです。今年のVue Fes Japan 2024では日本語版サイトと[リソース](https://github.com/vuejs-jp/learn.nuxt.com)が公開されました。
+Nuxt TutorialはNuxt公式で提供されているチュートリアルサイトですべてWeb上で完結できるものです。
+
+今年のVue Fes Japan 2024ではハンズオン教材として日本語版サイトと[リソース](https://github.com/vuejs-jp/learn.nuxt.com)が公開されました。ハンズオン担当者による振り返り記事も公開されているので併せてご覧ください。
 
 https://note.com/ubugeeei/n/n2ac2b02043da
 
@@ -212,7 +216,7 @@ https://note.com/ubugeeei/n/n2ac2b02043da
 
 [Introducing @nx/nuxt: Enhanced Nuxt.js Support in Nx | by Katerina Skroumpelou | Nx Devtools](https://blog.nrwl.io/introducing-nx-nuxt-enhanced-nuxt-js-support-in-nx-01eac78034fc)
 
-モノレポ管理ツールであるNxにNuxtプロジェクトをサポートするためのプラグイン`@nx/nuxt`が公開されました。
+モノレポ管理ツールであるNxに、Nuxtプロジェクトをサポートするためのプラグイン`@nx/nuxt`が公開されました。
 
 ## UnJS
 
@@ -285,3 +289,9 @@ https://github.com/unplugin/unplugin-unused
 https://github.com/unplugin/unplugin-vue-fervid
 
 https://github.com/unplugin/unplugin-vue-jsx-vapor
+
+---
+
+同日の[Vue Advent Calendar 2024](https://qiita.com/advent-calendar/2024/vue)ではVue.jsと周辺のエコシステムについての2024年を振り返っています。こちらも併せてご覧になってみてください。
+
+https://zenn.dev/comm_vue_nuxt/articles/vuejs-2024-year-in-review
