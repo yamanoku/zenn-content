@@ -10,7 +10,7 @@ publication_name: "comm_vue_nuxt"
 
 [Vue Advent Calendar 2024](https://qiita.com/advent-calendar/2024/vue)の9日目の記事です。
 
-この記事では2024年のVue.js、そしてそれらにまつわる周辺エコシステムについてを振り返っていきます。関連する大きな出来事や変更があったものについてを中心にまとめています（この内容も取り上げてほしい！というものがあった際は、GitHubから編集提案をください）。
+この記事では2024年のVue.js、そしてそれらにまつわる周辺エコシステムについてを振り返っていきます。関連する大きな出来事や変更があったものについてを中心にまとめています（この内容も取り上げてほしい！というものがあった際は、[GitHubから編集提案](https://github.com/yamanoku/zenn-content/edit/main/articles/vuejs-2024-year-in-review.md)をください）。
 
 ## Vue.js
 

@@ -10,7 +10,7 @@ publication_name: "comm_vue_nuxt"
 
 [Nuxt / UnJS Advent Calendar 2024](https://qiita.com/advent-calendar/2024/nuxt-and-unjs)の9日目の記事です。
 
-この記事では2024年のNuxtとUnJS、そしてそれらにまつわる周辺エコシステムについてを振り返っていきます。関連する大きな出来事や変更があったものについてを中心にまとめています（この内容も取り上げてほしい！というものがあった際は、GitHubから編集提案をください）。
+この記事では2024年のNuxtとUnJS、そしてそれらにまつわる周辺エコシステムについてを振り返っていきます。関連する大きな出来事や変更があったものについてを中心にまとめています（この内容も取り上げてほしい！というものがあった際は、[GitHubから編集提案](https://github.com/yamanoku/zenn-content/edit/main/articles/nuxt-unjs-2024-year-in-review.md)をください）。
 
 ## Nuxt
 
