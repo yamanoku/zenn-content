@@ -50,7 +50,7 @@ https://nuxt.com/blog/v3-11
 - **プレビューモード**: [`usePreviewMode`](https://nuxt.com/docs/api/composables/use-preview-mode)を使用して、プレビューモードが利用できるようになりました
 - **Cache-busting payloads**: デプロイ後に古いデータが残らないように自動的なキャッシュバスティングが行われるようになりました
 - **Middleware `routeRules`**: Nuxtアプリケーション内のページパスに対してミドルウェアを定義できます
-- **新しいデータフェッチユーティリティ`clear` **: `useAsyncData`と`useFetch`が`clear`ユーティリティを公開しました
+- **新しいデータフェッチユーティリティ`clear`**: `useAsyncData`と`useFetch`が`clear`ユーティリティを公開しました
 - **新しい`#teleports`ターゲット**: サーバーサイドテレポートをサポートする新しい`<div id="teleports"></div>`要素が追加されました
 - **ローディングインジケーターとトランジションコントロール**: ローディングインジケータを非表示にし、必要に応じて`finish()`メソッドを強制的に実行するためのカスタムタイミングを設定できるようになり、View Transitions APIにフックする`page:view-transition:start`フックが登場しました
 - **サーバーおよびクライアント専用ページ**: `.server.vue`または`.client.vue`サフィックスを使用して、サーバーまたはクライアント専用ページを作成できます
