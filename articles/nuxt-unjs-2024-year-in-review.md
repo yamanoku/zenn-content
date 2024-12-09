@@ -294,4 +294,4 @@ https://github.com/unplugin/unplugin-vue-jsx-vapor
 
 同日の[Vue Advent Calendar 2024](https://qiita.com/advent-calendar/2024/vue)ではVue.jsと周辺のエコシステムについての2024年を振り返っています。こちらも併せてご覧になってみてください。
 
-https://zenn.dev/comm_vue_nuxt/articles/vuejs-2024-year-in-review
+[Vue.jsと周辺エコシステムで振り返る2024年](https://zenn.dev/comm_vue_nuxt/articles/vuejs-2024-year-in-review)

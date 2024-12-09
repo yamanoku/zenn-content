@@ -192,4 +192,4 @@ Vue.jsの開発者向けサーベイが公開されました。Vue.jsやNuxtの�
 
 同日の[Nuxt / UnJS Advent Calendar 2024](https://qiita.com/advent-calendar/2024/nuxt-and-unjs)ではNuxtと周辺のエコシステムについての2024年を振り返っています。こちらも併せてご覧になってみてください。
 
-https://zenn.dev/comm_vue_nuxt/articles/nuxt-unjs-2024-year-in-review
+[Nuxt/UnJSと周辺エコシステムで振り返る2024年](https://zenn.dev/comm_vue_nuxt/articles/nuxt-unjs-2024-year-in-review)
