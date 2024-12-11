@@ -116,9 +116,9 @@ https://vueuse.org/
 
 今年はv11、v12のメジャーバージョンアップがありました。[v12](https://github.com/vueuse/vueuse/releases/tag/v12.0.0)よりVue2のサポートを終了し、Vue3のみをサポートするようになりました。
 
-## vue-i18n
+## Vue I18n
 
-vue-i18nはVue.jsの国際化（i18n）ライブラリです。
+Vue I18nはVue.jsの国際化（i18n）ライブラリです。
 
 https://github.com/intlify/vue-i18n/releases/tag/v10.0.0
 
