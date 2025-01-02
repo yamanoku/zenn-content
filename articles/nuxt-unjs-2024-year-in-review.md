@@ -39,17 +39,17 @@ https://nuxt.com/blog/v3-10
 - **`useCookie` のリアクティビティ向上**：`CookieStore` を使用してクッキーの値をリアクティブに更新するオプションが追加されました
 - **潜在的なバグやパフォーマンス問題の検出機能の追加**
 - **ページごとにView Transitionsのサポートが可能**
-- **ビルド時にルートメタデータにアクセスが可能**
+- **ビルド時にルートメタデータへのアクセスが可能**
 - **TypeScriptのバンドラー解決によるバンドラーモジュール解決**
 
 ### Nuxt 3.11
 
 https://nuxt.com/blog/v3-11
 
-- **ログ機能の改善**: サーバーサイドレンダリング中にブラウザコンソールにログが表示されるようになりました
+- **ログ機能の改善**: サーバーサイドレンダリング中にブラウザコンソールへログが表示されるようになりました
 - **プレビューモード**: [`usePreviewMode`](https://nuxt.com/docs/api/composables/use-preview-mode)を使用して、プレビューモードが利用できるようになりました
 - **Cache-busting payloads**: デプロイ後に古いデータが残らないように自動的なキャッシュバスティングが行われるようになりました
-- **Middleware `routeRules`**: Nuxtアプリケーション内のページパスに対してミドルウェアを定義できます
+- **Middleware `routeRules`**: Nuxtアプリケーション内のページパスに対してミドルウェアが定義できるようになりました
 - **新しいデータフェッチユーティリティ `clear`**: `useAsyncData` と `useFetch` が `clear` ユーティリティを公開しました
 - **新しい `#teleports` ターゲット**: サーバーサイドテレポートをサポートする新しい `<div id="teleports"></div>` 要素が追加されました
 - **ローディングインジケーターとトランジションコントロール**: ローディングインジケータを非表示にし、必要に応じて `finish()` メソッドを強制的に実行するためのカスタムタイミングを設定できるようになり、View Transitions APIにフックする `page:view-transition:start` フックが登場しました
@@ -67,7 +67,7 @@ https://nuxt.com/blog/v3-12
 - **Nuxt 4の変更テスト**: Nuxt 4の変更箇所をテストするために設定にて `compatibilityVersion` オプションが追加されました。
 - **Nuxt Scriptsの自動インストール**
 - **レイヤーの自動登録とバグ修正**: プロジェクト内の `~/layers` が自動的に登録されるようになり、依存関係の読み込みが改善されました
-- **アクセシビリティの向上**: [`<NuxtRouteAnnouncer>`](https://nuxt.com/docs/api/components/nuxt-route-announcer)と[`useRouteAnnouncer`](https://nuxt.com/docs/api/composables/use-route-announcer)が追加され、SPAでのルート遷移時の状態をスクリーンリーダーに通知できるようになりました
+- **アクセシビリティの向上**: [`<NuxtRouteAnnouncer>`](https://nuxt.com/docs/api/components/nuxt-route-announcer)と[`useRouteAnnouncer`](https://nuxt.com/docs/api/composables/use-route-announcer)が追加され、SPAでのルート遷移時の状態をスクリーンリーダーへ通知できるようになりました
 - **マルチアプリサポート**: 複数のNuxtアプリを並行して実行できるようになるための変更が行われました
 - **機能の安定化**: いくつかの実験的オプションが安定化に伴い、experimentalから削除されました
 - **モジュール作者向けの改善**: モジュールオプションの型サポートや、ランタイム設定のアクセスと更新が可能になりました
@@ -96,7 +96,7 @@ https://nuxt.com/blog/v3-14
 - **Rspackビルダー**: 新しいNuxtのバンドラーとしてrspackが実験的に導入されました
 - **新しいコンポーザブル**: `useResponseHeader` と `useRuntimeHook` という新しいコンポーザブル関数が追加されました
 - **新しいモジュールユーティリティ**: Nitroランタイムルート内でアクセス可能な仮想ファイルを追加するための `addServerTemplate` ユーティリティが追加されました
-- **v4への変更**: `compatibilityVersion: 4` を設定することで、いくつかの変更を早期に適用できるようになります
+- **v4への変更**: `compatibilityVersion: 4` を設定することで、いくつかの変更を早期適用できるようになります
 
 ### Codemod for Nuxt 4 migration
 
@@ -114,7 +114,7 @@ Nuxtの公式認定試験である「Nuxt Certification」が今年から開始�
 
 https://hub.nuxt.com/blog/beta
 
-今年発表されたNuxtHubは、Nuxtフレームワークの拡張機能でCloudflare上でフルスタックアプリケーションをZero configで構築できるようになるものです。Nuxt modulesとしての `@nuxthub/core` と管理画面としてのNuxtHub Adminが公開されています。
+今年発表されたNuxtHubは、Nuxtフレームワークの拡張機能でCloudflareにてフルスタックアプリケーションをZero config構築ができるようになるものです。Nuxt modulesとしての `@nuxthub/core` と管理画面としてのNuxtHub Adminが公開されています。
 
 実際に活用している事例としては以下記事をご参照ください。
 
@@ -150,7 +150,7 @@ Nuxt2からNuxt3へのマイグレーションを支援するツールであるN
 
 ## Nuxt Modules
 
-Nuxtアプリケーションで利用できるモジュール群であるNuxt Modulesで大きな変更があったものについてを取り上げます。
+Nuxtアプリケーションで利用できるモジュール群のNuxt Modulesから、大きな変更があったものについてを取り上げます。
 
 ### Nuxt Content
 
@@ -190,7 +190,7 @@ Nuxt Leafletは[Leaflet](https://leafletjs.com/)をラップしたリアクテ�
 
 https://nuxt.com/blog/nuxt-scripts
 
-Nuxt Scriptsはサードパーティ製スクリプトをNuxtアプリケーションで組み込む際にプライバシー・セキュリティに配慮し最適化するモジュールです。Daniel Roe氏によるRFCを経て今年の5月にパブリックプレビューとなりました。
+Nuxt Scriptsはサードパーティ製スクリプトをNuxtアプリケーションで組み込む際にプライバシー・セキュリティを配慮して最適化するモジュールです。Daniel Roe氏によるRFCを経て今年の5月でパブリックプレビューとなりました。
 
 具体的な内容・使い方については以下記事をご参照ください。
 
@@ -200,13 +200,13 @@ https://zenn.dev/comm_vue_nuxt/articles/what-is-nuxt-scripts
 
 https://nuxtseo.com/announcement
 
-Nuxt SEOはNuxtアプリケーションやサイトのオーガニックトラフィックを増やすための技術的な側面を処理してくれるモジュールです。v2が11月25日にリリースされました。これまで個別でインストールが必要だったモジュールが `@nuxtjs/seo` に統一されています。今後はNuxt SEO Proの有料版も公開される予定です。
+Nuxt SEOはNuxtアプリケーションやサイトのオーガニックトラフィックを増やすための技術的な側面を処理してくれるモジュールです。v2が11月25日にリリースされました。これまで個別でインストール必要だったモジュールが `@nuxtjs/seo` に統一されています。今後はNuxt SEO Proの有料版も公開される予定です。
 
 ## Nuxt Tutorial
 
 https://learn-nuxt.vuejs-jp.org/
 
-Nuxt TutorialはNuxt公式で提供されているチュートリアルサイトですべてWeb上で完結できるものです。
+Nuxt TutorialはNuxt公式で提供されているチュートリアルサイトです。すべてWeb上で完結できるチュートリアルです。
 
 今年のVue Fes Japan 2024ではハンズオン教材として日本語版サイトと[リソース](https://github.com/vuejs-jp/learn.nuxt.com)が公開されました。ハンズオン担当者による振り返り記事も公開されているので併せてご覧ください。
 
