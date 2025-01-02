@@ -14,7 +14,8 @@
       "ja-no-mixed-period": {
         "allowPeriodMarks": [
           ":"
-        ]
+        ],
+        "allowEmojiAtEnd": true
       },
       "max-kanji-continuous-len": {
         "max": 10
@@ -31,5 +32,8 @@
         "after": true
       }
     }
+  },
+  "filters": {
+    "comments": true
   }
 }
