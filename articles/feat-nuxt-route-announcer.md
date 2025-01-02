@@ -1,5 +1,5 @@
 ---
-title: "SPA のアクセシビリティを強化する Nuxt の Route Announcer 機能"
+title: "SPAのアクセシビリティを強化するNuxtのRoute Announcer機能"
 emoji: "♿"
 type: "tech"
 topics: ["Vue", "Nuxt", "アクセシビリティ", "スクリーンリーダー"]
@@ -7,7 +7,7 @@ published: true
 publication_name: "comm_vue_nuxt"
 ---
 
-## SPA におけるアクセシビリティ課題について
+## SPAにおけるアクセシビリティ課題について
 
 シングルページアプリケーション（SPA）は、1つのHTMLファイルに対してJavaScriptとWeb APIを活用して、ユーザーに素早いページ切り替えの体験を提供するウェブアプリケーションの一形態です。
 
@@ -42,7 +42,7 @@ publication_name: "comm_vue_nuxt"
 
 ですが `title` を設定することで、ページが切り替わったあとにその内容が読み上げられるようになっています。
 
-## Route Announcer を構成するコンポーネントと関数
+## Route Announcerを構成するコンポーネントと関数
 
 次にNuxt上で動くRoute Announcerを構成するコンポーネントとcomposables関数のそれぞれについてを紹介していきます。
 

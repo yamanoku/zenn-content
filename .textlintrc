@@ -28,6 +28,9 @@
       "ja-no-weak-phrase": false
     },
     "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": {
+        "space": "never"
+      },
       "ja-space-around-code": {
         "before": true,
         "after": true
