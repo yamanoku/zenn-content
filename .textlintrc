@@ -13,7 +13,8 @@
       },
       "ja-no-mixed-period": {
         "allowPeriodMarks": [
-          ":"
+          ":",
+          "、"
         ],
         "allowEmojiAtEnd": true
       },
