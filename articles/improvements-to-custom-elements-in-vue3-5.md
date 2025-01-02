@@ -33,7 +33,7 @@ Custom Elementsの利点としては、UIライブラリ・フレームワーク
 
 [^1]: [コンポーネント解決のスキップ](https://ja.vuejs.org/guide/extras/web-components.html#skipping-component-resolution)の設定を参照
 
-Web標準技術の相互運用向上プロジェクトである[Interop](https://wpt.fyi/interop-2024)では[Web Componentsの改善が行われており](https://wpt.fyi/results/?label=experimental&label=master&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2023-webcomponents)、Custom Elementsはほぼほぼテストケースを通過しているためクロスブラウザでもある程度安定して使用できると言えます。
+Web標準技術の相互運用向上プロジェクトである[Interop](https://wpt.fyi/interop-2024)では[Web Componentsの改善が行われており](https://wpt.fyi/results/?label=experimental&label=master&product=chrome&product=firefox&product=safari&aligned&view=interop&q=label%3Ainterop-2023-webcomponents)、Custom Elementsはほぼテストケースを通過しているためクロスブラウザでもある程度安定して使用できると言えます。
 
 Custom Elementsの具体的な使用例を上げると、GitHubのリポジトリ内での更新日付部分で使用されており、開発ツールで該当部分を見ると独自のHTML要素で定義されていることがわかります[^2]。
 
@@ -67,7 +67,7 @@ customElements.define('vue-app-element', ExampleElement);
 <vue-app-element></vue-app-element>
 ```
 
-公式のSFCツール（vue-loader@^16.5.0、@vitejs/plugin-vue@^1.4.0）では、`"Custom Elements Mode"` をサポートしており、`ce.vue` 拡張子でなくとも `customElement` オプションを追加することでCustom Elementsで呼び出せます。
+公式のSFCツール（vue-loader@^16.5.0、@vitejs/plugin-vue@^1.4.0）では、`"Custom Elements Mode"` をサポートしており、`ce.vue` 拡張子でなくとも `customElement` オプションを追加することでCustom Elementsを呼び出せます。
 
 ```js:vite.config.js
 import { defineConfig } from 'vite'
@@ -97,7 +97,7 @@ Viteを起動すると、描画されているVueコンポーネント部分がC
 
 VueやNuxtアプリケーション内でVueコンポーネントをわざわざCustom Elementsに変換して使用することはまずないと思います。VueやNuxtの世界外でVueコンポーネントを共通で使用する際に有用だと思います。
 
-LINEヤフーさんの事例ではtoB向けとtoC向けでコンポーネントの共通化する際にCustom Elementsに変換して使用しています。
+LINEヤフーさんの事例ではtoB向けとtoC向けでコンポーネントの共通化する際にCustom Elementsへ変換して使用しています。
 
 https://uit-inside.linecorp.com/episode/104
 
@@ -222,7 +222,7 @@ https://github.com/vuejs/core/commit/af838c1b5ec23552e52e64ffa7db0eb0246c3624
 
 ### custom-element: support `nonce` option for injected style tags
 
-`nonce`オプションがサポートされて、Custom Elementsに挿入されるstyleタグに `nonce` 属性を追加できるようになりました。
+`nonce` オプションがサポートされて、Custom Elementsへ挿入されるstyleタグに `nonce` 属性を追加できるようになりました。
 
 これはコンテンツ・セキュリティ・ポリシーを満たすために `nonce` 属性を含める必要があるため、追加されました。
 
@@ -230,13 +230,13 @@ https://github.com/vuejs/core/commit/bb4a02a70c30e739a3c705b3d96d09258d7d7ded
 
 ### custom-element: support passing custom-element-specific options via 2nd argument of defineCustomElement
 
-`defineCustomElement`の第2引数に `CustomElementOptions` を渡せるようになりました。
+`defineCustomElement` の第2引数に `CustomElementOptions` を渡せるようになりました。
 
 https://github.com/vuejs/core/commit/60a88a2b129714186cf6ba66f30f31d733d0311e
 
 ### custom-element: support `shadowRoot: false` in `defineCustomElement()`
 
-`defineCustomElement`で `shadowRoot: false` の指定をサポートするようになりました。これによりShadow DOMを使わずにCustom Elementsを作成できるようになりました。
+`defineCustomElement` で `shadowRoot: false` の指定をサポートするようになりました。これによりShadow DOMを使わずにCustom Elementsを作成できるようになりました。
 
 https://github.com/vuejs/core/commit/37d2ce5d8e0fac4a00064f02b05f91f69b2d5d5e
 

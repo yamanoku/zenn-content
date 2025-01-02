@@ -18,11 +18,11 @@ Interopは、Web Platform Tests（以下、WPT）プロジェクトの一部で�
 
 このプロジェクトはブラウザのレンダリングエンジンに多大な貢献をしているブラウザベンダ（Apple、Google、Microsoft、Mozilla）とコンサルティング企業（Bocoup、Igalia）の代表者チームによって進められています。
 
-どれだけ相互運用性を維持できるようになっているかについてはWPTのダッシュボードにて確認できるようになっています。Experimental（実験版）とStable（安定版）のそれぞれのブラウザでのテスト進捗結果が見れます。
+どれだけ相互運用性を維持できるようになっているかについてはWPTのダッシュボードにて確認できるようになっています。Experimental（実験版）とStable（安定版）のそれぞれのブラウザでのテスト進捗結果が見られます。
 
 ## プロポーザルの投票について
 
-期待していた新たなAPIがブラウザに実装されたときに「早くクロスブラウザで安定的に使えるようになったら…」とやきもきしている方もいるかもしれません。そんな相互運用性を高めてほしいと思ったときにInteropのIssueよりプロポーザルとして投票できます。
+期待していた新たなAPIがブラウザへ実装されたときに「早くクロスブラウザで安定的に使えるようになったら…」とやきもきしている方もいるかもしれません。そんな相互運用性を高めてほしいと思ったときにInteropのIssueよりプロポーザルとして投票できます。
 
 ![InteropのIssue選択画面。Focus Area Proposal、Investigation Effort Proposal、Other、Test Change Proposalの4項目がある](/images/interop-2025-opens-for-proposals/interop-issue-templates.png)
 

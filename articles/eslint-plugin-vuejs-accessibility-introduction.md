@@ -68,7 +68,7 @@ ESLintの設定から以下のように追加します。
 }
 ```
 
-個別指定ではなく、`extends`より推奨となっているルールをまとめて使うこともできます。
+個別指定ではなく、`extends` より推奨となっているルールをまとめて使うこともできます。
 
 ```javascript
 {
@@ -92,7 +92,7 @@ ESLintの設定から以下のように追加します。
 
 ### anchor-has-content
 
-`<a>`要素がコンテンツを持っていることを確認します。
+`<a>` 要素がコンテンツを持っていることを確認します。
 
 > [anchor-has-content | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/anchor-has-content.html)
 
@@ -116,7 +116,7 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### click-events-have-key-events
 
-`@click`イベントを指定する要素は、同様に `@keyup` 、`@keydown`、`@keypress`のいずれかのイベントを指定されていることを確認します。
+`@click` イベントを指定する要素は、同様に `@keyup` 、`@keydown`、`@keypress` のいずれかのイベントを指定されていることを確認します。
 
 > [click-events-have-key-events | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/click-events-have-key-events.html)
 
@@ -134,7 +134,7 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### iframe-has-title
 
-`<iframe>`要素に `title` 属性が設定されていることを確認します。
+`<iframe>` 要素に `title` 属性が設定されていることを確認します。
 
 > [iframe-has-title | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/iframe-has-title.html)
 
@@ -146,43 +146,43 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### label-has-for
 
-フォーム要素が `<label>` 要素内でネストされており、`<label>`要素の `for` 属性にフォーム要素のID値が設定されていることを確認します。
+フォーム要素が `<label>` 要素内でネストされており、`<label>` 要素の `for` 属性にフォーム要素のID値が設定されていることを確認します。
 
 > [label-has-for | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/label-has-for.html)
 
 ### media-has-caption
 
-メディア要素が字幕データを挿入できる `<track>` 要素を持っていることを確認します。`muted`属性が設定されている場合は除外されます。
+メディア要素が字幕データを挿入できる `<track>` 要素を持っていることを確認します。`muted` 属性が設定されている場合は除外されます。
 
 > [media-has-caption | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/media-has-caption.html)
 
 ### mouse-events-have-key-events
 
-いずれかのマウスイベント（`@mouseenter`、`@mouseover`、`@mouseout`、`@mouseleave`、`@hover`）を持つ要素には、同様に `@focus` 、`@blur`のいずれかのイベントを指定しているかを確認します。
+いずれかのマウスイベント（`@mouseenter`、`@mouseover`、`@mouseout`、`@mouseleave`、`@hover`）を持つ要素には、同様に `@focus` 、`@blur` のいずれかのイベントを指定しているかを確認します。
 
 > [mouse-events-have-key-events | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/mouse-events-have-key-events.html)
 
 ### no-access-key
 
-`accesskey`属性を設定した要素がないことを確認します。
+`accesskey` 属性を設定した要素がないことを確認します。
 
 > [no-access-key | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-access-key.html)
 
 ### no-aria-hidden-on-focusable
 
-`aria-hidden="true"`がフォーカス可能な要素やその要素の親に指定されていないことを確認します。
+`aria-hidden="true"` がフォーカス可能な要素やその要素の親に指定されていないことを確認します。
 
 > [no-aria-hidden-on-focusable | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-aria-hidden-on-focusable.html)
 
 ### no-autofocus
 
-`autofocus`属性を設定した要素がないことを確認します。
+`autofocus` 属性を設定した要素がないことを確認します。
 
 > [no-autofocus | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-autofocus.html)
 
 ### no-distracting-elements
 
-`<blink>`や `<marquee>` などの気の散る要素がないことを確認します。
+`<blink>` や `<marquee>` などの気の散る要素がないことを確認します。
 
 > [no-distracting-elements | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-distracting-elements.html)
 
@@ -196,7 +196,7 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 <!-- textlint-enable -->
 
-`@change`イベントを指定した場合は同様に `@blur` イベントも指定するか、`@blur`イベントだけの指定になっているかを確認します。
+`@change` イベントを指定した場合は同様に `@blur` イベントも指定するか、`@blur` イベントだけの指定になっているかを確認します。
 
 > [no-onchange | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-onchange.html)
 
@@ -208,13 +208,13 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### no-role-presentation-on-focusable
 
-`role="presentation"`がフォーカス可能な要素やその要素の親に指定されていないことを確認します。
+`role="presentation"` がフォーカス可能な要素やその要素の親に指定されていないことを確認します。
 
 > [no-role-presentation-on-focusable | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-role-presentation-on-focusable.html)
 
 ### no-static-element-interactions
 
-インタラクティブな `role` を持たない要素（`div`や `span` など）にインタラクティブな操作を指定していないことを確認します。
+インタラクティブな `role` を持たない要素（`div` や `span` など）にインタラクティブな操作を指定していないことを確認します。
 
 > [no-static-element-interactions | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/no-static-element-interactions.html)
 
@@ -226,7 +226,7 @@ ARIA属性をサポートされていない要素にARIA属性が設定されて
 
 ### tabindex-no-positive
 
-`tabindex`属性で正の値（`1`以上）が設定されていないことを確認します。
+`tabindex` 属性で正の値（`1` 以上）が設定されていないことを確認します。
 
 > [tabindex-no-positive | eslint-plugin-vuejs-a11y](https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/rules/tabindex-no-positive.html)
 

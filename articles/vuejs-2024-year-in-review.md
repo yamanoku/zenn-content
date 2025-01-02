@@ -38,8 +38,8 @@ https://blog.vuejs.org/posts/vue-3-5
 9月にVue 3.5がリリースされました。コードネームは「Tengen Toppa Gurren Lagann」です。このリリースでは以下の変更が含まれています。
 
 - **リアクティブシステムの最適化**: パフォーマンスが向上し、メモリ使用量が大幅に削減されました
-- **リアクティブプロップのデストラクチャリング**: `defineProps`からデストラクチャリングされた変数がリアクティブになりました
-- **SSRの改善**: 遅延ハイドレーションや`useId()`などの新機能が追加されました
+- **リアクティブプロップのデストラクチャリング**: `defineProps` からデストラクチャリングされた変数がリアクティブになりました
+- **SSRの改善**: 遅延ハイドレーションや `useId()` などの新機能が追加されました
 - **カスタムエレメントの改善**: `defineCustomElement` APIに新機能が追加されました
 - **新しいAPI追加**
   - `useTemplateRef()`
@@ -62,9 +62,9 @@ https://router.vuejs.org/
 
 Vue RouterはVue.jsの公式ルーターライブラリです。
 
-v4.4.0より`RouteNamedMap`による型付きルートのネイティブ・サポートが導入されました。unplugin-vue-routerなしでマップを定義し、型を自動的に推論させることができるようになりました。
+v4.4.0より `RouteNamedMap` による型付きルートのネイティブ・サポートが導入されました。unplugin-vue-routerなしでマップを定義し、型を自動的に推論させることができるようになりました。
 
-v4.5.0よりRouterLinkに`view-transition` Propが追加されました。
+v4.5.0よりRouterLinkに `view-transition` Propが追加されました。
 
 ## Vitepress
 
@@ -98,7 +98,7 @@ Vue.jsのESLint pluginであるeslint-plugin-vueでは、以下の新たなル�
 - [`vue/max-template-depth`](https://eslint.vuejs.org/rules/max-template-depth.html)
 - [`vue/no-deprecated-delete-set`](https://eslint.vuejs.org/rules/no-deprecated-delete-set.html)
 
-そのほかVue3.4からの`v-bind` same-name shorthandと`defineModel`のサポートが追加されたり、Flat ConfigサポートやESLint v9をpeer dependencyとして追加するなどの変更も行われました。
+そのほかVue3.4からの `v-bind` same-name shorthandと `defineModel` のサポートが追加されたり、Flat ConfigサポートやESLint v9をpeer dependencyとして追加するなどの変更も行われました。
 
 ## Vue Language Tools
 
@@ -122,11 +122,11 @@ Vue I18nはVue.jsの国際化（i18n）ライブラリです。
 
 https://github.com/intlify/vue-i18n/releases/tag/v10.0.0
 
-v10.0.0では軽量版のpetite-vue-i18n、JITコンパイルの有効化がデフォルトに、設定されたLocaleに合わせた型生成、レガシー APIモードの`$t`と`t`のオーバーロードシグネチャの変更などがされました。
+v10.0.0では軽量版のpetite-vue-i18n、JITコンパイルの有効化がデフォルトに、設定されたLocaleに合わせた型生成、レガシー APIモードの `$t` と `t` のオーバーロードシグネチャの変更などがされました。
 
-次期バージョンのv11からはLegacy API modeの非推奨化や、v10から非推奨としていた`$tc`と`tc`のAPI廃止が計画されています。
+次期バージョンのv11からはLegacy API modeの非推奨化や、v10から非推奨としていた `$tc` と `tc` のAPI廃止が計画されています。
 
-## UI フレームワーク
+## UIフレームワーク
 
 Vue.jsにまつわるUIフレームワークやコンポーネントライブラリで大きな変更があったものについてを取り上げます。
 
@@ -174,7 +174,7 @@ https://govukvue.org/
 
 https://storybook.js.org/blog/first-class-vue-support-storybook-8/
 
-コンポーネントカタログツールのStorybookでのv8からは、Vue公式のLanguage ToolsであるVolarを活用してStorybookとVue.jsの連携が強化されました。docgenでは`vue-component-meta`を使用するようになりました。VueプロジェクトにおいてReactをpeer dependencyとしてインストールする必要もなくなりました。
+コンポーネントカタログツールのStorybookでのv8からは、Vue公式のLanguage ToolsであるVolarを活用してStorybookとVue.jsの連携が強化されました。docgenでは `vue-component-meta` を使用するようになりました。VueプロジェクトにおいてReactをpeer dependencyとしてインストールする必要もなくなりました。
 
 ## v0 for Vue
 
