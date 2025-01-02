@@ -16,7 +16,14 @@
           ":"
         ]
       },
-      "sentence-length": false
+      "max-kanji-continuous-len": {
+        "max": 10
+      },
+      "no-mix-dearu-desumasu": {
+        "preferInList": ""
+      },
+      "sentence-length": false,
+      "ja-no-weak-phrase": false
     },
     "preset-ja-spacing": {
       "ja-space-around-code": {
