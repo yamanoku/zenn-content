@@ -43,7 +43,7 @@ https://vuefes-japan-speakers.nuxt.dev/
 
 ---
 
-今回のサイト構築で使用したフレームワークはVue関連ということで[Nuxt](https://nuxt.com/)を使用しています。`compatibilityVersion`の設定よりNuxt4の機能を使えるようにしているため、`app`ディレクトリを使用した構成になっています。
+今回のサイト構築で使用したフレームワークはVue関連ということで[Nuxt](https://nuxt.com/)を使用しています。`compatibilityVersion` の設定よりNuxt4の機能を使えるようにしているため、`app` ディレクトリを使用した構成になっています。
 
 ```sh
 app

@@ -222,7 +222,7 @@ https://github.com/vuejs/core/commit/af838c1b5ec23552e52e64ffa7db0eb0246c3624
 
 ### custom-element: support `nonce` option for injected style tags
 
-`nonce`オプションがサポートされて、Custom Elementsに挿入されるstyleタグに `nonce` 属性を追加できるようになりました。
+`nonce` オプションがサポートされて、Custom Elementsに挿入されるstyleタグに `nonce` 属性を追加できるようになりました。
 
 これはコンテンツ・セキュリティ・ポリシーを満たすために `nonce` 属性を含める必要があるため、追加されました。
 
@@ -230,13 +230,13 @@ https://github.com/vuejs/core/commit/bb4a02a70c30e739a3c705b3d96d09258d7d7ded
 
 ### custom-element: support passing custom-element-specific options via 2nd argument of defineCustomElement
 
-`defineCustomElement`の第2引数に `CustomElementOptions` を渡せるようになりました。
+`defineCustomElement` の第2引数に `CustomElementOptions` を渡せるようになりました。
 
 https://github.com/vuejs/core/commit/60a88a2b129714186cf6ba66f30f31d733d0311e
 
 ### custom-element: support `shadowRoot: false` in `defineCustomElement()`
 
-`defineCustomElement`で `shadowRoot: false` の指定をサポートするようになりました。これによりShadow DOMを使わずにCustom Elementsを作成できるようになりました。
+`defineCustomElement` で `shadowRoot: false` の指定をサポートするようになりました。これによりShadow DOMを使わずにCustom Elementsを作成できるようになりました。
 
 https://github.com/vuejs/core/commit/37d2ce5d8e0fac4a00064f02b05f91f69b2d5d5e
 

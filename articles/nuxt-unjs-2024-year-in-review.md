@@ -33,10 +33,10 @@ https://nuxt.com/blog/nuxt2-eol
 https://nuxt.com/blog/v3-10
 
 - **共有されたasyncDataのprerendering**：prerendering時にデータの再取得を防ぐ機能が追加されました
-- **SSRセーフなユニークIDの生成**：SSRセーフなユニークIDを生成するための`useId`コンポーザブルが追加されました
+- **SSRセーフなユニークIDの生成**：SSRセーフなユニークIDを生成するための `useId` コンポーザブルが追加されました
 - **app/router.optionsの拡張**：モジュール作成者が独自のrouter.optionsファイルを注入できるようになりました
 - **クライアントサイドのNode.jsサポート**：クライアントサイドでNode.jsのビルトインモジュールをポリフィルする実験的サポートが追加されました
-- **`useCookie`のリアクティビティ向上**：`CookieStore`を使用してクッキーの値をリアクティブに更新するオプションが追加されました
+- **`useCookie` のリアクティビティ向上**：`CookieStore` を使用してクッキーの値をリアクティブに更新するオプションが追加されました
 - **潜在的なバグやパフォーマンス問題の検出機能の追加**
 - **ページごとにView Transitionsのサポートが可能**
 - **ビルド時にルートメタデータにアクセスが可能**
@@ -50,10 +50,10 @@ https://nuxt.com/blog/v3-11
 - **プレビューモード**: [`usePreviewMode`](https://nuxt.com/docs/api/composables/use-preview-mode)を使用して、プレビューモードが利用できるようになりました
 - **Cache-busting payloads**: デプロイ後に古いデータが残らないように自動的なキャッシュバスティングが行われるようになりました
 - **Middleware `routeRules`**: Nuxtアプリケーション内のページパスに対してミドルウェアを定義できます
-- **新しいデータフェッチユーティリティ`clear`**: `useAsyncData`と`useFetch`が`clear`ユーティリティを公開しました
-- **新しい`#teleports`ターゲット**: サーバーサイドテレポートをサポートする新しい`<div id="teleports"></div>`要素が追加されました
-- **ローディングインジケーターとトランジションコントロール**: ローディングインジケータを非表示にし、必要に応じて`finish()`メソッドを強制的に実行するためのカスタムタイミングを設定できるようになり、View Transitions APIにフックする`page:view-transition:start`フックが登場しました
-- **サーバーおよびクライアント専用ページ**: `.server.vue`または`.client.vue`サフィックスを使用して、サーバーまたはクライアント専用ページを作成できます
+- **新しいデータフェッチユーティリティ `clear`**: `useAsyncData` と `useFetch` が `clear` ユーティリティを公開しました
+- **新しい `#teleports` ターゲット**: サーバーサイドテレポートをサポートする新しい `<div id="teleports"></div>` 要素が追加されました
+- **ローディングインジケーターとトランジションコントロール**: ローディングインジケータを非表示にし、必要に応じて `finish()` メソッドを強制的に実行するためのカスタムタイミングを設定できるようになり、View Transitions APIにフックする `page:view-transition:start` フックが登場しました
+- **サーバーおよびクライアント専用ページ**: `.server.vue` または `.client.vue` サフィックスを使用して、サーバーまたはクライアント専用ページを作成できます
 - **サーバーコンポーネントの改善**
 - **パフォーマンスの向上**
 - **パブリックアセットの取り扱いの変更**
@@ -64,9 +64,9 @@ https://nuxt.com/blog/v3-11
 
 https://nuxt.com/blog/v3-12
 
-- **Nuxt 4の変更テスト**: Nuxt 4の変更箇所をテストするために設定にて`compatibilityVersion`オプションが追加されました。
+- **Nuxt 4の変更テスト**: Nuxt 4の変更箇所をテストするために設定にて `compatibilityVersion` オプションが追加されました。
 - **Nuxt Scriptsの自動インストール**
-- **レイヤーの自動登録とバグ修正**: プロジェクト内の`~/layers`が自動的に登録されるようになり、依存関係の読み込みが改善されました
+- **レイヤーの自動登録とバグ修正**: プロジェクト内の `~/layers` が自動的に登録されるようになり、依存関係の読み込みが改善されました
 - **アクセシビリティの向上**: [`<NuxtRouteAnnouncer>`](https://nuxt.com/docs/api/components/nuxt-route-announcer)と[`useRouteAnnouncer`](https://nuxt.com/docs/api/composables/use-route-announcer)が追加され、SPAでのルート遷移時の状態をスクリーンリーダーに通知できるようになりました
 - **マルチアプリサポート**: 複数のNuxtアプリを並行して実行できるようになるための変更が行われました
 - **機能の安定化**: いくつかの実験的オプションが安定化に伴い、experimentalから削除されました
@@ -80,8 +80,8 @@ https://nuxt.com/blog/v3-12
 https://nuxt.com/blog/v3-13
 
 - **Route Groups**: ディレクトリ名に括弧や角括弧を使用してルートを整理できるようになりました。これにより、URL構造に影響を与えずにルートをグループ化できます
-- **IslandとHeadメタデータ**: サーバーコンポーネントから`head`を操作し、SEOメタデータを追加できるようになりました
-- **カスタムプリフェッチトリガー**: NuxtLinkで`prefetch-on`トリガーをサポート。ホバーやフォーカス時、または可視化されたときにプリフェッチを実行できます
+- **IslandとHeadメタデータ**: サーバーコンポーネントから `head` を操作し、SEOメタデータを追加できるようになりました
+- **カスタムプリフェッチトリガー**: NuxtLinkで `prefetch-on` トリガーをサポート。ホバーやフォーカス時、または可視化されたときにプリフェッチを実行できます
 - **サーバーソースマップの改善**: サーバービルドのソースマップが元のソースファイルを参照するようになりました
 - **モジュール作者向けの新機能**: モジュール作者向けに新しいユーティリティや型推論の改善が追加されました
 - **開発時の警告の改善**: ミドルウェアでのデータフェッチングコンポーザブルの使用に関する警告が削除され、ユーザーコンポーネント名が「Lazy」で始まる場合に警告が表示されるようになりました
@@ -92,11 +92,11 @@ https://nuxt.com/blog/v3-13
 https://nuxt.com/blog/v3-14
 
 - **Jitiによる高速起動**: Nuxtの設定ファイルやモジュールの読み込みがjiti v2によって高速化されました
-- **`shared/`フォルダ**: クライアントとサーバーで共有するコードや型のための新しい`shared/`フォルダが追加されました
+- **`shared/` フォルダ**: クライアントとサーバーで共有するコードや型のための新しい `shared/` フォルダが追加されました
 - **Rspackビルダー**: 新しいNuxtのバンドラーとしてrspackが実験的に導入されました
-- **新しいコンポーザブル**: `useResponseHeader`と`useRuntimeHook`という新しいコンポーザブル関数が追加されました
-- **新しいモジュールユーティリティ**: Nitroランタイムルート内でアクセス可能な仮想ファイルを追加するための`addServerTemplate`ユーティリティが追加されました
-- **v4への変更**: `compatibilityVersion: 4`を設定することで、いくつかの変更を早期に適用できるようになります
+- **新しいコンポーザブル**: `useResponseHeader` と `useRuntimeHook` という新しいコンポーザブル関数が追加されました
+- **新しいモジュールユーティリティ**: Nitroランタイムルート内でアクセス可能な仮想ファイルを追加するための `addServerTemplate` ユーティリティが追加されました
+- **v4への変更**: `compatibilityVersion: 4` を設定することで、いくつかの変更を早期に適用できるようになります
 
 ### Codemod for Nuxt 4 migration
 
@@ -114,7 +114,7 @@ Nuxtの公式認定試験である「Nuxt Certification」が今年から開始�
 
 https://hub.nuxt.com/blog/beta
 
-今年発表されたNuxtHubは、Nuxtフレームワークの拡張機能でCloudflare上でフルスタックアプリケーションをZero configで構築できるようになるものです。Nuxt modulesとしての`@nuxthub/core`と管理画面としてのNuxtHub Adminが公開されています。
+今年発表されたNuxtHubは、Nuxtフレームワークの拡張機能でCloudflare上でフルスタックアプリケーションをZero configで構築できるようになるものです。Nuxt modulesとしての `@nuxthub/core` と管理画面としてのNuxtHub Adminが公開されています。
 
 実際に活用している事例としては以下記事をご参照ください。
 
@@ -156,7 +156,7 @@ Nuxtアプリケーションで利用できるモジュール群であるNuxt Mo
 
 https://content.nuxt.com/
 
-Nuxtディレクトリの`content/`配下のファイルを活用したブログ・ドキュメントなどのコンテンツ管理ができるNuxt Contentは現在v3の開発が進められています。
+Nuxtディレクトリの `content/` 配下のファイルを活用したブログ・ドキュメントなどのコンテンツ管理ができるNuxt Contentは現在v3の開発が進められています。
 
 https://x.com/nuxtstudio/status/1861448306338992295
 
@@ -172,7 +172,7 @@ Nuxt FontsはNuxtアプリでお気に入りのフォントソースを使用し
 
 https://x.com/nuxt_js/status/1834350374100287596
 
-デモにもあるように`font-family`の宣言をするだけでカスタムフォントの追加と最適化を実施してくれます。
+デモにもあるように `font-family` の宣言をするだけでカスタムフォントの追加と最適化を実施してくれます。
 
 ### Nuxt Icon
 
@@ -200,7 +200,7 @@ https://zenn.dev/comm_vue_nuxt/articles/what-is-nuxt-scripts
 
 https://nuxtseo.com/announcement
 
-Nuxt SEOはNuxtアプリケーションやサイトのオーガニックトラフィックを増やすための技術的な側面を処理してくれるモジュールです。v2が11月25日にリリースされました。これまで個別でインストールが必要だったモジュールが`@nuxtjs/seo`に統一されています。今後はNuxt SEO Proの有料版も公開される予定です。
+Nuxt SEOはNuxtアプリケーションやサイトのオーガニックトラフィックを増やすための技術的な側面を処理してくれるモジュールです。v2が11月25日にリリースされました。これまで個別でインストールが必要だったモジュールが `@nuxtjs/seo` に統一されています。今後はNuxt SEO Proの有料版も公開される予定です。
 
 ## Nuxt Tutorial
 
@@ -216,7 +216,7 @@ https://note.com/ubugeeei/n/n2ac2b02043da
 
 [Introducing @nx/nuxt: Enhanced Nuxt.js Support in Nx | by Katerina Skroumpelou | Nx Devtools](https://blog.nrwl.io/introducing-nx-nuxt-enhanced-nuxt-js-support-in-nx-01eac78034fc)
 
-モノレポ管理ツールであるNxに、Nuxtプロジェクトをサポートするためのプラグイン`@nx/nuxt`が公開されました。
+モノレポ管理ツールであるNxに、Nuxtプロジェクトをサポートするためのプラグイン `@nx/nuxt` が公開されました。
 
 ## UnJS
 
