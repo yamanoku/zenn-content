@@ -49,6 +49,28 @@ pnpm add -D eslint-plugin-vuejs-accessibility
 
 ESLintの設定から以下のように追加します。
 
+### Flat Config（ESLint v9以降）
+
+`eslint.config.js` ファイルに以下のように追加します。
+
+```javascript
+import pluginVueA11y from "eslint-plugin-vuejs-accessibility";
+
+export default [
+  ...pluginVueA11y.configs["flat/recommended"],
+  {
+    rules: {
+      // 個別でオーバーライド・適応したいルールは以下のように設定できます。
+      "vuejs-accessibility/alt-text": "error"
+    }
+  }
+];
+```
+
+### ESLint v9以前
+
+`.eslintrc.*` ファイルに以下のように追加します。
+
 ```javascript
 {
   plugins: [
