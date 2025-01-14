@@ -60,8 +60,8 @@ export default [
   ...pluginVueA11y.configs["flat/recommended"],
   {
     rules: {
-      // 個別でオーバーライド・適応したいルールは以下のように設定できます。
-      "vuejs-accessibility/alt-text": "error"
+      // 個別でオーバーライドしたいルールは以下のように設定できます。
+      "vuejs-accessibility/alt-text": "warn"
     }
   }
 ];
