@@ -133,7 +133,7 @@ Largest Contentful Paint（LCP）については、現在Safari/Webkitが、Inte
 
 ### Modules
 
-JavaScriptの `import` 文は、JavaScript modulesを読み込むことができます。 さらに `type` 属性と一緒に使うと、CSS ModulesやJSONデータを読み込むことができます。 例えば、`import ... with { type： "json" }` は、JSONデータ（JSON module scripts）をロードできます。今年はJSON module scriptsのインポートに注力していきます。
+JavaScriptの `import` 文は、JavaScript modulesを読み込むことができます。 さらに `type` 属性と一緒に使うと、CSS ModulesやJSONデータを読み込むことができます。 例えば、`import ... with { type： "json" }` は、JSONデータ（JSON module scripts）をロードできます。今年はJSON module scriptsのインポート部分に注力していくそうです。
 
 - [Tests dashboard](https://wpt.fyi/results/html/semantics/scripting-1/the-script-element?label=master&label=experimental&aligned&q=label%3Ainterop-2025-modules)
 - [MDN](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/import/with)
@@ -184,7 +184,7 @@ Navigation APIはHistory APIに代わるSPAでのナビゲーションやURLの�
 
 ### `scrollend` event
 
-このイベントは文書のビュー内でスクロールが完了した時に発生するイベントです。
+文書のビュー内でスクロールが完了した時に発生するイベントです。これまでは `setTimeout()` を使用してスクロールが一定時間停止したかどうかをチェックするしかできなかったため、`scrollend` が導入されることで「スクロールが完了したこと」を正しく検出できるようになります。
 
 ```js
 document.addEventListener("scrollend", (event) => {
@@ -209,9 +209,9 @@ Storage Access APIは、認証された埋め込みをサポートしつつ、�
 
 ### `text-decoration`
 
-アンダーライン、オーバーライン、ラインスルー、またはその組み合わせを含む装飾線のスタイルと色を設定できるCSSプロパティです。
+テキストのアンダーライン、オーバーライン、ラインスルー、またはその組み合わせを含む装飾線のスタイルと色を設定できるCSSプロパティです。
 
-今年の目標として、`text-decoration` プロパティを使用する際に付与されるベンダープレフィックスを不要にし、すべてのブラウザで相互運用できるようにすることです。
+今年は、`text-decoration` プロパティを使用する際に付与されるベンダープレフィックスを不要にすることを目標としています。
 
 - [Tests dashboard](https://wpt.fyi/results/?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2025-textdecoration)
 - [MDN](https://developer.mozilla.org/docs/Web/CSS/text-decoration)
@@ -235,14 +235,14 @@ console.log(pattern.test(url_2)); // false
 
 ウェブサイト上でのさまざまなビュー間をシームレスな視覚的遷移を作成するためのAPIです。
 
-今年は、同一ドキュメントでのView Transition APIを相互運用可能にすることと、`view-transition-class` CSSプロパティを実装することに焦点を当てます。
+今年は、同一ドキュメントでのView Transition APIを相互運用可能にすることと、`view-transition-class` CSSプロパティを実装することを目標にしています。
 
 - [Tests dashboard](https://wpt.fyi/results/css/css-view-transitions?label=master&label=experimental&aligned&view=interop&q=all%28label%3Ainterop-2025-view-transitions%29)
 - [MDN](https://developer.mozilla.org/docs/Web/API/View_Transition_API)
 
 ### WebAssembly
 
-WebAssembly APIを使用することでWebAssemblyコードを読み込むことができるようになります。
+WebAssembly APIはWebAssemblyコードを読み込むことができるようになるAPIです。
 
 昨年は調査対象として選出されており、WPTフレームワーク内でWebAssembly仕様のテストが実行するためのテストインフラを追加するように進められていました。今年は重点対象となり、以下APIの相互運用に焦点を当てます。
 
@@ -289,11 +289,11 @@ WebRTC APIは、ブラウザ間で直接リアルタイムの通信チャネル�
 - [Tests dashboard](https://wpt.fyi/results/?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2025-writingmodes)
 - [MDN](https://developer.mozilla.org/docs/Web/CSS/writing-mode)
 
-### Mutation Eventsの削除
+### Mutation Eventの削除
 
 今年ははじめて**機能の削除**が重点対象として選ばれました。
 
-`DOMSubtreeModified`、`DOMNodeInserted`、`DOMNodeRemoved` はDOMの変更を監視し、DOMの変更が発生したときにイベントリスナーコールバックを実行します。しかし、現在これらはすべて非推奨となっており、`MutationObserver` APIを使用することが推奨されています。すべてのブラウザでのMutation Eventsのサポートを完全に取り除くことを今年の目標としています。
+`DOMSubtreeModified`、`DOMNodeInserted`、`DOMNodeRemoved` はDOMの変更を監視し、DOMの変更が発生したときにイベントリスナーコールバックを実行します。しかし、現在これらはすべて非推奨となっており、`MutationObserver` APIを使用することが推奨されています。すべてのブラウザでのMutation Eventのサポートを完全に取り除くことを今年の目標としています。
 
 - [Tests dashboard](https://wpt.fyi/results/dom?label=master&label=experimental&aligned&q=label%3Ainterop-2025-remove-mutation-events)
 - [MDN](https://developer.mozilla.org/docs/Web/API/MutationEvent)
@@ -330,14 +330,14 @@ https://hacks.mozilla.org/2025/02/interop-2025/
 
 ## おわりに
 
-今回の記事ではInterop 2025の重点対象について紹介しました。
+今回の記事ではInterop 2024の振り返りと、Interop 2025の重点対象について紹介しました。
 
-今年のInteropでは前回からの継続対象も含めて172件ものプロポーザルが提出されておりました。それぞれのプロポーザルでは重点対象として注目されているものについては多くのリアクションがついており、一番多くのリアクションを集めたのは[JPEG XL image format](https://github.com/web-platform-tests/interop/issues/700)でした（2/15時点で👍リアクションが448個）。ですが、必ずしもリアクションの多いものが対象に選ばれているわけでもありません。
+Interop 2025では前回からの継続対象も含めて172件ものプロポーザルが提出されておりました。それぞれのプロポーザルでは重点対象として注目されているものについては多くのリアクションがついており、一番多くのリアクションを集めたのは[JPEG XL image format](https://github.com/web-platform-tests/interop/issues/700)でした（2/15時点で👍リアクションが448個）。ですが、必ずしもリアクションの多いものが対象に選ばれているわけでもありません。
 
-Interopプロジェクトは各ブラウザベンダ、コンサル企業らの尽力によりWebの相互運用性を高めてもらっています。開発者でもある我々はその恩恵を活用できるようにするためにも、これらの重点対象の動向・テスト結果をチェックし、どのように扱うものかを知っていくことが重要です。
+Interopプロジェクトは各ブラウザベンダ、コンサル企業らの尽力によりWeb標準の相互運用性を高めてもらっています。開発者でもある我々はその恩恵を活用できるようにするためにも、これらの重点対象のものが**どのように扱えるものなのかを知っておく**ことが重要です。
 
 ちなみに重点対象のものが、各ブラウザで利用可能となる機能の指標（Baseline）として追加されると、[Web Platform Status DashboardのBaseline 2025リスト](https://webstatus.dev/?q=baseline_date%3A2025-01-01..2025-12-31)にも反映されるそうなので、こちらもチェックしておくとよいでしょう。
 
-筆者は以前の記事でも述べた通り、Navigation APIの採用を願っておりましたが、今年ついに重点対象に選出されました。今年のInteropを通じて来年以降に安定した使用ができることを祈り、改めて技術の素振りをしておきたいと思っております。View Transition APIの相互運用性も高まり、来年以降でMPAでの使用も相互運用性が持てるようになることを期待しています。
+筆者は[前回の記事](https://zenn.dev/yamanoku/articles/interop-2025-opens-for-proposals)でも述べた通り、Navigation APIの採用を願っておりましたが、今年ついに重点対象に選出されて大変うれしく思っております。今年のInteropを通じて来年以降に安定した使用ができることを祈り、改めて技術の素振りをしておきたいと思っております。また、View Transition APIの相互運用性も徐々に高まっていき、来年以降でMPA環境での相互運用性も向上していくことを期待しています。
 
 皆さんも今後のInterop 2025の進捗に注目していきましょう。
