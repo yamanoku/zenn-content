@@ -1,5 +1,5 @@
 ---
-title: "Interop2025のプロポーザル投票が始まりました！"
+title: "Interop 2025のプロポーザル投票が始まりました！"
 emoji: "🗳️"
 type: "tech"
 topics: ["ブラウザ", "Interop", "Web標準"]

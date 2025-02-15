@@ -1,5 +1,5 @@
 ---
-title: "Interop2025が始まりました！"
+title: "Interop 2025が始まりました！"
 emoji: "🚀"
 type: "tech"
 topics: ["ブラウザ", "Interop", "Web標準"]
@@ -10,7 +10,7 @@ published: true
 
 この記事では、Interop 2024の振り返りと、Interop 2025でどのAPIが重点対象として選出されたのかについて触れていきます。
 
-前提知識として、Interopそのものの取り組みについての解説については、昨年書いた[Interop2025のプロポーザル投票が始まりました！](https://zenn.dev/yamanoku/articles/interop-2025-opens-for-proposals)をご覧ください。
+前提知識として、Interopそのものの取り組みについての解説については、昨年書いた[Interop 2025のプロポーザル投票が始まりました！](https://zenn.dev/yamanoku/articles/interop-2025-opens-for-proposals)をご覧ください。
 
 ## Interop 2024の振り返り
 
