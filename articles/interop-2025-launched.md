@@ -8,9 +8,9 @@ published: false
 
 2月14日（日本時間）、ブラウザ間でのWeb標準の相互運用性を向上するプロジェクト「Interop」の2025年プロジェクトが始まりました。
 
-この記事では、Interop 2024の振り返りと、2025年でどのAPIが選出されたのかについて触れていきます。
+この記事では、Interop 2024の振り返りと、Interop 2025でどのAPIが重点対象として選出されたのかについて触れていきます。
 
-Interopそのものの取り組みについての解説については、昨年書いた[Interop2025のプロポーザル投票が始まりました！](https://zenn.dev/yamanoku/articles/interop-2025-opens-for-proposals)をご覧ください。
+前提知識として、Interopそのものの取り組みについての解説については、昨年書いた[Interop2025のプロポーザル投票が始まりました！](https://zenn.dev/yamanoku/articles/interop-2025-opens-for-proposals)をご覧ください。
 
 ## Interop 2024の振り返り
 
@@ -18,7 +18,7 @@ Interopそのものの取り組みについての解説については、昨年�
 
 | Stable | Experimental |
 | --- | --- |
-| ![2025/2/15時点のInterop2024のStable版WPTダッシュボード。重点対象全体が95点、調査対象が62点、Chromeが98点、Edgeが97点、Firefoxが99点、Safariが98点](/images/interop-2025-launched/wpt.fyi_interop-2025_stable.png) | ![2025/2/15時点のInterop2024のExperimental版WPTダッシュボード。重点対象全体が97点、調査対象が62点、Chromeが99点、Edgeが99点、Firefoxが99点、Safariが99点](/images/interop-2025-launched/wpt.fyi_interop-2024_experimental.png) |
+| ![2025/2/15時点のInterop2024のStable版WPTダッシュボード。重点対象全体が95点、調査対象が62点、Chromeが98点、Edgeが97点、Firefoxが99点、Safariが98点](/images/interop-2025-launched/wpt.fyi_interop-2024_stable.png) | ![2025/2/15時点のInterop2024のExperimental版WPTダッシュボード。重点対象全体が97点、調査対象が62点、Chromeが99点、Edgeが99点、Firefoxが99点、Safariが99点](/images/interop-2025-launched/wpt.fyi_interop-2024_experimental.png) |
 
 最新の安定版ブラウザでのリリースにおいては全体で95点まで網羅されており、プレリリース版においては97点まで網羅されていました。安定版でのテスト網羅率ではFirefoxが一歩リードしている形となっています。このことより、各ブラウザでのInterop 2024の重点対象がおおよそ網羅していることが示されています。
 
@@ -26,9 +26,9 @@ Interopそのものの取り組みについての解説については、昨年�
 
 重点対象となったものの中では、CSS Nesting、Declarative Shadow DOM、`text-wrap: balance` が100%テストカバレッジを達成しています。前年から続く重点対象個所の中ではMedia Queries 4、Motion Path、Viewport Unitsらが100％に達成しています。
 
-<details>
-  <summary>2024年の重点対象リスト</summary>
-
+<!--textlint-disable -->
+:::details 2024年の重点対象リスト
+<!--textlint-enable -->
   - Accessibility
   - CSS Nesting
   - Custom Properties
@@ -46,11 +46,11 @@ Interopそのものの取り組みについての解説については、昨年�
   - Text Directionality
   - `text-wrap: balance`
   - URL
-</details>
+:::
 
-<details>
-  <summary>前年から継続している重点対象のリスト</summary>
-
+<!--textlint-disable -->
+:::details 前年から継続している重点対象のリスト
+<!--textlint-enable -->
 - Aspect Ratio
 - Border Image
 - Cascade Layers
@@ -78,7 +78,7 @@ Interopそのものの取り組みについての解説については、昨年�
 - Web Compat 2022
 - Web Compat 2023
 - Web Components
-</details>
+:::
 
 比較までに2024/9/19時点のダッシュボードも掲載しておきます。
 
@@ -143,7 +143,7 @@ JavaScriptの `import` 文は、JavaScript modulesを読み込むことができ
 Navigation APIはHistory APIに代わるSPAでのナビゲーションやURLの更新を簡単に扱えるようにするAPIです。このAPIはブラウザのナビゲーション・アクションを開始したり、傍受したり、内容を変更できます。これまでChromeのみの実装でしたが、今年は他のブラウザでも実装されることを目指します。
 
 - [Tests dashboard](https://wpt.fyi/results/navigation-api?label=master&label=experimental&aligned&q=label%3Ainterop-2025-navigation)
-- [MDN](https://developer.mozilla.org/docs/Web/API/Navigation_API)
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API)
 
 ### Pointer and Mouse events
 
@@ -231,11 +231,11 @@ console.log(pattern.test(url_2)); // false
 - [Tests dashboard](https://wpt.fyi/results/url-pattern-api?label=master&label=experimental&aligned&q=label%3Ainterop-2025-url-pattern)
 - [MDN](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API)
 
-### View Transitions API
+### View Transition API
 
 ウェブサイト上でのさまざまなビュー間をシームレスな視覚的遷移を作成するためのAPIです。
 
-今年は、同一ドキュメントでのView Transitions APIを相互運用可能にすることと、`view-transition-class` CSSプロパティを実装することに焦点を当てます。
+今年は、同一ドキュメントでのView Transition APIを相互運用可能にすることと、`view-transition-class` CSSプロパティを実装することに焦点を当てます。
 
 - [Tests dashboard](https://wpt.fyi/results/css/css-view-transitions?label=master&label=experimental&aligned&view=interop&q=all%28label%3Ainterop-2025-view-transitions%29)
 - [MDN](https://developer.mozilla.org/docs/Web/API/View_Transition_API)
@@ -249,8 +249,10 @@ WebAssembly APIを使用することでWebAssemblyコードを読み込むこと
 - JS String Builtins: WebAssemblyの組み込み文字列関数をJavaScript String APIのサブセットをミラーするようにし、JavaScriptグルーコードなしで呼び出せるようにします
 - Resizable buffers integration: リサイズ可能なバッファを使用するJSコードにWebAssemblyを統合します
 
-- [Tests dashboard](https://wpt.fyi/results/?label=master&label=experimental&aligned&q=label%3Ainterop-2025-webassembly)
-- [MDN](https://developer.mozilla.org/docs/WebAssembly)
+---
+
+* [Tests dashboard](https://wpt.fyi/results/?label=master&label=experimental&aligned&q=label%3Ainterop-2025-webassembly)
+* [MDN](https://developer.mozilla.org/docs/WebAssembly)
 
 ### Web Compat
 
@@ -269,10 +271,12 @@ Web Compatは特定の技術ではなく、すでにリリースされているA
 WebRTC APIは、ブラウザ間で直接リアルタイムの通信チャネルを確立するAPIです。ブラウザ内でのビデオ会議アプリケーションなどで使用されていたりします。今年は以下のAPIの相互運用に焦点を当てます。
 
 - `RTCRtpScriptTransform`: クロスブラウザのエンドツーエンドの暗号化を可能にするAPI
-- `RTCDataChannels` をワーカーへ転送可能にして、メインスレッド以外でのデータ処理を可能にする
+- `RTCDataChannel`: 2つのピア間で双方向に任意のデータを転送するためのネットワークチャネル
 
-- [Tests dashboard](https://wpt.fyi/results/?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2025-webrtc)
-- [MDN](https://developer.mozilla.org/docs/Web/API/WebRTC_API)
+---
+
+* [Tests dashboard](https://wpt.fyi/results/?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2025-webrtc)
+* [MDN](https://developer.mozilla.org/docs/Web/API/WebRTC_API)
 
 ### Writing modes
 
@@ -313,7 +317,7 @@ https://webkit.org/blog/16458/announcing-interop-2025/
 https://www.bocoup.com/blog/interop-2025
 
 ### Google
-https://web.dev/blog/interop-2025
+https://web.dev/blog/interop-2025?hl=en
 
 ### Igalia
 https://www.igalia.com/2025/02/13/Interop-2025.html
@@ -334,6 +338,6 @@ Interopプロジェクトは各ブラウザベンダ、コンサル企業らの�
 
 ちなみに重点対象のものが、各ブラウザで利用可能となる機能の指標（Baseline）として追加されると、[Web Platform Status DashboardのBaseline 2025リスト](https://webstatus.dev/?q=baseline_date%3A2025-01-01..2025-12-31)にも反映されるそうなので、こちらもチェックしておくとよいでしょう。
 
-筆者は以前の記事でも述べた通り、Navigation APIの採用を願っておりましたが、今年ついに重点対象に選出されました。今年のInteropを通じて来年以降に安定した使用ができることを祈り、改めて技術の素振りをしておきたいと思っております。View Transitions APIの相互運用性も高まり、来年以降でMPAでの使用も相互運用性が持てるようになることを期待しています。
+筆者は以前の記事でも述べた通り、Navigation APIの採用を願っておりましたが、今年ついに重点対象に選出されました。今年のInteropを通じて来年以降に安定した使用ができることを祈り、改めて技術の素振りをしておきたいと思っております。View Transition APIの相互運用性も高まり、来年以降でMPAでの使用も相互運用性が持てるようになることを期待しています。
 
 皆さんも今後のInterop 2025の進捗に注目していきましょう。
