@@ -3,7 +3,7 @@ title: "Interop2025が始まりました！"
 emoji: "🚀"
 type: "tech"
 topics: ["ブラウザ", "Interop", "Web標準"]
-published: false
+published: true
 ---
 
 2月14日（日本時間）、ブラウザ間でのWeb標準の相互運用性を向上するプロジェクト「Interop」の2025年プロジェクトが始まりました。
