@@ -42,7 +42,7 @@ publication_name: "comm_vue_nuxt"
 
 ## Push型、Pull型、Push-Pull型
 
-リアクティブプログラミングにおいては、状態の変化を依存している部分にどのように伝えるかによって、主にPush型、Pull型、Push-Pull型に分類できます。次はそれぞれの特徴を見ていきます。
+リアクティブプログラミングにおいては、状態の変化を依存している部分にどのように伝えるかによって、主にPush型、Pull型、Push-Pull型に分類できます。次にそれぞれの特徴を見ていきます。
 
 ### Push型
 
@@ -187,5 +187,4 @@ alien-signalsやVue.jsについてはもちろん、PreactやAngular、Svelteな
 * [pzuraq | blog | What Makes a Good Reactive System?](https://www.pzuraq.com/blog/what-makes-a-good-reactive-system#observables-streams-and-rxjs)
 * [EmberConf 2024 - Standardizing Autotracking Via TC39 Signals with Daniel Ehrenberg](https://youtu.be/ji7zSHCX6d8?list=TLGGE0qWPG3HOW4xNTAzMjAyNQ)
 * [The Evolution of Signals in JavaScript - DEV Community](https://dev.to/this-is-learning/the-evolution-of-signals-in-javascript-8ob)
-* [リアクティビティーの探求 | Vue.js](https://vuejs.org/guide/extras/reactivity-in-depth.html)
 * [ついにやってくるSignals！Angularはどう変わるのか？【ng-japan OnAir #63】 - YouTube](https://www.youtube.com/watch?v=gCKw5OyRPiA)
