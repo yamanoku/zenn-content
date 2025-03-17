@@ -1,5 +1,5 @@
 ---
-title: "リアクティブの進化からalien-signalsを知ろう"
+title: "Webフロントエンドでのリアクティビティからalien-signalsを知ろう"
 emoji: "👾"
 type: "tech"
 topics: ["Signals", "JavaScript", "Vue", "tc39"]
@@ -7,50 +7,46 @@ published: false
 publication_name: "comm_vue_nuxt"
 ---
 
-現代のWebアプリケーションを開発する上で、**あらゆるデバイスにおける操作に応じて画面がスムーズに変化できるのは、ユーザー体験を考慮する上で非常に重要なものです。この「スムーズな変化」を実現するための仕組みの1つが「リアクティブ」です。
+現代のWebアプリケーション開発において「リアクティビティ」という概念が非常に重要になっています。今回は、このリアクティビティにまつわる歴史を辿りつつ、2025年の1月にv1.0となった注目のライブラリであるalien-signalsについて解説していきます。
 
-今回は、このリアクティブにまつわる歴史を辿りつつ、2025年の1月にメジャーバージョンとなった注目のライブラリである**alien-signals**について解説していきます。
+## リアクティビティとは何を実現するものか
 
-## リアクティブとは？
+そもそも「リアクティビティ」とは何かについてを説明します。
 
-そもそもリアクティブとは何かについてを説明します。
+リアクティビティを日本語にすると「**即応性**」と訳されます。言葉の意味を調べると以下のようになります。
 
-リアクティブを日本語にすると「即応性」と訳されます。リアクティブシステムは **「データが変更されたときに、それに関連する処理や画面表示を自動的に更新する仕組み」** です。これはGoFのデザインパターンにおける「オブザーバーパターン」に基づいており、データの変更を監視し必要な部分に通知することで、アプリケーション全体の状態を一貫して保つことができます。
+> １ 状況に応じてすばやく行動すること。「事故に即応した処置」
+> ２ 状況・情勢にあてはまること。「現実に即応した考え」
+>
+> [即応(ソクオウ)とは？ 意味や使い方 - コトバンク](https://kotobank.jp/word/%E5%8D%B3%E5%BF%9C-553762)
 
-フロントエンド開発の歴史においてはKnockout observablesやMeteor Tracker、RxJSのようなライブラリが存在し、リアクティブなプログラミングの基礎を築いていました。状態管理ライブラリであるMobXも、背後では同様の原理に基づいてオブジェクトのプロパティの変化を監視し、関連する部分を更新していました[^1]。
+では、この即応性という概念はなぜ必要なのでしょうか？
+
+それは現代のWebアプリケーションにおいて、 **リアルタイムでのユーザーの操作やデータの変更に対して、アプリケーションがすばやく反応して画面を更新されることが望まれているから**です。このすばやい反応・更新を実現するための仕組みの1つが「リアクティビティ」です。
+
+フロントエンド開発の歴史においてはKnockout observablesやMeteor Tracker、RxJSのようなライブラリが存在し、リアクティブプログラミングの基礎を築いていました。状態管理ライブラリであるMobX[^1]やXStateも、背後では同様の原理に基づいてオブジェクトのプロパティの変化を監視し、関連する部分を更新していました。
 
 [^1]: [The fundamental principles behind MobX | HackerNoon](https://hackernoon.com/the-fundamental-principles-behind-mobx-7a725f71f3e8)
 
-## なぜリアクティブプログラミングが重要なのか？
+これらの先駆的な技術を背景に、現代の主要なフロントエンドフレームワークは、より洗練されたリアクティビティの仕組みをコア機能として取り込むようになりました。
 
-このリアクティブプログラミングという概念はなぜ重要となっているのでしょうか？その理由は以下の通りです。
+- EmberJSは、依存関係を自動的に追跡する `Autotracking` というリアクティビティシステム[^2]を採用している
+- Vue 2では、当初は `getter`/`setter` を使用していました[^3]が、Vue 3からは `Proxy` オブジェクトを活用した、より柔軟で高性能なリアクティビティシステムを提供している[^4]
+- Svelteは仮想DOMを活用せずにコンパイラを用いてコードを変換し、変数への代入操作が直接DOMの更新を引き起こすリアクティビティモデルを実現している
 
-### 複雑化するUIの効率的な管理
+[^2]: [Autotracking In-Depth - In-Depth Topics - Ember Guides](https://guides.emberjs.com/release/in-depth-topics/autotracking-in-depth/)
 
-現代のWebアプリケーションは、以前に比べて遥かに複雑なユーザーインターフェース（UI）を持つようになっています。
+[^3]: https://v2.vuejs.org/v2/guide/reactivity
 
-データ量の増加やインタラクティブ性の向上に伴い、アプリケーションの状態（データ）とUIの同期を手動で管理することは、開発者の負担が大きく、エラーも発生しやすくなります。
-
-リアクティブプログラミングは、データが変更された際に、その変更をUIに自動的に反映させる仕組みを提供することで、この課題を解決します。
-
-### 宣言的なプログラミング
-
-リアクティブプログラミングは「何を表示するか」を宣言的に記述するスタイルを促進します。
-
-開発者は、状態の変化に応じてUIをどのように更新するかという手続き的なコードを書く代わりに、データの流れとそれにまつわるUIの関連性を定義するだけで済みます。これはいわゆる「宣言的UI」の考え方に基づいているものです。
-
-### 状態管理の簡略化
-
-アプリケーションの状態管理は、規模が大きくなるにつれて複雑になります。リアクティブプログラミングは、状態の変化を監視し、それに応じて関連するUIや他の状態を自動的に更新する機能を提供することで、状態管理の複雑さを軽減します。
+[^4]: https://vuejs.org/guide/extras/reactivity-in-depth.html
 
 ## Push型、Pull型、Push-Pull型
 
-リアクティブシステムは、状態の変化を依存している部分にどのように伝えるかによって、主にPush型、Pull型、Push-Pull型に分類できます。次はそれぞれの特徴を見ていきます。
+リアクティブプログラミングにおいては、状態の変化を依存している部分にどのように伝えるかによって、主にPush型、Pull型、Push-Pull型に分類できます。次はそれぞれの特徴を見ていきます。
 
 ### Push型
 
-* このモデルでは、**状態が変更されると、その状態に依存しているすべてのシステムに自動的に変更を通知（push）** される
-  * 依存している側は、通知を受け取るたびに再計算や副作用が実行される
+* このモデルでは、 **状態が変更されると、その状態に依存しているすべてのシステム(コンポーネントなど)に自動的に変更を通知（push）し、通知を受け取ったシステムは再計算や副作用を実行される**
 * RxJSがこのPush型のモデルを採用しており、状態の変更をストリームとして扱うことができる
 * 初期のリアクティブプログラミングではこのPush型のモデルが一般的だったが、**不要な再計算やUIの早期更新の問題**が指摘されていた
 
@@ -59,27 +55,27 @@ publication_name: "comm_vue_nuxt"
 * Pull型のモデルでは、**状態が変更されても、依存している側は直ちに通知を受けない**
 * 代わりに、**依存している側が必要になったタイミング** (例えば、UIのレンダリング時や値が実際に要求された時) に、**最新の値を状態から「引き出す (pull)」** 必要がある
 * これにより、状態が頻繁に変化する場合でも、実際に必要になるまで計算を遅延させることができて**パフォーマンスの最適化**に繋がる
-* ReactやVue.jsのような仮想DOMを採用するものや、ElmではPull型のアルゴリズムが採用されている
+* ReactやVue.jsのような仮想DOMを採用するものや、Elmでも変更検知の最適化のためにPull型に似たアプローチが採用されている
 
 ### Push-Pull型
 
 * Push-Pull型のモデルは、**Push型とPull型の利点を組み合わせたハイブリッドなアプローチ**
-* 状態が変更されると、依存している部分に対して **「dirty(ダーティ)」** であるというフラグを立てるなどの軽い通知 (Push) を行う
+* 状態が変更されると、依存している部分に対して **「dirty（ダーティ）」** であるというフラグを立てるなどの軽い通知 (Push) を行う
 * その後、実際にその依存している部分の値が必要となった際に最新の値を計算する (Pull) という流れを取り込む
 
 近年では**Pull型**や**Push-Pull型**のアプローチが、パフォーマンスと効率性の観点から多くのリアクティブプログラミングで採用される傾向にあります。これにより、不要な計算を避け、必要な時だけ最新の状態を反映させることが可能になり、よりスムーズなアプリケーション体験を提供できます。
 
 ## Fine-Grained ReactivityとSignals
 
-リアクティブプログラミングにおいて近年注目を集めているのが、 **Fine-Grained Reactivity（きめ細かいリアクティビティ）** [^2]という考え方です。これはReactのようにアプリケーション全体を再レンダリングするのではなく[^3]、**本当に変更があったデータに関連するごく一部だけを更新する**というものです。
+リアクティブプログラミングにおいて近年注目を集めているのが、 **Fine-Grained Reactivity（きめ細かいリアクティビティ）** [^5]という考え方です。これはReactのようにアプリケーション全体を再レンダリングするのではなく[^6]、**本当に変更があったデータに関連するごく一部だけを更新する**というものです。
 
-[^2]: [A Hands-on Introduction to Fine-Grained Reactivity - DEV Community](https://dev.to/ryansolid/a-hands-on-introduction-to-fine-grained-reactivity-3ndf)
+[^5]: [A Hands-on Introduction to Fine-Grained Reactivity - DEV Community](https://dev.to/ryansolid/a-hands-on-introduction-to-fine-grained-reactivity-3ndf)
 
-[^3]: ReactではReact.memoやuseMemo、useCallbackを使うことでレンダリングのパフォーマンスを悪化させないようにしたり、新たなコンパイル戦略でもある「React Compiler」によって仮想DOMのレンダリングコストを抑えようとしています。
+[^6]: Reactはコンポーネント単位の再レンダリングを行いますが、React.memo、useMemo、useCallbackなどの最適化APIや、将来的に導入される可能性のあるReact Compilerによって、不要な再レンダリングを抑制する取り組みが行われています。
 
 このFine-Grained Reactivityを実現するための重要なプリミティブ（基本的な構成要素）となるAPIが **「Signals（シグナル）」** です。Signalsは、**リアクティブプログラミング**を実現するための重要なプリミティブであり、データの変更に応じて自動的に影響を受ける部分を更新する仕組みの中心となります。
 
-Signalsの基本的な機能は以下のようになります。
+Signalsの基本的な機能は以下のとおりです。
 
 * **値の保持 (State/Writable Signal)**
 * **値へのアクセス (Getter)**
@@ -91,7 +87,9 @@ Signalsの基本的な機能は以下のようになります。
 
 ## alien-signalsとは？
 
+<!-- textlint-disable -->
 ![alien-signalsのロゴ](https://github.com/stackblitz/alien-signals/raw/master/assets/logo.png =300x)
+<!-- textlint-enable -->
 
 このようなSignalsの潮流の中で登場したのが **alien-signals** です。alien-signalsは、**非常に軽量なリアクティブライブラリ**であることを特徴としています。
 
@@ -124,7 +122,7 @@ console.log(doubleCount()); // 4
 
 `signal` でリアクティブな値 `count` を作成し、`effect` 内でその値を監視しています。`count` の値が変更されると、`effect` 内の処理が自動的に再実行されます。`effectScope` を使うことで、`effect` のライフサイクルを管理できます。
 
-内部の処理では、再帰呼び出しを避けるための最適化 (`propagate`, `checkDirty` 関数) が施されており、効率的な更新を実現しています。
+内部の処理では、`propagate` 関数による変更の伝播、`checkDirty` 関数によるダーティチェックなど、再帰呼び出しを避けるための最適化が施されており、効率的な更新を実現しています。
 
 また、`createReactiveSystem()` を使うことで、alien-signalsのコアアルゴリズムを再利用して、独自のSignals APIの構築も可能です。
 
@@ -143,9 +141,9 @@ const system = createReactiveSystem({
 });
 ```
 
-### 派生プロジェクト(2025/3/15時点)
+### 派生プロジェクト
 
-alien-signalsは、現在さまざまなフレームワークや言語で派生して実装が進められています。以下はその派生プロジェクトの一部です。
+alien-signalsは、現在さまざまなフレームワークや言語で派生して実装が進められています。2025年3月時点での派生プロジェクトは以下の通りです。
 
 - [YanqingXu/alien-signals-in-lua](https://github.com/YanqingXu/alien-signals-in-lua)
 - [medz/alien-signals-dart](https://github.com/medz/alien-signals-dart)
@@ -167,9 +165,9 @@ alien-signalsのようなライブラリや各フレームワークによるSign
 
 ## まとめ
 
-- リアクティブプログラミングは、現代のフロントエンドフレームワークにおける重要な概念であり、状態の変化に応じてUIを効率的に更新するための基盤となる
+- リアクティブは、現代のフロントエンドフレームワークにおける重要な概念であり、状態の変化に応じてUIを効率的に更新するための基盤となる
 - 複数の主要なフレームワークが、それぞれ独自の方法でリアクティビティを実現しているが、近年「Signals」というパターンに収束する傾向が見られる
-- alien-signalsは、軽量なリアクティブプログラミングのライブラリであり、Vue 3.6から採用されている
+- alien-signalsは、軽量なリアクティブプログラミングのライブラリであり、Vue 3.6から採用されることになった
 - TC39におけるSignalsの標準化の動きは、JavaScriptエコシステム全体に大きな影響を与える可能性があり、フレームワーク間の相互運用性や開発の共通理解を促進することが期待される
 
 ## 宣伝: Vue.js v-tokyo Meetup #22
@@ -184,6 +182,7 @@ alien-signalsやVue.jsについてはもちろん、PreactやAngular、Svelteな
 
 * [Reactive programming - Wikipedia](https://en.wikipedia.org/wiki/Reactive_programming)
 * [The Reactive Manifesto](https://www.reactivemanifesto.org/)
+* [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
 * [pzuraq | blog | What Is Reactivity?](https://www.pzuraq.com/blog/what-is-reactivity)
 * [pzuraq | blog | What Makes a Good Reactive System?](https://www.pzuraq.com/blog/what-makes-a-good-reactive-system#observables-streams-and-rxjs)
 * [EmberConf 2024 - Standardizing Autotracking Via TC39 Signals with Daniel Ehrenberg](https://youtu.be/ji7zSHCX6d8?list=TLGGE0qWPG3HOW4xNTAzMjAyNQ)
