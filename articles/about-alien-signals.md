@@ -58,15 +58,11 @@ MVCアプリケーションで、モデルの変更を監視しているビュ�
 
 ```mermaid
 flowchart LR
-    subgraph Publishers
-        P[Publisher]
-    end
+    P[Publisher]
 
     B[Event Broker]
 
-    subgraph Subscribers
-        S[Subscriber]
-    end
+    S[Subscriber]
 
     P -->|発行| B
 
