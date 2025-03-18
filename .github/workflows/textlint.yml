@@ -15,6 +15,6 @@ jobs:
           node-version: "latest"
       - name: textlint
         run: |
-          npx textlint articles/**/*
+          npx textlint articles/*.md
         env:
           CI: true
