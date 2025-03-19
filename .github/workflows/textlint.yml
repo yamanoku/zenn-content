@@ -1,0 +1,20 @@
+name: textlint
+on: [pull_request]
+jobs:
+  textlint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+      - name: Setup node/npm
+        uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - name: textlint
+        run: |
+          npm ci
+          npx textlint articles/*.md
+        env:
+          CI: true
