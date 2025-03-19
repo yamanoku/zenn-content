@@ -2,7 +2,6 @@ name: textlint
 on: [pull_request]
 jobs:
   textlint:
-    name: runner / textlint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,6 +14,7 @@ jobs:
           node-version: "latest"
       - name: textlint
         run: |
+          npm ci
           npx textlint articles/*.md
         env:
           CI: true
