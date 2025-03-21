@@ -126,6 +126,8 @@ Webフロントエンドにおけるリアクティブプログラミングの�
 
 それぞれのAPIは異なりますが、[Solid](https://www.solidjs.com/docs/latest/api#createsignal)をはじめ、[Angular](https://angular.dev/guide/signals)、[Preact](https://preactjs.com/guide/v10/signals/)、[Qwik](https://qwik.dev/docs/components/state/#usesignal)など、多くのモダンなフレームワークがSignalsを採用しています。
 
+Vue.jsでのComposition APIである [`ref`](https://vuejs.org/api/reactivity-core.html#ref) も、Signalsと似た概念として設計されています。PreactとQwikでは [`shallowRef`](https://vuejs.org/api/reactivity-advanced.html#shallowref) と似たような形で設計されております（`.value` プロパティでアクセス、値を通じて作用している部分）。SolidとAngularは異なるAPIを提供していますが、いずれも `shallowRef` を活用して再現できます。詳しくは[API 設計のトレードオフ](https://vuejs.org/guide/extras/reactivity-in-depth#api-design-trade-offs)の章をご参照してください。
+
 ## alien-signalsとは？
 <!-- textlint-disable -->
 ![alien-signalsのロゴ](https://github.com/stackblitz/alien-signals/raw/master/assets/logo.png =300x)
@@ -217,6 +219,10 @@ Vue.js日本ユーザーグループが主催する「Vue.js v-tokyo Meetup #22�
 https://vuejs-meetup.connpass.com/event/343338/
 
 alien-signalsやVue.jsについてはもちろん、PreactやAngular、Svelteなどのフレームワークにおけるリアクティブについても学ぶことができる貴重な機会です。ぜひご参加ください！
+
+## 謝辞
+
+本記事は、NotebookLM Plusにより関連情報の要約・整理、[ubugeeei](https://github.com/ubugeeei)さんと[ナイトウ](https://x.com/engineer_naito)さんより記事のレビューいただけました。感謝申し上げます。
 
 ## 参考情報
 
