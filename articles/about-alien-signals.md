@@ -223,7 +223,7 @@ alien-signalsやVue.jsについてはもちろん、PreactやAngular、Svelteな
 
 ## 謝辞
 
-本記事は、NotebookLM Plusにより関連情報の要約・整理、[ubugeeei](https://github.com/ubugeeei)さんと[ナイトウ](https://x.com/engineer_naito)さんより記事のレビューいただけました。感謝申し上げます。
+本記事は、NotebookLM Plusにより関連情報の要約・整理をしてもらい作成されました。本記事のレビューについては[ubugeeei](https://github.com/ubugeeei)さん、[ナイトウ](https://github.com/engineer-naito/)さん、[GANGAN](https://github.com/shinGangan)さんよりしていただけました。感謝申し上げます。
 
 ## 参考情報
 
