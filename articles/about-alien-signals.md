@@ -53,9 +53,9 @@ MVCアプリケーションで、モデルの変更を監視しているビュ�
 
 このリアクティビティについての源泉を知るために、リアクティブプログラミングについても触れておきましょう。
 
-リアクティブプログラミングは非同期でのデータの流れ（ストリーム）を扱うプログラミングスタイルです。一般には「Publish-Subscribe（通称Pub-Sub）」モデルを採用してデータストリームを扱っています。これはGoFのオブザーバーパターン[^7]に代わるものとされています。
+リアクティブプログラミングは非同期でのデータの流れ（ストリーム）を扱うプログラミングスタイルです。一般には「Publish-Subscribe（通称Pub-Sub）」モデルを採用してデータストリームを扱っています。これはGoFのオブザーバーパターン[^1]に代わるものとされています。
 
-[^7]: [Observer](https://refactoring.guru/design-patterns/observer)
+[^1]: [Observer](https://refactoring.guru/design-patterns/observer)
 
 ```mermaid
 flowchart LR
@@ -74,21 +74,21 @@ flowchart LR
 
 リアクティブプログラミングが有用な例として、とあるデータの更新が終わった際に特定のUIを更新したり、とあるユーザーが通知を実施した際に他のユーザー全員に通知を届けたい場合が挙げられます。
 
-Webフロントエンドにおけるリアクティブプログラミングの歴史において、Knockout observablesやMeteor Tracker、RxJSのようなライブラリが基礎を築いていました。状態管理ライブラリであるMobX[^1]やXStateも、背後では同様の原理に基づいてオブジェクトのプロパティの変化を監視し、関連する部分を更新していました。
+Webフロントエンドにおけるリアクティブプログラミングの歴史において、Knockout observablesやMeteor Tracker、RxJSのようなライブラリが基礎を築いていました。状態管理ライブラリであるMobX[^2]やXStateも、背後では同様の原理に基づいてオブジェクトのプロパティの変化を監視し、関連する部分を更新していました。
 
-[^1]: [The fundamental principles behind MobX | HackerNoon](https://hackernoon.com/the-fundamental-principles-behind-mobx-7a725f71f3e8)
+[^2]: [The fundamental principles behind MobX | HackerNoon](https://hackernoon.com/the-fundamental-principles-behind-mobx-7a725f71f3e8)
 
 これらの先駆的な技術を背景に、現代の主要なフロントエンドフレームワークは、より洗練されたリアクティビティの仕組みをコア機能として取り込むようになりました。
 
-- Emberは、依存関係を自動的に追跡する `Autotracking` というリアクティビティシステム[^2]を採用している
-- Vue 2では、当初は `getter`/`setter` を使用していました[^3]が、Vue 3からは `Proxy` オブジェクトを活用した、より柔軟で高性能なリアクティビティシステムを提供している[^4]
+- Emberは、依存関係を自動的に追跡する `Autotracking` というリアクティビティシステム[^3]を採用している
+- Vue 2では、当初は `getter`/`setter` を使用していました[^4]が、Vue 3からは `Proxy` オブジェクトを活用した、より柔軟で高性能なリアクティビティシステムを提供している[^5]
 - SvelteやSolidでは仮想DOMを活用せずにコンパイラを用いてコードを変換し、変数への代入操作が直接DOMの更新を引き起こすリアクティビティモデルを実現している
 
-[^2]: [Autotracking In-Depth - In-Depth Topics - Ember Guides](https://guides.emberjs.com/release/in-depth-topics/autotracking-in-depth/)
+[^3]: [Autotracking In-Depth - In-Depth Topics - Ember Guides](https://guides.emberjs.com/release/in-depth-topics/autotracking-in-depth/)
 
-[^3]: https://v2.vuejs.org/v2/guide/reactivity
+[^4]: https://v2.vuejs.org/v2/guide/reactivity
 
-[^4]: https://vuejs.org/guide/extras/reactivity-in-depth.html
+[^5]: https://vuejs.org/guide/extras/reactivity-in-depth.html
 
 ## Push型、Pull型、Push-Pull型
 
@@ -96,7 +96,7 @@ Webフロントエンドにおけるリアクティブプログラミングの�
 
 ### Push型
 
-* このモデルでは、状態が変更されると、その状態に依存しているすべてのシステム(コンポーネントなど)に自動的に変更を通知（push）し、通知を受け取ったシステムは再計算が実行される
+* このモデルでは、状態が変更されると、その状態に依存しているすべてのシステム(コンポーネントなど)に**自動的に変更を通知（push）**し、**通知を受け取ったシステムは再計算が実行される**
 * RxJSがこのPush型のモデルを採用しており、状態の変更をストリームとして扱うことができる
 * 初期のリアクティブプログラミングではこのPush型のモデルが一般的だったが、不要な再計算やUIの早期更新の問題が指摘されていた
 
