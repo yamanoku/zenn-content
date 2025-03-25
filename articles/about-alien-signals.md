@@ -166,7 +166,7 @@ console.log(doubleCount()); // 4
 `signal` でリアクティブな値 `count` を作成し、`effect` 内でその値を監視しています。`count` の値が変更されると、`effect` 内の処理が自動的に再実行されます。
 
 ```javascript
-import { signal, effectScope } from 'alien-signals';
+import { signal, effect, effectScope } from 'alien-signals';
 
 const count = signal(1);
 
@@ -174,9 +174,9 @@ const stopScope = effectScope(() => {
   effect(() => {
     console.log(`Count in scope: ${count()}`);
   }); // Console: Count in scope: 1
-
-  count(2); // Console: Count in scope: 2
 });
+
+count(2); // Console: Count in scope: 2
 
 stopScope();
 
