@@ -18,6 +18,10 @@ https://github.com/yamanoku/baseline-mcp-server
 
 ## Baseline MCP Serverとは
 
+<!-- textlint-disable -->
+![Baseline MCP Serverのロゴ](/images/baseline-mcp-server/baseline-mcp-server-logo.png =350x)
+<!-- textlint-enable -->
+
 Baseline MCP Serverは、[Web Platform Dashboard](https://webstatus.dev/)のAPIを利用して、WebのAPI機能のBaselineステータス（ブラウザ対応状況）を取得できるMCPサーバーです。Claude DesktopやCline、VSCodeなどでMCPクライアントを通じてWeb機能のBaseline情報へアクセスできるようになります。
 
 Baselineについての詳細は「[Baseline (互換性) - MDN Web Docs 用語集](https://developer.mozilla.org/ja/docs/Glossary/Baseline/Compatibility)」を参照してください。
