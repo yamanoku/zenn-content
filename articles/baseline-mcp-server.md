@@ -8,7 +8,7 @@ published: true
 
 Model Context Protocol（MCP）、最近流行っていますね。割と簡単に作れることが売りのようです。
 
-というわけで私も勉強がてら、Web Platform APIのサポート状況を提供するMCPサーバーをOSSとして公開しました。
+というわけで私も勉強がてら、Web Platform APIからBaselineの状況を提供するMCPサーバーを作成し、OSSとして公開しました。
 
 https://jsr.io/@yamanoku/baseline-mcp-server
 
@@ -16,7 +16,7 @@ https://jsr.io/@yamanoku/baseline-mcp-server
 
 https://github.com/yamanoku/baseline-mcp-server
 
-## Baseline MCP Serverとは
+## Baseline MCP Serverとは何か
 
 <!-- textlint-disable -->
 ![Baseline MCP Serverのロゴ](/images/baseline-mcp-server/baseline-mcp-server-logo.png =350x)
@@ -36,9 +36,9 @@ LLMモデルは知識カットオフなどの制約があるため、コンテ�
 
 また、フロントエンド開発において、MCPクライアントと連携したワークフローの効率化も目指していました。この機能はBaselineではどのステータスだったのか？ということをいちいちMDNやCan I Useなどから確認する手間を省き、AIエージェントにBaselineに関する使い方を把握してもらい命令させることで開発の生産性向上に貢献したいと考えています。
 
-## なぜDenoを推奨しているのか
+## なぜDenoのランタイムで実装しているのか
 
-Baseline MCP ServerではランタイムとしてDenoを推奨しています。Node.jsやBunでも使用はできるのですが、この選択にはセキュリティ上の理由があります。
+Baseline MCP ServerではランタイムとしてDenoをサポートしています。記事執筆時点ではNode.jsやBunでのサポートはありませんが、この選択にはセキュリティ上の理由があります。
 
 MCPサーバーは本質的に外部からの入力を処理し、外部APIと通信するため、セキュリティリスクが存在します。Denoはデフォルトで安全なパーミッションモデルを採用しており、明示的に許可されたネットワークドメインにのみアクセスできるような制限が可能です。
 
@@ -58,9 +58,13 @@ npx -y @organization/some-mcp-server
 
 MCPサーバーのセキュリティリスクについて詳しく知りたい方は、[MCPことはじめ / MCPサーバーのセキュリティリスク](https://findy-code.io/media/articles/modoku20250404-yusuktan)という記事を参照することをお勧めします。Baseline MCP Serverでは、これらのリスクを念頭に置いて、より安全に使用もらうことを推奨しています。
 
+また、Docker環境がある場合は以下、Dockerイメージから使うこともできます。
+
+https://github.com/yamanoku/baseline-mcp-server/blob/919596d85371a0392124b911756b63bcbd19ab2f/Dockerfile
+
 ## まとめ
 
-Baseline MCP Serverを使うことで、LLMモデルは常に最新のWeb Platform APIのサポート状況へアクセスできるようになります。フロントエンドエンジニアがAIを活用する際、より信頼性の高い情報を得ることができるようになるでしょう。
+Baseline MCP Serverを使うことで、LLMモデルは常に最新のWeb Platform APIよりBaselineの状況へアクセスできるようになります。フロントエンドエンジニアがAIを活用する際、より信頼性の高い情報を得ることができるようになるでしょう。
 
 MCPの可能性はまだまだ広がっており、今後もWeb開発者とAIの連携をより強化するツールを開発していきたいと考えています。セキュリティを考慮した実装アプローチによって、安全かつ実用的なツールとなることを目指しています。
 
