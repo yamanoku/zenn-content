@@ -36,7 +36,7 @@ LLMモデルは知識カットオフなどの制約があるため、コンテ�
 
 また、フロントエンド開発において、MCPクライアントと連携したワークフローの効率化も目指していました。この機能はBaselineではどのステータスだったのか？ということをいちいちMDNやCan I Useなどから確認する手間を省き、AIエージェントにBaselineに関する使い方を把握してもらい命令させることで開発の生産性向上に貢献したいと考えています。
 
-## なぜDenoのランタイムで実装しているのか
+## なぜDenoから動作するようにしているのか
 
 Baseline MCP ServerではランタイムとしてDenoをサポートしています。記事執筆時点ではNode.jsやBunでのサポートはありませんが、この選択にはセキュリティ上の理由があります。
 
@@ -56,9 +56,9 @@ npx -y @organization/some-mcp-server
 
 この `npx -y` アプローチには、パッケージのインストールと実行を無条件に許可するため、潜在的なセキュリティリスクがあります。公式ではない野良のMCPサーバーを無意識的に使ってしまうことで、ユーザーが知らないうちに悪意のあるコードを実行してしまいかねません。
 
-MCPサーバーのセキュリティリスクについて詳しく知りたい方は、[MCPことはじめ / MCPサーバーのセキュリティリスク](https://findy-code.io/media/articles/modoku20250404-yusuktan)という記事を参照することをお勧めします。Baseline MCP Serverでは、これらのリスクを念頭に置いて、より安全に使用もらうことを推奨しています。
+MCPサーバーのセキュリティリスクについて詳しく知りたい方は、[MCPことはじめ / MCPサーバーのセキュリティリスク](https://findy-code.io/media/articles/modoku20250404-yusuktan)、[MCPサーバーを安全に動かすための工夫](https://blog.lai.so/crashing-mcp-server/)という記事を参照することをお勧めします。Baseline MCP Serverでは、これらのリスクを念頭に置いて、より安全に使用もらうことを推奨しています。
 
-また、Docker環境がある場合は以下、Dockerイメージから使うこともできます。
+また、Docker環境がある場合は以下、Dockerfileから使うこともできます。
 
 https://github.com/yamanoku/baseline-mcp-server/blob/919596d85371a0392124b911756b63bcbd19ab2f/Dockerfile
 
