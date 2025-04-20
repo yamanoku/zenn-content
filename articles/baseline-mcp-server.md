@@ -75,3 +75,11 @@ https://github.com/yamanoku/baseline-mcp-server
 ## 謝辞
 
 本記事は、Claude 3.7 Sonnetに記事作成を協力してもらい作成されました。感謝申し上げます。
+
+## 追記 （2025-04-20）
+
+[WebDX Community Group](https://www.w3.org/community/webdx/)が運営するBaselineホームページ内の[Baseline in the wild](https://web-platform-dx.github.io/web-features/baseline-in-the-wild/)にて、Baseline MCP ServerをBaselineの活用事例としてToolsのセクションに追加させてもらいました。
+
+![Baselineサイトのスクリーンショット。画面の左半分にはBaselineのロゴと「Baseline gives you clear information about which web platform features work across browsers.」という説明文、その下には関連するリンク一覧がある。右半分には様々なBaselineに関連ツールやプロジェクトのリストがあり、赤枠で強調されている項目にはBaseline MCP Serverが載っていて、説明文には「Baseline MCP Server, a Model Context Protocol (MCP) server that provides Baseline information for web features.」と書かれている。](https://i.gyazo.com/32972dc3d6b79d703bfbebfd6c84e38b.png)
+
+https://github.com/web-platform-dx/web-features/pull/2877
