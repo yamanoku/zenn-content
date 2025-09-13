@@ -21,6 +21,8 @@ export default defineNuxtConfig({
 
 ## `compatibilityDate` は何に使われているの？
 
+この設定は、Nuxtの[Pull Request #27512](https://github.com/nuxt/nuxt/pull/27512)で2024年6月に追加されたものです。
+
 Nuxtの公式ドキュメントを見てみると以下のように記載されています。
 
 > ## compatibilityDate
@@ -125,9 +127,13 @@ https://github.com/unjs/compatx/blob/4d7c1e140af76d1514c937c6101eda1c637907ec/sr
 - `compatibilityDate` の設定はNuxtのコア機能には直接影響しない
 - `compatibilityDate` は日付または `latest` を指定したり、プリセットごとに個別に指定したりできる
 
-`compatibilityDate` を変更する際は、対象のデプロイ環境における挙動の変化も十分に確認したうえで、慎重に設定を更新することが重要です。
+`compatibilityDate` を変更する際は、対象のデプロイ環境における挙動の変化も十分に確認したうえで、慎重に設定を更新することが重要です。特に以下のようなポイントをチェックすることで、予期せぬ不具合を防ぐことにもつながります。
 
-今回の記事の内容は、Alexander Lichter氏の動画でも解説されています。併せてご覧になってみてください。
+- デプロイ環境ごとでの（AWS、Netlify, Vercel等）でビルド・デプロイ時のログや警告は出ていないか
+- Nitro経由で提供されるAPIレスポンスの形式やステータスコードが変更されていないか
+- Nuxt Imageを使用している場合のモジュールの挙動（画像最適化・キャッシュ）は意図したものか
+
+今回の記事の内容はAlexander Lichter氏の動画でも解説されています。併せてご覧になってみてください。
 
 https://www.youtube.com/watch?v=RqOPfhAWSl0
 
