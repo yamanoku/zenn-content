@@ -2,7 +2,7 @@
 title: "Nuxt設定ファイルにあるcompatibilityDateとは何か？"
 emoji: "⚙"
 type: "tech"
-topics: ["Nuxt", "Nitro"]
+topics: ["Nuxt", "Nitro", "cloudflare", "Vercel", "Netlify"]
 published: true
 publication_name: "comm_vue_nuxt"
 ---
