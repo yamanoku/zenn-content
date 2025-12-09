@@ -4,6 +4,7 @@ emoji: "👀"
 type: "idea"
 topics: ["react", "reacttokyo"]
 published: true
+published_at: 2025-12-10 10:00
 ---
 
 :::message
