@@ -11,7 +11,7 @@ published_at: 2025-12-10 10:00
 この記事は[React Tokyo Advent Calendar 2025](https://qiita.com/advent-calendar/2025/react-tokyo)の10日目の記事です。
 :::
 
-こんにちは、[yamanoku](https://x.com/yamanoku)です。本日はReact Tokyoのアドベントカレンダー企画ということで、コミュニティ参加者から見たReact Tokyoの取り組みとその印象について書いてみました。あくまでも、運営メンバーではなく一個人の解釈としてお読みいただけると幸いです。
+こんにちは、[yamanoku](https://x.com/yamanoku)です。本日はReact Tokyoのアドベントカレンダー企画ということで、コミュニティ参加者から見たReact Tokyoの取り組みの印象と考えてみたことについてを書いてみました。あくまでも、運営メンバーではなく一個人の解釈としてお読みいただけると幸いです。
 
 React Tokyoへの所感記事は[Wonder](https://x.com/iwonder118)さんも書かれているので併せてご覧になってみてください。
 
