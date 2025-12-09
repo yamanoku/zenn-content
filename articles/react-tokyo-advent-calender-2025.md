@@ -11,18 +11,20 @@ published_at: 2025-12-10 10:00
 この記事は[React Tokyo Advent Calendar 2025](https://qiita.com/advent-calendar/2025/react-tokyo)の10日目の記事です。
 :::
 
-こんにちは、[yamanoku](https://yamanoku.net)です。本日はReact Tokyoのアドベントカレンダー企画ということで、コミュニティ参加者から見たReact Tokyoの取り組みとその印象について書いてみました。あくまでも、運営メンバーではなく一個人の解釈としてお読みいただけると幸いです。
+こんにちは、[yamanoku](https://x.com/yamanoku)です。本日はReact Tokyoのアドベントカレンダー企画ということで、コミュニティ参加者から見たReact Tokyoの取り組みとその印象について書いてみました。あくまでも、運営メンバーではなく一個人の解釈としてお読みいただけると幸いです。
+
+React Tokyoへの所感記事は[Wonder](https://x.com/iwonder118)さんも書かれているので併せてご覧になってみてください。
+
+https://zenn.dev/iwonder/articles/2c27abb35eaa4e
 
 # 自己紹介
 
-改めまして、yamanokuと申します。一児の父で会社員をやっている者です。
+改めまして、[yamanoku](https://x.com/yamanoku)と申します。一児の父で会社員をやっている者です。
 技術コミュニティウォッチャーとして興味のある国内・国外の技術コミュニティに参加してそれぞれの活動を追っています。主に[Vue.js Japan User Group](https://vuejs-jp.org/)のコミュニティや[chibivue land](https://github.com/chibivue-land)コミュニティで活動しています。
 
 # なぜ技術コミュニティをウォッチしているのか
 
-主にWebフロントエンドにまつわる最新の技術動向を追うのが趣味なのですが、その技術を実際にどう活用しているかについても興味があります。そのため技術コミュニティでの発信を見に行くことで情報収集ができると思い参加しています。
-
-もちろんウォッチャーとしてただのテイカーとなるだけでなく、自分から提供できる情報や交流する材料があれば、積極的に発信しています。
+主にWebフロントエンドにまつわる最新の技術動向を追うのが趣味なのですが、その技術を実際にどう活用しているか・どのような感想をもっているかについても興味があります。技術コミュニティを見に行くことでそれらに関する情報収集ができると思って参加しています。もちろんウォッチャーとしてただのテイカーとなるだけでなく、自分から提供できる情報や交流する材料があれば、積極的に発信しています。
 
 React Tokyo以外の国内技術者コミュニティには以下のところに参加しています（過去参加していたものも含む）。
 
@@ -58,30 +60,30 @@ React Tokyo以外の国内技術者コミュニティには以下のところに
 
 React Tokyoについて触れる前に、まずコロナ禍以前の国内のReactコミュニティの動向について触れてみたいと思います。
 
-国内ではReact Japan User Groupというグループがあり、connpass上ではReact.js meetupという勉強会イベントが開催されていました。[初回イベント](https://reactjs-meetup.connpass.com/event/11232/)は2015/04/24に開催され、定員150人のところ392人もの申し込みがあったことから、かなり期待値の高いイベントであることが分かります。他にもMeetup上では、ReactJS Tokyoというグループでの勉強会もあり、SlackグループとしてのReactコミュニティも存在していました。
+国内ではReact Japan User Groupというグループがあり、connpass上ではReact.js meetupという勉強会イベントが開催されていました。[初回イベント](https://reactjs-meetup.connpass.com/event/11232/)は2015/04/24に開催され、定員150人のところ392人もの申し込みがあったことから、かなり期待値の高いイベントであることが分かります。他にも[ReactJS Tokyo](https://www.meetup.com/ja-jp/reactjs-tokyo/)というグループでの勉強会もありました。
 
 しかしながらコロナ禍を経て、国内のReactコミュニティのオフラインでの活動は難しくなっていきました。React Japan User Groupにより、[React Conf Japan](https://reactconf.jp/2020/)というカンファレンスも企画されていましたが、[コロナ禍の影響で中止](https://reactconf.jp/2020/entries/cancellation-announcement/)となりました。
 
-コロナ禍のフロントエンドにまつわる技術コミュニティはAngular、Vue.js、Svelteがそれぞれ活動場所をつくりオンラインでの活動を中心としていましたが、Reactについてはフロントエンド勉強会で発表題材としては上がるものの、「人が集まれるコミュニティの活動」はほとんど見かけなかった印象です。
-このコミュニティとしての場所がなくなったことについては、場所として機能していたSlackの無料プランでのログ保持期間が定められてしまったことも影響していると考えています。
+コロナ禍におけるフロントエンド技術コミュニティはAngular、Vue.js、Svelteがそれぞれ活動場所をつくりオンラインでの活動を中心としていましたが、Reactについてはフロントエンド勉強会で発表題材としては上がるものの、「人が集まれるコミュニティの場」はほとんど見かけなかった印象があります。
+このコミュニティとしての場所がなくなったことに要因として、場所として機能していた[Slackの無料プランでのログ保持期間が定められてしまった](https://slack.com/intl/ja-jp/help/articles/27204752526611-Slack-%E3%81%AE%E3%83%95%E3%83%AA%E3%83%BC%E3%83%97%E3%83%A9%E3%83%B3%E3%81%AE%E6%A9%9F%E8%83%BD%E5%88%B6%E9%99%90)ことも影響していると考えています。
 
-コロナ禍や副次的な要因でReactコミュニティは以前よりも見かけなくなってしまいましたが、関西でのReactユーザーコミュニティの[React Osaka](https://react-osaka.connpass.com/)は昨年8月より活動再開しています。
+コロナ禍や副次的な要因でReactコミュニティは以前よりも見かけなくなってしまいましたが、関西でのReactユーザーコミュニティの[React Osaka](https://react-osaka.connpass.com/)は昨年8月より活動再開しています。[Remix Tokyo Meetup](https://www.meetup.com/ja-jp/remix-tokyo/)もプレイベントを経て同年9月からコミュニティ活動が始まっています。
 
 # React Tokyoの登場
 
-昨年の12月に[React Tokyo](https://react-tokyo.vercel.app/)というコミュニティが登場しました。このコミュニティはDaishi Katoさんが「Webアプリ開発塾」「Meteor Fan」「React Fan」として続けていたもので、その延長線上で新たに立ち上げられたコミュニティです。
-コミュニティを作るに至った経緯については以下の記事で詳しく書かれています。
+昨年の12月より[React Tokyo](https://react-tokyo.vercel.app/)というコミュニティが登場しました。
+このコミュニティはDaishi Katoさんが「Webアプリ開発塾」「Meteor Fan」「React Fan」として続けていたもので、その延長線上で新たに立ち上げられたコミュニティです。コミュニティを作るに至った経緯については以下の記事で詳しく書かれています。
 
 https://zenn.dev/dai_shi/articles/9f2760086fb31a
 
-私はX(旧Twitter)でもReact Tokyoの存在を知り、技術コミュニティウォッチャーとして参加してみることにしました。
+私はX(旧Twitter)でもReact Tokyoの存在を知り、技術コミュニティウォッチャーとしてDiscordサーバーへ参加してみることにしました。
 
 ![yamanokuが「こんにちは。Xの宣伝を見かけて参加しました。yamanokuと言います。よろしくお願いします。業務ではVue.js/Nuxtメインですが、ReactやNext.jsほかフレームワークにも興味があるフロントエンドエンジニアです。」と記載しポートフォリオサイトのURLも添付して自己紹介している](/images/react-tokyo-advent-calender-2025/join-react-tokyo-discord.png)
-*React TokyoのDiscordに参加したときのログ*
+*React TokyoのDiscordサーバーへ参加したときのログ*
 
 # React Tokyoの取り組み
 
-ようやく本題に入りますが、コミュニティ参加者として見てきたReact Tokyoの取り組みを紹介していきます。
+ようやく本題に入りますが、コミュニティ参加者として見てきたReact Tokyoの取り組みにどういうものがあったかを紹介していきます。
 
 ## オンライン上で運営チームが精力的に活動している
 
@@ -167,7 +169,7 @@ https://www.docswell.com/s/hk_it7/Z446WL-community-toukatsu-dev
 ここからは個人的な見解を述べてみたいと思います。
 
 皆さんは国内Vue.jsコミュニティの最大イベントでもある[Vue Fes Japan](https://vuefes.jp/)をご存知でしょうか。
-元々はVue.jsとNuxtにまつわるカンファレンスイベントとしてスタートしましたが、Viteの登場以来さまざまなエコシステムに影響を与え、Vue Fes Japanは今やVue.jsやNuxtだけにとどまらない幅広いフロントエンドのエコシステムを扱うカンファレンスになっています。
+元々はVue.jsとNuxtにまつわるカンファレンスイベントとしてスタートしましたが、Viteの登場以来さまざまなエコシステムに影響を与え、Vue Fes Japanは今やVue.jsやNuxtだけにとどまらない幅広い技術を扱ったカンファレンスになっています。
 
 それを象徴するかのように今年はVue.js・ViteクリエイターのEvan You氏とReactコアメンバーのDan Abramov氏、Svelte・Viteコアメンバーのdominikg氏を招いての[パネルディスカッション](https://vuefes.jp/2025/speaker?section=panel-discussion#panel-discussion)が行われ、話題になりました。
 
@@ -175,7 +177,7 @@ https://www.docswell.com/s/hk_it7/Z446WL-community-toukatsu-dev
 
 フロントエンド開発の潮流が激しかった過去においてはそのようなことはあまり考えられなかったのですが、今はそうした動きも落ち着き、いかに安定したアプリケーションを提供できるかに重きを置いていく時代になってきていると考えています。それぞれの技術優位性で反目し合うことよりも、どのような解決法があるのか・どういう課題があるのかをお互いに共有し合い、より良いものを相互的に作っていくことができるのではないかと考えています。
 
-今から何が解決できるかということは正直わかりません。ですが、それぞれのことを知っていくことは、今後のフロントエンド開発にとってマイナスなことにはならないのではないかと私は考えています。だからこそ業務でReactを使わない私も、React Tokyoに参加してみています。
+今から何が解決できるかということは正直わかりません。ですが、それぞれのことを知っていくことは、今後のフロントエンド開発にとってマイナスなことにはならないのではないかと私は考えています。**だからこそ業務でReactを使わない私も、React Tokyoに参加しています。**
 
 # あなたもReact Tokyoに参加してみませんか
 
@@ -184,7 +186,8 @@ https://www.docswell.com/s/hk_it7/Z446WL-community-toukatsu-dev
 
 https://discord.com/invite/5B9jYpABUy
 
-また来年2月28日には[React Tokyoフェス2026](https://react-tokyo.vercel.app/fes2026)というReact Tokyoコミュニティのお祭り型イベントが開催されます。ポスターセッションや参加者同士の交流ブース、スポンサービスやライブコーディングセッションなどの企画があるそうです。Discordサーバーに参加したのちconnpass上で参加申し込みができます。
+また来年2月28日には[React Tokyoフェス2026](https://react-tokyo.vercel.app/fes2026)というReact Tokyoコミュニティのお祭り型イベントが開催されます。
+ポスターセッションや参加者同士の交流ブース、スポンサービスやライブコーディングセッションなどの企画があるそうです。Discordサーバーに参加したのちconnpass上で参加申し込みができます。
 
 https://react-tokyo.connpass.com/event/366003/
 
