@@ -10,7 +10,7 @@ published: true
 この記事は[Svelte Advent Calendar 2025](https://qiita.com/advent-calendar/2025/svelte)の18日目の記事です。
 :::
 
-こんにちは、[yamanoku](https://x.com/yamanoku)です。私は現在Navigation APIとそれに関連するAPIやエコシステムを調べるアドベントカレンダーの「[ひとりNavigation API Advent Calendar](https://qiita.com/advent-calendar/2025/navigation-api)」を実施しています。
+こんにちは、[yamanoku](https://x.com/yamanoku)です。私は現在[Navigation API](https://developer.mozilla.org/en-US/docs/Web/API/Navigation_API)とそれに関連するAPIやエコシステムを調べるアドベントカレンダーの「[ひとりNavigation API Advent Calendar](https://qiita.com/advent-calendar/2025/navigation-api)」を実施しています。
 
 その中でSPAにおけるクライアントサイドルーティングがどのような仕組みになっているかを調べており、[SvelteKit](https://svelte.dev/docs/kit/introduction)の内部を調査しています。今日はその実装内部で興味をもった部分があったので、それをまとめて記事にしてみました。
 
