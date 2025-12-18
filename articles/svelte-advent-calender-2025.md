@@ -16,7 +16,7 @@ published: true
 
 # Sveltekitのクライアントサイドルーティングの仕組み
 
-SvelteKitのクライアントルーティングは、他のルーターライブラリと同様にHistory APIとLocation APIを中心に構築されています。主にHistory APIの`pushState`や`replaceState`を用いて、ルーティング処理を行っています。
+SvelteKitのクライアントルーティングは、他のルーターライブラリと同様にHistory APIとLocation APIを中心に構築されています。主にHistory APIの `pushState` や `replaceState` を用いて、ルーティング処理を行っています。
 
 SvelteKitではクライアントルーティング遷移をコンポーネント上で表現するにあたり、特定のルーター用のコンポーネント（`<Link>` や `<NuxtLink>` のようなもの）を呼び出すことはありません。代わりにHTMLの `<a>` 要素を使って表現できます。これは他メタフレームワークと比較して個人的に面白いなと思っている部分です。
 
