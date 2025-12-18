@@ -1,5 +1,5 @@
 ---
-title: "SvelteKitのクライアントルーティングはどういう仕組みなの？"
+title: "SvelteKitのクライアントサイドルーティングはどういう仕組みなの？"
 emoji: "🔀"
 type: "tech"
 topics: ["svelte", "sveltekit"]
@@ -16,15 +16,15 @@ published: true
 
 # Sveltekitのクライアントサイドルーティングの仕組み
 
-SvelteKitのクライアントルーティングは、他のルーターライブラリと同様にHistory APIとLocation APIを中心に構築されています。主にHistory APIの `pushState` や `replaceState` を用いて、ルーティング処理を行っています。
+SvelteKitのクライアントサイドルーティングは、他のルーターライブラリと同様にHistory APIとLocation APIを中心に構築されています。主にHistory APIの `pushState` や `replaceState` を用いて、ルーティング処理を行っています。
 
-SvelteKitではクライアントルーティング遷移をコンポーネント上で表現するにあたり、特定のルーター用のコンポーネント（`<Link>` や `<NuxtLink>` のようなもの）を呼び出すことはありません。代わりにHTMLの `<a>` 要素を使って表現できます。これは他メタフレームワークと比較して個人的に面白いなと思っている部分です。
+SvelteKitではクライアントサイドルーティング遷移をコンポーネント上で表現するにあたり、特定のルーター用のコンポーネント（`<Link>` や `<NuxtLink>` のようなもの）を呼び出すことはありません。代わりにHTMLの `<a>` 要素を使って表現できます。これは他メタフレームワークと比較して個人的に面白いなと思っている部分です。
 
 しかし、ただの `<a>` 要素であればHTMLでのリンクとしてそのまま遷移してしまいます。それを防ぐためにSvelteKitでは通常のリンク遷移のインターセプト（中断）処理を実装して制御しています。今回はその内容を紹介していきます。
 
 # インターセプト処理を見る
 
-クライアントルーティング処理は `kit/packages/kit/src/runtime/client/client.js` 上で実装されています。その中にインターセプト処理も含まれております。
+クライアントサイドルーティング処理は `kit/packages/kit/src/runtime/client/client.js` 上で実装されています。その中にインターセプト処理も含まれております。
 
 https://github.com/sveltejs/kit/blob/85a57a03160ab68dc45da6acd57ac8670d7b1d26/packages/kit/src/runtime/client/client.js#L2461-L2579
 
@@ -128,10 +128,10 @@ navigation.addEventListener("navigate", e => {
 
 リンククリック処理をインターセプトせずとも、Navigation APIの `intecept` メソッドよりSvelteKitの `navigate` 関数を渡すことで簡略化できるかもしれません（詳細な内部実装までは追えてないのであくまで想像です）。
 
-参考までにHistory APIで実装したクライアントルーティングとNavigation APIのクライアントルーティングのサンプルページがあるので実装内容を比較してみてください。
+参考までにHistory APIで実装したクライアントサイドルーティングとNavigation APIのクライアントサイドルーティングのサンプルページがあるので実装内容を比較してみてください。
 
-- [History APIで実装したクライアントルーティング](https://codepen.io/yamanoku/pen/JoXepMb)
-- [Navigation APIで実装したクライアントルーティング](https://codepen.io/yamanoku/pen/dPMEvOV)
+- [History APIで実装したクライアントサイドルーティング](https://codepen.io/yamanoku/pen/JoXepMb)
+- [Navigation APIで実装したクライアントサイドルーティング](https://codepen.io/yamanoku/pen/dPMEvOV)
 
 来年より本格的にクロスブラウザ対応となるNavigation APIですが、SvelteKit以外でも様々なルーティングライブラリに影響を与えてくれると思っています。来年以降でのNavigation APIの活用が広がっていくのが楽しみです。
 
