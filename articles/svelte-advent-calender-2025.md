@@ -1,6 +1,6 @@
 ---
 title: "SvelteKitのクライアントルーティングはどういう仕組みなの？"
-emoji: "📬"
+emoji: "🔀"
 type: "tech"
 topics: ["svelte", "sveltekit"]
 published: true
@@ -136,3 +136,7 @@ navigation.addEventListener("navigate", e => {
 来年より本格的にクロスブラウザ対応となるNavigation APIですが、SvelteKit以外でも様々なルーティングライブラリに影響を与えてくれると思っています。来年以降でのNavigation APIの活用が広がっていくのが楽しみです。
 
 Navigation APIについての仕様や動向は引き続き[ひとりNavigation API Advent Calendar](https://qiita.com/advent-calendar/2025/navigation-api)で追っていきたいと思っております。興味ある方は是非ご覧になってみてください。
+
+## 謝辞
+
+本記事は、DeepWikiによるリポジトリ内要約を協力してもらい作成されました。感謝申し上げます。
