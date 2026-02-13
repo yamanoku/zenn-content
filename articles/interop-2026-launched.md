@@ -22,96 +22,124 @@ published: true
 
 最新の安定版ブラウザでのリリースにおいては全体で95点まで網羅されており、プレリリース版においては97点まで網羅されていました。安定版でのテスト網羅率ではFirefoxが一歩リードしている形となっています。この結果はInterop 2024でも同様の結果となっています。
 
-スコア自体は昨年同様高い数値をキープしており、安定版においてはChromeとEdgeでは昨年よりも1点スコアが高まっています。一方で調査対象は昨年と比較して
+スコア自体は昨年同様高い数値をキープしており、安定版においてはChromeとEdgeでは昨年よりも1点スコアが高まっています。一方で調査対象は36点と昨年と比較して低い結果となっています。特に[Privacy Testing](https://github.com/web-platform-tests/interop-privacy)はまったく着手されていない結果となっています。
 
 :::details 2025年の重点対象リスト（完了・継続含む）
 
 * CSS Anchor positioning
-* `backdrop-filter`
+* `backdrop-filter` - **完了**
 * Core Web Vitals (LCP, INP)
-* `<details>` element
+* `<details>` element - **完了**
 * Layout (Flexbox/Grid/Subgrid)
 * Modules (JSON modules)
 * Navigation API
 * Pointer and Mouse events
 * `@scope`
-* `scrollend` event
+* `scrollend` event - **完了**
 * Storage Access API
-* `text-decoration`
+* `text-decoration` - **完了**
 * URLPattern
 * View Transition API (SPA)
-* WebAssembly (JS String Builtins)
+* WebAssembly (JS String Builtins) - **完了**
 * WebRTC
-* Writing modes
-* Mutation Eventの削除
+* Writing modes - **完了**
+* Mutation Eventの削除 - **完了**
 :::
+
+
+ちなみに、2/13時点でのInterop 2025と2026のダッシュボードをスコアを比較すると、Interop 2026ではChromeとEdgeのスコアは下がるもののFirefoxとSafariのスコアは高めになっており、全体のスコアも高い結果となっております。
+
+| Interop 2025 - 2025/2/13時点のスコア | Interop 2026 - 2026/2/13時点のスコア |
+| --- | --- |
+| ![Interop 2025のダッシュボード。Interop全体が33点、Investigationが0の指標が上部にあり、Chrome Canaryが91点、Edge Devが88点、Firefox Nightlyが52点、Safari Technology Previewが55点と下部に表示されている。](/images/interop-2026-launched/dashboard-2025.png) | ![Interop 2026のダッシュボード。Interop全体が43点、Investigationが0の指標が上部にあり、Chrome Canaryが87点、Edge Devが82点、Firefox Nightlyが63点、Safari Technology Previewが64点と下部に表示されている。](/images/interop-2026-launched/dashboard-2026.png) |
 
 ## Interop 2026での重点対象について
 
-ここからは、Interop 2026で新しく重点対象として追加されたもの、および重要なアップデートがあった機能について見ていきます。2026年は20の重点対象と4つの調査領域で構成され、2025年からの継続した課題も多いです。
+ここからは、Interop 2026で新しく重点対象として追加されたもの、および重要なアップデートがあった機能について見ていきます。2026年は20の重点対象と4つの調査領域で構成され、2025年からの継続された課題も存在します。
 
 ### Container style queries
 
-Container style queriesは、`@container`アットルールを一つ以上の`style()`関数と組み合わせて使用し、コンテナのカスタムプロパティの計算値に基づいて要素にスタイルを適用します。
+Container style queriesは、`@container` アットルールと1つ以上の `style()` 関数と組み合わせて使用し、コンテナのカスタムプロパティの計算値に基づいて要素にスタイルを適用するCSSです。
 
-- [Tests dashboard](https://wpt.fyi/results/css/css-conditional/container-queries?label=experimental&label=master&aligned&view=interop&q=label%3Ainterop-2026-container-style-queries)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@container#container_style_queries)
+```css
+@container style(--theme: dark) {
+  .card {
+    background: #1a1a1a;
+    color: #fff;
+  }
+}
+```
+
+> - [Tests dashboard](https://wpt.fyi/results/css/css-conditional/container-queries?label=experimental&label=master&aligned&view=interop&q=label%3Ainterop-2026-container-style-queries)
+> - [MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/At-rules/@container#container_style_queries)
 
 ### CSS anchor Positioning
 
-CSS Anchor positioningは、アンカーと呼ばれる要素を基準として特定の要素を、常に画面の特定の位置に固定できるCSSプロパティです。
+こちらは2025年から継続されているものです。CSS Anchor positioningは、アンカーと呼ばれる要素を基準として特定の要素を、常に画面の特定の位置に固定できるCSSプロパティです。
 
-- [Tests dashboard](https://wpt.fyi/results/css/css-anchor-position?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2025-anchor-positioning)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/Guides/Anchor_positioning)
+> - [Tests dashboard](https://wpt.fyi/results/css/css-anchor-position?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2025-anchor-positioning)
+> - [MDN](https://developer.mozilla.org/docs/Web/CSS/Guides/Anchor_positioning)
 
 ### The `attr()` CSS function
 
-`attr()`は、HTML要素の属性値を返します。その値を特定の型や単位として返すオプションもあります。
+`attr()` は、HTML要素の属性値を返します。これまではcontentプロパティでしか使えませんでしたが現在の仕様では、色・長さ・角度など、あらゆるCSSプロパティで使えるようになり、必要に応じて型変換も行われます。つまり、HTMLの属性値をそのままスタイルの一部として扱えるようになりました。
 
-- [Tests dashboard](https://wpt.fyi/results/css/css-values?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-attr&label=master&label=experimental)
-- [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/attr)
+```css
+.element {
+  color: attr(data-value color);
+}
+```
+
+> - [Tests dashboard](https://wpt.fyi/results/css/css-values?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-attr&label=master&label=experimental)
+> - [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/attr)
 
 ### The `contrast-color()` CSS function
 
-`contrast-color()`は、指定された前景色または背景色に対して、コントラストが保証された色を選択します。
+`contrast-color()` は、指定された前景色または背景色に対して、コントラストが保証された色を選択できるCSS機能です。
 
-- [Tests dashboard](https://wpt.fyi/results/css/css-color?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-contrast-color&label=master&label=experimental)
+> - [Tests dashboard](https://wpt.fyi/results/css/css-color?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-contrast-color&label=master&label=experimental)
+> - [MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Values/color_value/contrast-color)
 
 ### Custom Highlights
 
-Custom highlightsは、DOM に余分な要素を追加することなく、任意のテキスト範囲にスタイルを設定します。
+Custom highlightsは、DOMに余分な要素を追加することなく、任意のテキスト範囲にスタイルを設定するCSS機能です。
 
-- [Tests dashboard](https://wpt.fyi/results/css/css-highlight-api?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-custom-highlights&label=master&label=experimental)
+> - [Tests dashboard](https://wpt.fyi/results/css/css-highlight-api?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-custom-highlights&label=master&label=experimental)
+> - [MDN](https://developer.mozilla.org/docs/Web/API/CSS_Custom_Highlight_API)
 
 ### Dialog and popover additions
 
-`<dialog>` HTML 要素は、確認プロンプトやデータ入力用のサブウィンドウなど、モーダルまたはモードレスなダイアログボックスを表します。`popover` HTML 属性は、他のページコンテンツの上にコンテンツを表示するオーバーレイを作成します。ポップオーバーは、HTML を使用して宣言的に表示することも、`showPopover()` メソッドを使用して表示することもできます。
-
-今年の作業は以下に焦点を当てます：
+`<dialog>` HTML要素は、確認プロンプトやデータ入力用のサブウィンドウなど、モーダルまたはモードレスなダイアログボックスを表します。`popover` HTML属性は、他のページコンテンツの上にコンテンツを表示するオーバーレイを作成します。ポップオーバーは、HTMLを使用して宣言的に表示することも、`showPopover()` メソッドを使用して表示できます。今年の作業は以下に焦点を当てます。
 
 - `<dialog closedby>` 属性：ダイアログを閉じるユーザー操作を設定します。例えば、`<dialog closedby="any">` は、ダイアログの外側をクリックして閉じることを許可します。
-- `:open` CSS 擬似クラス：`<dialog>` のような開いた状態を持つ要素にマッチします。
+- `:open` CSS擬似クラス：`<dialog>` のような開いた状態を持つ要素にマッチします。
 - `popover="hint"` グローバル属性：`popover="auto"` 属性を持つ他のポップオーバーに従属するポップオーバーを作成します。これを使用すると、例えば自動ポップオーバーを閉じないツールチップを作成できます。
 
-- [Tests dashboard](https://wpt.fyi/results/?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-dialogs-and-popovers&label=master&label=experimental)
+> - [Tests dashboard](https://wpt.fyi/results/?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-dialogs-and-popovers&label=master&label=experimental)
+> - MDN docs:
+>   - [`<dialog closedby>` attribute](https://developer.mozilla.org/docs/Web/HTML/Reference/Elements/dialog#closedby)
+>   - [`:open` pseudo-class](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:open)
+>   - [`popover="hint"` attribute](https://developer.mozilla.org/docs/Web/HTML/Reference/Global_attributes/popover#hint)
 
 ### Fetch uploads and ranges
 
-`fetch()`メソッドは、非同期 HTTP リクエストを行います。
+`fetch()` メソッドは、非同期HTTPリクエストを行うAPIです。今年の作業は以下に焦点を当てます。
 
-今年の作業は以下に焦点を当てます：
+- `Body` 内の `ReadableStream`: サーバーにデータをストリーミングできるようにする
+- リクエストとレスポンスにおける `FormData` と `mime-type` のサポート
+- `Range` ヘッダーのサポート
 
-- `Body` 内の `ReadableStream`：サーバーにデータをストリーミングするため。
-- リクエストとレスポンスにおける `FormData` と `mime-type` のサポート。
-- `Range` ヘッダーのサポート。
-
-- [Tests dashboard](https://wpt.fyi/results/fetch?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-fetch&label=master&label=experimental)
+> - [Tests dashboard](https://wpt.fyi/results/fetch?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-fetch&label=master&label=experimental)
+> - MDN Docs
+>   - [ReadableStream in body](https://developer.mozilla.org/docs/Web/API/ReadableStream)
+>   - [FormData](https://developer.mozilla.org/docs/Web/API/FormData)
+>   - [Range header](https://developer.mozilla.org/docs/Web/HTTP/Reference/Headers/Range)
 
 ### IndexedDB
 
-IndexedDB API は、ローカルストレージのトランザクション型オブジェクトデータベースです。
+IndexedDB APIは、ローカルストレージのトランザクション型オブジェクトデータベースです。
 
-IndexedDB ストアまたはインデックスからレコードとその主キーを返す `IDBObjectStore` および `IDBIndex` の `getAllRecords()` メソッドに焦点を当てます。レコードはバッチ処理や逆順で読み取ることができます。`getAllRecords()` メソッドは、大規模なデータセットでの読み取り操作を高速化します。
+IndexedDBストアまたはインデックスからレコードとその主キーを返す `IDBObjectStore` および `IDBIndex` の `getAllRecords()` メソッドに焦点を当てます。レコードはバッチ処理や逆順で読み取ることができます。`getAllRecords()` メソッドは、大規模なデータセットでの読み取り操作を高速化します。
 
 ```js
 const records = await objectStore.getAllRecords({
@@ -121,54 +149,58 @@ const records = await objectStore.getAllRecords({
 });
 ```
 
-- [Tests dashboard](https://wpt.fyi/results/IndexedDB?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-indexeddb&label=master&label=experimental)
+> - [Tests dashboard](https://wpt.fyi/results/IndexedDB?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-indexeddb&label=master&label=experimental)
+> - MDN Docs
+>   - [`IDBObjectStore.getAllRecords()`](https://developer.mozilla.org/docs/Web/API/IDBObjectStore/getAllRecords)
+>   - [`IDBIndex.getAllRecords()`](https://developer.mozilla.org/docs/Web/API/IDBIndex/getAllRecords)
 
 ### JSPI for WASM
 
-Wasm（WebAssembly）は、ポータブルなバイナリ命令形式です。JavaScript Promise Integration API (JSPI) を使用すると、外部機能への同期アクセスを前提として記述された Wasm アプリケーションが、その機能が実際には非同期である環境でもスムーズに動作できるようになります。
+Wasm（WebAssembly）は、ポータブルなバイナリ命令形式です。JavaScript Promise Integration API (JSPI) を使用すると、外部機能への同期アクセスを前提として記述されたWasmアプリケーションが、その機能が実際には非同期である環境でもスムーズに動作できるようになります。
 
-- [Tests dashboard](https://wpt.fyi/results/wasm/jsapi/jspi?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-jspi-for-wasm&label=master&label=experimental)
+> - [Tests dashboard](https://wpt.fyi/results/wasm/jsapi/jspi?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-jspi-for-wasm&label=master&label=experimental)
+> - [Introducing the WebAssembly JavaScript Promise Integration API](https://v8.dev/blog/jspi)
 
 ### Media pseudo-classes
 
-`:playing`、`:paused`、`:seeking`、`:buffering`、`:stalled`、`:muted`、および `:volume-locked` CSS 擬似クラスは、その状態に基づいて `<audio>` および `<video>` 要素にマッチします。
+`:playing`、`:paused`、`:seeking`、`:buffering`、`:stalled`、`:muted`、および `:volume-locked` CSS擬似クラスは、その状態に基づいて `<audio>` および `<video>` 要素にマッチします。
 
-- `:playing` — media is currently playing
-- `:paused` — media is paused
-- `:seeking` — user is seeking to a new position
-- `:buffering` — media is buffering
-- `:stalled` — playback has stalled
-- `:muted` — audio is muted
-- `:volume-locked` — volume cannot be changed
+- `:playing` — media is currently playing（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:playing)）
+- `:paused` — media is paused（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:paused)）
+- `:seeking` — user is seeking to a new position（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:seeking)）
+- `:buffering` — media is buffering（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:buffering)）
+- `:stalled` — playback has stalled（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:stalled)）
+- `:muted` — audio is muted（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:muted)）
+- `:volume-locked` — volume cannot be changed（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:volume-locked)）
 
-- [Tests dashboard](https://wpt.fyi/results/css/selectors/media?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-media-pseudo-classes&label=master&label=experimental)
+> - [Tests dashboard](https://wpt.fyi/results/css/selectors/media?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-media-pseudo-classes&label=master&label=experimental)
+
 
 ### Navigation API
 
-Navigation API は、ブラウザのナビゲーション操作を開始、傍受、または変更します。
+こちらは2025年から継続されているものです。Navigation APIはHistory APIに代わる、ブラウザのナビゲーション操作を開始・傍受・変更するためのAPIです。
 
-今年は、Navigation API の相互運用性の継続的な向上と、ハンドラが解決されるまでコミットを遅延させる `MapsEvent.intercept()` の `precommitHandler` オプションに焦点を当てます。
+今年は、Navigation APIの相互運用性の継続的な向上と、ハンドラが解決されるまでコミットを遅延させる `MapsEvent.intercept()` の `precommitHandler` オプションに焦点を当てます。
 
 ```js
 navigation.addEventListener('navigate', (e) => {
   e.intercept({
     async precommitHandler() {
-      // Load critical resources before commit
       await loadCriticalData();
     },
     async handler() {
-      // Render the new view
       renderPage();
     }
   });
 });
 ```
 
-- [Tests dashboard](https://wpt.fyi/results/navigation-api?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-navigation&label=master&label=experimental)
+> - [Tests dashboard](https://wpt.fyi/results/navigation-api?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-navigation&label=master&label=experimental)
+> - [MDN](https://developer.mozilla.org/docs/Web/API/Navigation_API)
 
 ### Scoped custom element registries
 
-`CustomElementRegistry()` コンストラクタは、グローバルな `window.customElements` レジストリとは別の、新しいカスタム要素レジストリを作成します。複数のレジストリを作成することは、同じタグ名を持つ複数のカスタム要素を共存させる場合に便利です。
+`CustomElementRegistry()` コンストラクタは、グローバルな `window.customElements` レジストリとは別の、新しいカスタム要素レジストリを作成するAPIです。複数のレジストリを作成することは、同じタグ名を持つ複数のカスタム要素を共存させる場合に便利です。
 
 ```js
 const registry = new CustomElementRegistry();
@@ -176,31 +208,32 @@ registry.define('my-button', MyButtonV2);
 shadowRoot.registry = registry;
 ```
 
-- [Tests dashboard](https://wpt.fyi/results/custom-elements/registries?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-scoped-custom-element-registries&label=master&label=experimental)
+> - [Tests dashboard](https://wpt.fyi/results/custom-elements/registries?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-scoped-custom-element-registries&label=master&label=experimental)
+> - [MDN](https://developer.mozilla.org/docs/Web/API/CustomElementRegistry)
 
 ### Scroll-driven Animations
 
-スクロール量に応じてアニメーションを制御する機能です。`animation-timeline`、`scroll-timeline`、および `view-timeline` CSS プロパティは、ユーザーのスクロール位置に基づいてアニメーションを進行させます。
+スクロール量に応じてアニメーションを制御するCSS機能です。`animation-timeline`、`scroll-timeline`、および `view-timeline` CSSプロパティは、ユーザーのスクロール位置に基づいてアニメーションを進行させます。
 
 ```css
-/* スクロールに合わせてプログレスバーを伸縮させる例 */
-@keyframes grow-progress {
-  from { transform: scaleX(0); }
-  to { transform: scaleX(1); }
+.reveal {
+  animation: fade-in linear forwards;
+  animation-timeline: view();
+  animation-range: entry 0% entry 100%;
 }
 
-#progress {
-  animation: grow-progress auto linear;
-  animation-timeline: scroll();
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 ```
 
-- [Tests dashboard](https://wpt.fyi/results/scroll-animations?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-scroll-driven-animations&label=master&label=experimental)
-- [MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_scroll-driven_animations)
+> - [Tests dashboard](https://wpt.fyi/results/scroll-animations?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-scroll-driven-animations&label=master&label=experimental)
+> - [MDN](https://developer.mozilla.org/docs/Web/CSS/CSS_scroll-driven_animations)
 
 ### Scroll snap
 
-Scroll snapは、スクロールコンテナ内のパンとスクロールの動作を制御します。
+Scroll snapは、スクロールコンテナ内のパンとスクロールの動作を制御するCSS機能です。モダンブラウザではもうサポートされているのですが、ブラウザが初期実装を出したあとに仕様が何度も書き換えられたため、ブラウザ間で動作が揃わないという問題が深く残ってしまいました。仕様も成熟してきたので、改めてこの機能の互換性を整えるタイミングとして選出されました。
 
 ```css
 .carousel {
@@ -212,9 +245,12 @@ Scroll snapは、スクロールコンテナ内のパンとスクロールの動
 }
 ```
 
+> - [Tests dashboard](https://wpt.fyi/results/css/css-scroll-snap?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2026-scroll-snap)
+> - [MDN](https://developer.mozilla.org/docs/Web/CSS/Guides/Scroll_snap)
+
 ### The `shape()` CSS function
 
-CSS の`shape()` 関数は、line（線）、move（移動）、curve（曲線）などの一連のコマンドを使用して形状を作成します。これは `clip-path` や `shape-outside` と共に使用できます。
+CSSの `shape()` 関数は、line（線）、move（移動）、curve（曲線）などの一連のコマンドを使用して形状を作成します。これは `clip-path` や `shape-outside` と共に使用できます。
 
 ```css
 .element {
@@ -228,19 +264,21 @@ CSS の`shape()` 関数は、line（線）、move（移動）、curve（曲線�
 }
 ```
 
+> - [Tests dashboard](https://wpt.fyi/results/css/css-shapes/shape-functions?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2026-shape)
+> - [MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Values/basic-shape/shape)
+
 ### View Transitions API
 
-View Transition APIを使用すると、ドキュメントの異なる状態間、またはマルチページアプリケーションの異なるドキュメント間で、アニメーション化された視覚的な遷移を作成できます。
+ウェブサイト上でのさまざまなビュー間をシームレスな視覚的遷移を作成するためのAPIです。ドキュメントの異なる状態間、またはマルチページアプリケーションの異なるドキュメント間で、アニメーション化された視覚的な遷移を作成できるようになります。今年の作業は以下に焦点を当てます。
 
-今年の作業は以下に焦点を当てます：
+- 同一ドキュメント（same-document）のView Transitionsの相互運用性の継続的な向上
+- `<link>`、`<script>`、`<style>` 要素の `blocking="render"` 属性: 外部スクリプトやスタイルシートが読み込まれるまで、または特定の要素がDOMに存在するまでレンダリングをブロックします
+- `<link rel="expect">` 属性: `href` 値を参照する要素がドキュメントに接続され、完全に解析されるまでレンダリングをブロックするようブラウザにヒントを与えます
+- `:active-view-transition-type()` CSS擬似クラス: 指定されたタイプでアクティブなView Transitionsが開始された場合にのみマッチします
+- クロスドキュメント（cross-document）View Transitions
 
-- 同一ドキュメント（same-document）のビュートランジションの相互運用性の継続的な向上。
-- `<link>`、`<script>`、`<style>` 要素の `blocking="render"` 属性：外部スクリプトやスタイルシートが読み込まれるまで、または特定の要素が DOM に存在するまでレンダリングをブロックします。
-- `<link rel="expect">` 属性：href 値が参照する要素がドキュメントに接続され、完全に解析されるまでレンダリングをブロックするようブラウザにヒントを与えます。
-- `:active-view-transition-type()` CSS 擬似クラス：指定されたタイプでアクティブなビュートランジションが開始された場合にのみマッチします。
-- クロスドキュメント（cross-document）ビュートランジション
-
-* [MDN: View Transition API](https://developer.mozilla.org/docs/Web/API/View_Transition_API)
+> - [Tests dashboard](https://wpt.fyi/results/css/css-view-transitions?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-view-transitions&label=master&label=experimental)
+> - [MDN: View Transition API](https://developer.mozilla.org/docs/Web/API/View_Transition_API)
 
 ### Web Compat
 
@@ -252,22 +290,36 @@ Web Compatは特定の技術ではなく、すでにリリースされているA
 
 ### WebRTC
 
-WebRTC API は、ブラウザ間で直接リアルタイム通信チャネルを確立します。ビデオ会議アプリケーションで一般的に使用されます。
+こちらは2025年から継続されているものです。WebRTC APIは、ブラウザ間で直接リアルタイム通信チャネルを確立します。ビデオ会議アプリケーションで一般的に使用されます。今年の作業は以下に焦点を当てます。
 
-今年の作業は以下に焦点を当てます：
+- WebRTCの相互運用性の継続的な向上 
+- Interop 2025重点分野からの残りの失敗テストの修正
 
-- WebRTC の相互運用性の継続的な向上。
-- WebRTC Interop 2025 重点分野からの残りの失敗テストの修正。
+> - [Tests dashboard](https://wpt.fyi/results/?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-webrtc&label=master&label=experimental)
+> - [MDN](https://developer.mozilla.org/docs/Web/API/WebRTC_API)
 
 ### WebTransport
 
-WebTransport API は、HTTP/3 プロトコルを使用してクライアントとサーバー間でデータを送信します。
+WebTransport APIは、HTTP/3プロトコルを使用してクライアントとサーバー間でデータを送信できます。
+
+```js
+const transport = new WebTransport('https://example.com/endpoint');
+await transport.ready;
+const stream = await transport.createBidirectionalStream();
+// Stream data efficiently
+```
+
+> - [Tests dashboard](https://wpt.fyi/results/webtransport?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-webtransport&label=master&label=experimental)
+> - [MDN](https://developer.mozilla.org/docs/Web/API/WebTransport_API)
 
 ### The `zoom` CSS property
 
-要素のサイズを拡大縮小する CSS プロパティ`zoom`の相互運用性の向上を2025年から引き続き対応します。`transform`プロパティとは異なり、ズームされた要素はページのレイアウトに影響を与えます。
+要素のサイズを拡大縮小するCSSプロパティ `zoom` は、昨年はWeb Compatの一部として対象となっていましたが、今年は単体の重点項対象として選ばれました。
 
-- [Tests dashboard](https://wpt.fyi/results/?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2026-zoom)
+`transform` プロパティとは異なり、ズームされた要素はページのレイアウトに影響を与えるものとなっています。
+
+> - [Tests dashboard](https://wpt.fyi/results/?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2026-zoom)
+> - [MDN](https://developer.mozilla.org/docs/Web/CSS/zoom)
 
 ## Interop 2026での調査対象について
 
@@ -277,6 +329,10 @@ Interopでは重点対象だけでなく、テスト合格率では進捗を測�
 * JPEG XL
 * Mobile testing
 * WebVTT
+
+今回注目したい点として「[JPEG XL](https://jpegxl.info/)」が調査対象に入ったことがあげられます。JPEG XLはアニメーション、アルファ透過、そしてロッシー（不可逆）およびロスレス（可逆）圧縮の両方をサポートするラスター画像ファイル形式です。
+
+長らくInteropのプロポーザルとして挙げられつつも重点対象として選ばれることはなかったのですが、機能をテスト可能とするため今回から調査対象として選ばれました。
 
 ## 参加企業によるInterop 2026プロジェクト開始にまつわる記事
 
@@ -297,10 +353,10 @@ https://hacks.mozilla.org/2026/02/launching-interop-2026/
 
 ## おわりに
 
-Interop 2025ではNavigation APIやCSS Anchor Positioningといった「アプリのようなWeb」を作るための基盤が固まりました。
+今回の記事ではInterop 2025の振り返りと、Interop 2026の重点対象・調査対象について紹介しました。Interop 2026では前回からの継続対象も含めて140件ものプロポーザルが提出されておりました。
 
-Interop 2026では、それらをさらに発展させた**MPA View Transitions**や**Scroll-driven Animations**など、ユーザー体験を直接リッチにする機能が多く選出されています。また、`field-sizing` のような「長年欲しかった小さな機能」が含まれているのも嬉しいポイントです。
+昨年選出されたNavigation APIは主要なブラウザでのテストを通過し、今年1月より晴れて[Baseline Newly Available](https://web-platform-dx.github.io/web-features-explorer/features/navigation)となりました。これもInteropでのWeb標準の相互運用性を高めてくれた成果の1つと言えるでしょう。ちなみに余談ですが、私はNavigation APIを理解するために[ひとりアドベントカレンダー](https://scrapbox.io/yamanoku/%E3%81%B2%E3%81%A8%E3%82%8ANavigation_API_Advent_Calendar)を実施していました。
 
-個人的には、昨年SPAで実現されたView Transitionが、今年は普通のWebサイト（MPA）でも使えることへの大きな期待を寄せています。これにより、ReactやVueなどのフレームワークを使わないシンプルなサイトでも、ネイティブアプリのような遷移表現が可能となるでしょう。
+今年はCSS anchor Positioning、View Transitions API、`popover` 属性、Scroll snapsの相互運用性向上を期待しています。特にView Transitions APIでは静的なWebサイト（MPA）でも使えることへの大きな期待を寄せています。これにより、モダンなUIフレームワークを使わないサイトでも、ネイティブアプリのような遷移表現が可能となることでしょう。
 
-今年もWeb標準の進化から目が離せません。ぜひ皆さんもWPTダッシュボードをチェックしてみてください。
+今後のInterop 2026の進捗に注目していきましょう。
