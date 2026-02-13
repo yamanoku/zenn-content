@@ -111,9 +111,9 @@ Custom highlightsは、DOMに余分な要素を追加することなく、任意
 
 `<dialog>` HTML要素は、確認プロンプトやデータ入力用のサブウィンドウなど、モーダルまたはモードレスなダイアログボックスを表します。`popover` HTML属性は、他のページコンテンツの上にコンテンツを表示するオーバーレイを作成します。ポップオーバーは、HTMLを使用して宣言的に表示することも、`showPopover()` メソッドを使用して表示できます。今年の作業は以下に焦点を当てます。
 
-- `<dialog closedby>` 属性：ダイアログを閉じるユーザー操作を設定します。例えば、`<dialog closedby="any">` は、ダイアログの外側をクリックして閉じることを許可します。
-- `:open` CSS擬似クラス：`<dialog>` のような開いた状態を持つ要素にマッチします。
-- `popover="hint"` グローバル属性：`popover="auto"` 属性を持つ他のポップオーバーに従属するポップオーバーを作成します。これを使用すると、例えば自動ポップオーバーを閉じないツールチップを作成できます。
+- `<dialog closedby>` 属性: ダイアログを閉じるユーザー操作を設定します。例えば、`<dialog closedby="any">` は、ダイアログの外側をクリックして閉じることを許可できます
+- `:open` CSS擬似クラス: `<dialog>` のような開いた状態を持つ要素にマッチできます
+- `popover="hint"` グローバル属性: `popover="auto"` 属性を持つ他のポップオーバーに従属するポップオーバーを作成します。これを使用すると、例えば自動ポップオーバーを閉じないツールチップを作成できます
 
 > - [Tests dashboard](https://wpt.fyi/results/?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-dialogs-and-popovers&label=master&label=experimental)
 > - MDN docs:
@@ -125,9 +125,9 @@ Custom highlightsは、DOMに余分な要素を追加することなく、任意
 
 `fetch()` メソッドは、非同期HTTPリクエストを行うAPIです。今年の作業は以下に焦点を当てます。
 
-- `Body` 内の `ReadableStream`: サーバーにデータをストリーミングできるようにする
-- リクエストとレスポンスにおける `FormData` と `mime-type` のサポート
-- `Range` ヘッダーのサポート
+- `Body` 内の `ReadableStream`: サーバーにデータをストリーミングできるようにします
+- リクエストとレスポンスにおける `FormData` と `mime-type` をサポートします
+- `Range` ヘッダーのサポートをします
 
 > - [Tests dashboard](https://wpt.fyi/results/fetch?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-fetch&label=master&label=experimental)
 > - MDN Docs
@@ -165,13 +165,13 @@ Wasm（WebAssembly）は、ポータブルなバイナリ命令形式です。Ja
 
 `:playing`、`:paused`、`:seeking`、`:buffering`、`:stalled`、`:muted`、および `:volume-locked` CSS擬似クラスは、その状態に基づいて `<audio>` および `<video>` 要素にマッチします。
 
-- `:playing` — media is currently playing（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:playing)）
-- `:paused` — media is paused（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:paused)）
-- `:seeking` — user is seeking to a new position（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:seeking)）
-- `:buffering` — media is buffering（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:buffering)）
-- `:stalled` — playback has stalled（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:stalled)）
-- `:muted` — audio is muted（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:muted)）
-- `:volume-locked` — volume cannot be changed（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:volume-locked)）
+- `:playing` — 現在再生中のとき（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:playing)）
+- `:paused` — 停止中のとき（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:paused)）
+- `:seeking` — 新しい位置にシークしているとき（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:seeking)）
+- `:buffering` — バッファリング中のとき（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:buffering)）
+- `:stalled` — 再生が停止したとき（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:stalled)）
+- `:muted` — ミュートのとき（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:muted)）
+- `:volume-locked` — 音量を変更できないとき（[MDN](https://developer.mozilla.org/docs/Web/CSS/Reference/Selectors/:volume-locked)）
 
 > - [Tests dashboard](https://wpt.fyi/results/css/selectors/media?product=chrome&product=edge&product=firefox&product=safari&aligned=&view=interop&q=label%3Ainterop-2026-media-pseudo-classes&label=master&label=experimental)
 
