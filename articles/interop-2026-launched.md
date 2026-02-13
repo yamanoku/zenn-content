@@ -20,7 +20,7 @@ published: true
 | --- | --- |
 | ![2026/2/13時点のInterop2025のStable版WPTダッシュボード。重点対象全体が95点、調査対象が36点、Chromeが99点、Edgeが98点、Firefoxが99点、Safariが98点](/images/interop-2026-launched/wpt.fyi_interop-2025_stable.png) | ![2026/2/13時点のInterop2025のExperimental版WPTダッシュボード。重点対象全体が97点、調査対象が36点、Chromeが99点、Edgeが99点、Firefoxが99点、Safariが99点](/images/interop-2026-launched/wpt.fyi_interop-2025_experimental.png) |
 
-最新の安定版ブラウザでのリリースにおいては全体で95点まで網羅されており、プレリリース版においては97点まで網羅されていました。安定版でのテスト網羅率ではFirefoxが一歩リードしている形となっています。この結果はInterop 2024でも同様の結果となっています。
+最新の安定版ブラウザでのリリースにおいては全体で95点まで達成されており、プレリリース版においては97点まで網羅されていました。安定版でのテスト網羅率ではFirefoxが一歩リードしている形となっています。この結果はInterop 2024でも同様の結果となっています。
 
 スコア自体は昨年同様高い数値をキープしており、安定版においてはChromeとEdgeでは昨年よりも1点スコアが高まっています。一方で調査対象は36点と昨年と比較して低い結果となっています。特に[Privacy Testing](https://github.com/web-platform-tests/interop-privacy)はまったく着手されていない結果となっています。
 
@@ -75,7 +75,7 @@ Container style queriesは、`@container` アットルールと1つ以上の `st
 
 ### CSS anchor Positioning
 
-こちらは2025年から継続されているものです。CSS Anchor positioningは、アンカーと呼ばれる要素を基準として特定の要素を、常に画面の特定の位置に固定できるCSSプロパティです。
+これは2025年からの継続項目です。CSS Anchor positioningは、アンカーと呼ばれる要素を基準として特定の要素を、常に画面の特定の位置に固定できるCSSプロパティです。
 
 > - [Tests dashboard](https://wpt.fyi/results/css/css-anchor-position?label=master&label=experimental&aligned&view=interop&q=label%3Ainterop-2025-anchor-positioning)
 > - [MDN](https://developer.mozilla.org/docs/Web/CSS/Guides/Anchor_positioning)
@@ -178,7 +178,7 @@ Wasm（WebAssembly）は、ポータブルなバイナリ命令形式です。Ja
 
 ### Navigation API
 
-こちらは2025年から継続されているものです。Navigation APIはHistory APIに代わる、ブラウザのナビゲーション操作を開始・傍受・変更するためのAPIです。
+これは2025年からの継続項目です。Navigation APIはHistory APIに代わる、ブラウザのナビゲーション操作を開始・傍受・変更するためのAPIです。
 
 今年は、Navigation APIの相互運用性の継続的な向上と、ハンドラが解決されるまでコミットを遅延させる `MapsEvent.intercept()` の `precommitHandler` オプションに焦点を当てます。
 
@@ -290,7 +290,7 @@ Web Compatは特定の技術ではなく、すでにリリースされているA
 
 ### WebRTC
 
-こちらは2025年から継続されているものです。WebRTC APIは、ブラウザ間で直接リアルタイム通信チャネルを確立します。ビデオ会議アプリケーションで一般的に使用されます。今年の作業は以下に焦点を当てます。
+これは2025年からの継続項目です。WebRTC APIは、ブラウザ間で直接リアルタイム通信チャネルを確立します。ビデオ会議アプリケーションで一般的に使用されます。今年の作業は以下に焦点を当てます。
 
 - WebRTCの相互運用性の継続的な向上 
 - Interop 2025重点分野からの残りの失敗テストの修正
@@ -355,7 +355,7 @@ https://hacks.mozilla.org/2026/02/launching-interop-2026/
 
 今回の記事ではInterop 2025の振り返りと、Interop 2026の重点対象・調査対象について紹介しました。Interop 2026では前回からの継続対象も含めて140件ものプロポーザルが提出されておりました。
 
-昨年選出されたNavigation APIは主要なブラウザでのテストを通過し、今年1月より晴れて[Baseline Newly Available](https://web-platform-dx.github.io/web-features-explorer/features/navigation)となりました。これもInteropでのWeb標準の相互運用性を高めてくれた成果の1つと言えるでしょう。ちなみに余談ですが、私はNavigation APIを理解するために[ひとりアドベントカレンダー](https://scrapbox.io/yamanoku/%E3%81%B2%E3%81%A8%E3%82%8ANavigation_API_Advent_Calendar)を実施していました。
+昨年選出されたNavigation APIは主要なブラウザでのテストを通過し、今年1月より晴れて[Baseline Newly Available](https://web-platform-dx.github.io/web-features-explorer/features/navigation)となりました。これもInteropでのWeb標準の相互運用性を高めてくれた成果の1つと言えるでしょう。ちなみに私は、Navigation APIの理解を深めるために昨年[ひとりアドベントカレンダー](https://scrapbox.io/yamanoku/%E3%81%B2%E3%81%A8%E3%82%8ANavigation_API_Advent_Calendar)を実施していました。
 
 今年はCSS anchor Positioning、View Transitions API、`popover` 属性、Scroll snapsの相互運用性向上を期待しています。特にView Transitions APIでは静的なWebサイト（MPA）でも使えることへの大きな期待を寄せています。これにより、モダンなUIフレームワークを使わないサイトでも、ネイティブアプリのような遷移表現が可能となることでしょう。
 
