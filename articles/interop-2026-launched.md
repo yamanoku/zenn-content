@@ -1,7 +1,7 @@
 ---
 title: "Interop 2026が始まりました！"
 emoji: "🎇"
-type: "idea"
+type: "tech"
 topics: ["ブラウザ", "Interop", "Web標準"]
 published: true
 ---
