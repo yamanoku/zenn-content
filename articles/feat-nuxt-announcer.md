@@ -33,7 +33,7 @@ https://github.com/nuxt/nuxt/pull/34318
 
 ### コンポーネントの設置
 
-`app.vue` またはレイアウトファイルに `<NuxtAnnouncer />` を設置します。
+`app.vue` またはレイアウトファイルに `<NuxtAnnouncer>` を設置します。
 
 ```vue
 <template>
@@ -279,7 +279,7 @@ https://github.com/vueuse/vueuse/pull/5315
 
 https://github.com/nuxt/nuxt/issues/23255
 
-DevTools上でアクセシビリティチェックが可能になる [nuxt-a11y](https://github.com/nuxt/a11y) モジュールの開発も現在進行中で、Nuxt上でアクセシビリティを考慮した開発をより容易にする方向性で進んでいます。今後もこのロードマップには期待を寄せています。
+DevTools上でアクセシビリティチェックが可能になる [nuxt-a11y](https://github.com/nuxt/a11y) モジュールの開発も現在進行中で、Nuxt上でアクセシビリティを考慮した開発をやりやすくする方向へと進んでいます。今後もこのロードマップの進捗に期待を寄せています。
 
 ## 謝辞
 
