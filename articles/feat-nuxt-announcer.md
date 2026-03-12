@@ -7,6 +7,8 @@ published: false
 publication_name: "comm_vue_nuxt"
 ---
 
+## 動的な変更をスクリーンリーダーに伝える技術
+
 以前の記事で、Nuxt 3.12から導入された `<NuxtRouteAnnouncer>` と `useRouteAnnouncer` について紹介しました。
 
 https://zenn.dev/comm_vue_nuxt/articles/feat-nuxt-route-announcer
@@ -16,6 +18,8 @@ https://zenn.dev/comm_vue_nuxt/articles/feat-nuxt-route-announcer
 しかし、ページ遷移以外にもスクリーンリーダーに伝えたい動的な変更は他にもあります。たとえば、フォームバリデーションのエラーメッセージ、トースト通知、ローディング状態の変化などです。
 
 Nuxt 4.4[^1]より、これらのユースケースに対応する `<NuxtAnnouncer>` コンポーネントと `useAnnouncer` コンポーザブル関数が導入されました。
+
+https://github.com/nuxt/nuxt/pull/34318
 
 [^1]: Nuxt 3系の場合、Nuxt 3.17に同梱されています。
 
@@ -142,8 +146,8 @@ assertive('入力内容にエラーがあります');
 
 基本的には `polite` を使用し、ユーザーの即座の注意が必要な場合にのみ `assertive` を使用するようにしてください。`assertive` は他の読み上げを中断するため、多用するとユーザー体験を損なう可能性があります。
 
-- **`polite` が適切な場面**: 検索結果の件数、データの読み込み完了、操作の成功通知
-- **`assertive` が適切な場面**: フォームバリデーションエラー、セッション期限切れの警告、重要なエラー通知
+- `polite` が適切な場面: 検索結果の件数、データの読み込み完了、操作の成功通知
+- `assertive` が適切な場面: フォームバリデーションエラー、セッション期限切れの警告、重要なエラー通知
 
 ## `<NuxtRouteAnnouncer>` と `<NuxtAnnouncer>` の違い
 
@@ -250,6 +254,10 @@ async function search() {
 </template>
 ```
 
+## 注意点
+
+ユースケースでお伝えした通り、あくまでも動的な変更をスクリーンリーダーに伝えるため設計されているため、何でも `useAnnouncer` で通知するようにするのはおすすめしません。たいていの操作上では、コンテンツにフォーカスで移動させたり、ネイティブの `<form>` 検証を使用するだけでも情報は伝わります。主にフォーカスしない要素の通知のときに `useAnnouncer` の使用を検討してみてください。
+
 ## 余談：VueUseへのコンポーザブル追加要望
 
 私はこのNuxtから呼び出されるコンポーザブル関数を見たとき、Vue.js単体でも使えたらいいなと思いました。
@@ -262,6 +270,13 @@ https://github.com/vueuse/vueuse/pull/5315
 
 ## まとめ
 
-Nuxt 3.12から `<NuxtRouteAnnouncer>` が導入されSPAのページ遷移の通知が実現し、Nuxt4.4からは `<NuxtAnnouncer>` が追加されたことでページ内の動的な変更の通知もフレームワークレベルでサポートされました。
+この記事ではNuxt 3.12から `<NuxtRouteAnnouncer>` が導入されSPAのページ遷移の通知が実現し、Nuxt4.4からは `<NuxtAnnouncer>` が追加されたことでページ内の動的な変更の通知もフレームワークレベルでサポートされたことについて紹介しました。
 
 これにより、開発者がアクセシビリティ対応のために `aria-live` 属性を用いて自前で実装する負担が軽減されます。ぜひ `<NuxtAnnouncer>`、`useAnnouncer` を活用して、より多くのユーザーにとって使いやすいNuxtアプリケーションを構築してみてください。
+
+ちなみに今回の対応は、Nuxtのアクセシビリティに関するロードマップの一部です。
+
+https://github.com/nuxt/nuxt/issues/23255
+
+DevTools上でアクセシビリティチェックが可能になる [nuxt-a11y](https://github.com/nuxt/a11y) モジュールの開発も現在進行中で、Nuxt上でアクセシビリティを考慮した開発をより容易にする方向性で進んでいます。今後もこのロードマップには期待を寄せています。
+
