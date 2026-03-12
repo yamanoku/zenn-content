@@ -13,11 +13,11 @@ publication_name: "comm_vue_nuxt"
 
 https://zenn.dev/comm_vue_nuxt/articles/feat-nuxt-route-announcer
 
-これらはSPAにおけるページ遷移時にスクリーンリーダーへページタイトルを自動通知するコンポーネントとコンポーザブル関数で、クライアントサイドルーティングのアクセシビリティ課題を解消するものでした。
+これらはSPAにおけるページ遷移時にスクリーンリーダーへページタイトルを自動通知するコンポーネントとコンポーザブルで、クライアントサイドルーティングのアクセシビリティ課題を解消するものでした。
 
-しかし、ページ遷移以外にもスクリーンリーダーに伝えたい動的な変更は他にもあります。たとえば、フォームバリデーションのエラーメッセージ、トースト通知、ローディング状態の変化などです。
+しかしページ遷移以外にも、スクリーンリーダーに伝えたい動的な変更があります。たとえば、フォームバリデーションのエラーメッセージ、トースト通知、ローディング状態の変化などです。
 
-Nuxt 4.4[^1]より、これらのユースケースに対応する `<NuxtAnnouncer>` コンポーネントと `useAnnouncer` コンポーザブル関数が導入されました。
+Nuxt 4.4[^1]より、これらのユースケースに対応する `<NuxtAnnouncer>` コンポーネントと `useAnnouncer` コンポーザブルが導入されました。
 
 https://github.com/nuxt/nuxt/pull/34318
 
@@ -26,7 +26,7 @@ https://github.com/nuxt/nuxt/pull/34318
 - [<NuxtAnnouncer> · Nuxt Components v4](https://nuxt.com/docs/4.x/api/components/nuxt-announcer)
 - [useAnnouncer · Nuxt Composables v4](https://nuxt.com/docs/4.x/api/composables/use-announcer)
 
-今回はこのコンポーネントとコンポーザブル関数について紹介します。
+今回はこのコンポーネントとコンポーザブルについて紹介します。
 
 ## 基本的な使い方
 
@@ -46,9 +46,9 @@ https://github.com/nuxt/nuxt/pull/34318
 
 `<NuxtRouteAnnouncer>` と併用する場合は上記のように両方を設置します。
 
-### `useAnnouncer` で通知を発火する
+### `useAnnouncer` で通知する
 
-ページコンポーネントやその他のコンポーネントで `useAnnouncer` composableを使い、スクリーンリーダーへメッセージを通知します。
+ページコンポーネントやその他のコンポーネントで `useAnnouncer` コンポーザブルを使い、スクリーンリーダーへメッセージを通知します。
 
 ```vue
 <script setup lang="ts">
@@ -92,7 +92,7 @@ function onSubmit() {
 </div>
 ```
 
-この要素内のテキストで `minutes` が動的に切り替わって `01` となったとき、`aria-atomic="true"` では `12:00` から `12:01` に変更されたと読み上げられますが、`aria-atomic="false"` では `00` から `01` に変更されたと読み上げられます。
+この要素内のテキストで `minutes` が動的に切り替わって `01` となったとき、`aria-atomic="true"` では `12:00` から `12:01` に変わったと読み上げられますが、`aria-atomic="false"` では `00` から `01` に変更されたと読み上げられます。
 
 :::
 
@@ -146,8 +146,8 @@ assertive('入力内容にエラーがあります');
 
 基本的には `polite` を使用し、ユーザーの即座の注意が必要な場合にのみ `assertive` を使用するようにしてください。`assertive` は他の読み上げを中断するため、多用するとユーザー体験を損なう可能性があります。
 
-- `polite` が適切な場面: 検索結果の件数、データの読み込み完了、操作の成功通知
-- `assertive` が適切な場面: フォームバリデーションエラー、セッション期限切れの警告、重要なエラー通知
+- `polite` が適切な場面 ... 検索結果の件数、データの読み込み完了、操作の成功通知
+- `assertive` が適切な場面 ... フォームバリデーションエラー、セッション期限切れの警告、重要なエラー通知
 
 ## `<NuxtRouteAnnouncer>` と `<NuxtAnnouncer>` の違い
 
@@ -260,19 +260,19 @@ async function search() {
 
 ## 余談：VueUseへのコンポーザブル追加要望
 
-私はこのNuxtから呼び出されるコンポーザブル関数を見たとき、Vue.js単体でも使えたらいいなと思いました。
+私はこのNuxtから呼び出されるコンポーザブルを見たとき、Vue.js単体でも使えたらいいなと思いました。
 
-そこで、[VueUse](https://github.com/vueuse/)という便利なコンポーザブル関数集にもこの `useAnnouncer` 相当のものを実装したいと思って[Issueにて要望を提出した](https://github.com/vueuse/vueuse/issues/5314)ところ、別の方がすでに実装していただいています。
+そこで、[VueUse](https://github.com/vueuse/)という便利なコンポーザブル集にもこの `useAnnouncer` 相当のものを実装したいと思って[Issueにて要望を出した](https://github.com/vueuse/vueuse/issues/5314)ところ、別の方がすでに実装していただいています。
 
 https://github.com/vueuse/vueuse/pull/5315
 
-この記事を書いている現時点ではマージはされていませんが、これが適応されるのを楽しみにしています。
+この記事を書いている現時点ではマージはされていませんが、これが本体に適用されるのを楽しみにしています。
 
 ## まとめ
 
 この記事ではNuxt 3.12から `<NuxtRouteAnnouncer>` が導入されSPAのページ遷移の通知が実現し、Nuxt4.4からは `<NuxtAnnouncer>` が追加されたことでページ内の動的な変更の通知もフレームワークレベルでサポートされたことについて紹介しました。
 
-これにより、開発者がアクセシビリティ対応のために `aria-live` 属性を用いて自前で実装する負担が軽減されます。ぜひ `<NuxtAnnouncer>`、`useAnnouncer` を活用して、より多くのユーザーにとって使いやすいNuxtアプリケーションを構築してみてください。
+これにより、開発者がアクセシビリティ対応のために自前で `aria-live` の実装をする負担が軽減されます。ぜひ `<NuxtAnnouncer>`、`useAnnouncer` を活用して、より多くのユーザーにとって使いやすいNuxtアプリケーションを構築してみてください。
 
 ちなみに今回の対応は、Nuxtのアクセシビリティに関するロードマップの一部です。
 
