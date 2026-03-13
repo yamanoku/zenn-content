@@ -16,7 +16,7 @@ https://zenn.dev/comm_vue_nuxt/articles/feat-nuxt-route-announcer
 
 これらはSPAにおけるページ遷移時にスクリーンリーダーへページタイトルを自動通知するコンポーネントとコンポーザブルで、クライアントサイドルーティングのアクセシビリティ課題を解消するものでした。
 
-しかしページ遷移以外にも、スクリーンリーダーに伝えたい動的な変更があります。たとえば、フォームバリデーションのエラーメッセージ、トースト通知、ローディング状態の変化などです。
+しかし、ページ遷移以外にもスクリーンリーダーに伝えるべき動的な変更は多く存在します。たとえば、フォームバリデーションのエラーメッセージ、トースト通知、ローディング状態の変化などです。これらを実現するためには自前で `aria-live` を使って実装する必要がありました。
 
 Nuxt 4.4[^1]より、これらのユースケースに対応する `<NuxtAnnouncer>` コンポーネントと `useAnnouncer` コンポーザブルが導入されました。
 
@@ -31,7 +31,7 @@ https://github.com/nuxt/nuxt/pull/34318
 
 ## 基本的な使い方
 
-### コンポーネントの設置
+### `<NuxtAnnouncer>` コンポーネントの設置
 
 `app.vue` またはレイアウトファイルに `<NuxtAnnouncer>` を設置します。
 
@@ -39,17 +39,17 @@ https://github.com/nuxt/nuxt/pull/34318
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <NuxtAnnouncer />
+    <NuxtAnnouncer /> <!-- 追加 -->
     <NuxtPage />
   </div>
 </template>
 ```
 
-`<NuxtRouteAnnouncer>` と併用する場合は上記のように両方を設置します。
+`<NuxtRouteAnnouncer>` と併用する場合は上記のように両方設置します。
 
 ### `useAnnouncer` で通知する
 
-ページコンポーネントやその他のコンポーネントで `useAnnouncer` コンポーザブルを使い、スクリーンリーダーへメッセージを通知します。
+コンポーネント内やコンポーザブル関数にて `useAnnouncer` コンポーザブルを使い、スクリーンリーダーへメッセージを通知します。
 
 ```vue
 <script setup lang="ts">
@@ -57,10 +57,15 @@ import { useAnnouncer } from '#app';
 
 const { polite, assertive } = useAnnouncer();
 
-function onSubmit() {
-  // フォーム送信処理...
-  polite('メッセージが送信されました');
-};
+async function submitForm() {
+  try {
+    await $fetch('/api/contact', { method: 'POST', body: formData })
+    polite('メッセージが送信されました');
+  }
+  catch (error) {
+    assertive('メッセージの送信に失敗しました');
+  }
+}
 </script>
 ```
 
@@ -80,7 +85,7 @@ function onSubmit() {
 - 型: `boolean`
 - デフォルト: `true`
 
-スクリーンリーダーが変更部分のみを読み上げるか、要素全体を読み上げるかを制御します。`true` の場合は要素全体を、`false` の場合は変更された部分のみを読み上げます。
+これはWAI-ARIAの `aria-atomic` 属性と連動するPropsです。スクリーンリーダーが変更部分のみを読み上げるか、要素全体を読み上げるかを制御します。`true` の場合は要素全体を、`false` の場合は変更された部分のみを読み上げます。
 
 :::message
 
@@ -157,10 +162,16 @@ assertive('入力内容にエラーがあります');
 | 通知タイミング | ルート遷移時に自動 | 開発者が任意に制御 |
 | 通知内容 | ページタイトル（`useHead` の `title`） | 任意のメッセージ |
 | コンポーザブル | `useRouteAnnouncer` | `useAnnouncer` |
-| 主な用途 | ページ遷移の通知 | フォーム・トースト・ローディング等 |
+| 主な用途 | ページ遷移の通知 | フォームのエラー通知・トースト・ローディング等 |
 | `atomic` のデフォルト値 | `false` | `true` |
 
 `<NuxtRouteAnnouncer>` はルート変更時にページタイトルを**自動的に**通知するのに対し、`<NuxtAnnouncer>` は開発者が**任意のタイミングで任意のメッセージ**をスクリーンリーダーに通知できます。この性質の違いによって、それぞれの通知同士が競合することはありません。
+
+それぞれのコンポーネントのソースを見ると構造はほとんど一緒ですが、クラス名が異なる（`nuxt-route-announcer` と `nuxt-announcer`）、`aria-atomic` のデフォルト値が異なる（`false` と `true`）などの差異はあります。
+
+https://github.com/nuxt/nuxt/blob/b0cdb0af9b4634aebc283a876c0082e70cfedac2/packages/nuxt/src/app/components/nuxt-route-announcer.ts
+
+https://github.com/nuxt/nuxt/blob/b0cdb0af9b4634aebc283a876c0082e70cfedac2/packages/nuxt/src/app/components/nuxt-announcer.ts
 
 ## 具体的なユースケース
 
@@ -187,15 +198,14 @@ function validateForm() {
     return false;
   }
   return true;
-};
+}
 </script>
 
 <template>
   <form @submit.prevent="validateForm">
     <label :for="formId">メールアドレス</label>
     <input :id="formId" v-model="email" type="email" />
-    <p v-if="errorMessage" role="alert">{{ errorMessage }}</p>
-    <button type="submit">送信</button>
+   <button type="submit">送信</button>
   </form>
 </template>
 ```
@@ -240,7 +250,7 @@ const results = ref([]);
 async function search() {
   results.value = await $fetch('/api/search', {
     params: { q: query.value },
-  })  ;
+  });
   polite(`${results.value.length}件の検索結果が見つかりました`);
 }
 </script>
@@ -257,29 +267,49 @@ async function search() {
 
 ## 注意点
 
-ユースケースでお伝えした通り、あくまでも動的な変更をスクリーンリーダーに伝えるため設計されているため、何でも `useAnnouncer` で通知するようにするのはおすすめしません。たいていの操作上では、コンテンツにフォーカスで移動させたり、ネイティブの `<form>` 検証を使用するだけでも情報は伝わります。主にフォーカスしない要素の通知のときに `useAnnouncer` の使用を検討してみてください。
+`useAnnouncer` は、ページ内で発生する動的な変化をスクリーンリーダーに伝えるための仕組みとして設計されています。そのため、あらゆる通知を `useAnnouncer` に任せることは推奨されません。`<NuxtRouteAnnouncer>` と異なり、デフォルトで有効になっていないのも、必要な場面に限定して使うことを意図しているためです。
 
-## 余談：VueUseへのコンポーザブル追加要望
+多くのケースでは、フォーカス移動やネイティブの `<form>` 要素のバリデーション[^2]だけで十分に情報を伝えられます。`useAnnouncer` の利用を検討すべきなのは、フォーカスを移動できない・移動させない要素の変化を伝えたい場合です。
 
-私はこのNuxtから呼び出されるコンポーザブルを見たとき、Vue.js単体でも使えたらいいなと思いました。
+また、スクリーンリーダーへの通知だけではなく、視覚的なフィードバックも必ず併用することが重要です。エラーメッセージを画面上に表示するなど、誰にとっても理解しやすいUIを提供することを忘れないようにしてください。
 
-そこで、[VueUse](https://github.com/vueuse/)という便利なコンポーザブル集にもこの `useAnnouncer` 相当のものを実装したいと思って[Issueにて要望を出した](https://github.com/vueuse/vueuse/issues/5314)ところ、別の方がすでに実装していただいています。
+```vue
+<template>
+  <form @submit.prevent="validateForm">
+    <label :for="formId">メールアドレス</label>
+    <input :id="formId" v-model="email" type="email" />
+    <!-- 視覚的にもエラー情報を伝える -->
+    <p v-if="errorMessage">{{ errorMessage }}</p>
+   <button type="submit">送信</button>
+  </form>
+</template>
+```
+
+[^2]: [HTMLの標準機能で作るフォームバリデーション - ICS MEDIA](https://ics.media/entry/240418/)
+
+## Nuxtアクセシビリティ改善ロードマップ
+
+今回の対応は、Nuxtのアクセシビリティに関するロードマップの一部とされています。
+
+https://github.com/nuxt/nuxt/issues/23255
+
+DevTools上でアクセシビリティチェックが可能になる [@nuxt/a11y](https://github.com/nuxt/a11y) モジュールの開発も現在進行中で、Nuxt上でアクセシビリティを考慮した開発をやりやすくする方向へと進んでいます。今後もこのロードマップの進捗に期待を寄せています。
+
+## VueUseへのコンポーザブル追加要望
+
+余談ですが、私はこのNuxtから呼び出されるコンポーザブルを見たとき、Vue.js単体でも使えたらいいなと思いました。
+
+そこで、[VueUse](https://github.com/vueuse/)という便利なコンポーザブル集にもこの `useAnnouncer` 相当のものを実装したいと思って[Issueで要望を出した](https://github.com/vueuse/vueuse/issues/5314)ところ、翌日にはすでに別の方が実装してくださっていました。
 
 https://github.com/vueuse/vueuse/pull/5315
 
-この記事を書いている現時点ではマージはされていませんが、これが本体に適用されるのを楽しみにしています。
+この記事の執筆時点ではまだマージされていませんが、これが本体に適用されるのを楽しみにしています。
 
 ## まとめ
 
 この記事ではNuxt 3.12から `<NuxtRouteAnnouncer>` が導入されSPAのページ遷移の通知が実現し、Nuxt4.4からは `<NuxtAnnouncer>` が追加されたことでページ内の動的な変更の通知もフレームワークレベルでサポートされたことについて紹介しました。
 
-これにより、開発者がアクセシビリティ対応のために自前で `aria-live` の実装をする負担が軽減されます。ぜひ `<NuxtAnnouncer>`、`useAnnouncer` を活用して、より多くのユーザーにとって使いやすいNuxtアプリケーションを構築してみてください。
-
-ちなみに今回の対応は、Nuxtのアクセシビリティに関するロードマップの一部です。
-
-https://github.com/nuxt/nuxt/issues/23255
-
-DevTools上でアクセシビリティチェックが可能になる [nuxt-a11y](https://github.com/nuxt/a11y) モジュールの開発も現在進行中で、Nuxt上でアクセシビリティを考慮した開発をやりやすくする方向へと進んでいます。今後もこのロードマップの進捗に期待を寄せています。
+これにより、開発者がアクセシビリティ対応のために自前で `aria-live` の実装をする負担が軽減されます。ぜひ `<NuxtAnnouncer>`、`useAnnouncer` を活用して、動的なUIでもアクセシビリティを考慮した開発を実現してください。
 
 ## 謝辞
 
