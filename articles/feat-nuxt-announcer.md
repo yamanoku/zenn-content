@@ -293,7 +293,7 @@ async function search() {
 
 https://github.com/nuxt/nuxt/issues/23255
 
-DevTools上でアクセシビリティチェックが可能になる [@nuxt/a11y](https://github.com/nuxt/a11y) モジュールの開発も現在進行中で、Nuxt上でアクセシビリティを考慮した開発をやりやすくする方向へと進んでいます。今後もこのロードマップの進捗に期待を寄せています。
+DevTools上でアクセシビリティチェックが可能になる[@nuxt/a11y](https://github.com/nuxt/a11y)モジュールの開発も現在進行中で、Nuxt上でアクセシビリティを考慮した開発をやりやすくする方向へと進んでいます。今後もこのロードマップの進捗に期待を寄せています。
 
 ## VueUseへのコンポーザブル追加要望
 
